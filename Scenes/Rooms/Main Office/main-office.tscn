@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://t8epjukdqbi3"]
 
 [ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_chpiy"]
+[ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="2_gps8u"]
 
 [node name="MainOffice" type="Node2D" unique_id=467881628]
 script = ExtResource("1_chpiy")
 has_task = false
 metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575754116]
+position = Vector2(180, 504)
+texture = ExtResource("2_gps8u")
