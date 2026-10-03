@@ -1,36 +1,13 @@
 [gd_scene format=3 uid="uid://cs4tq17ql5qdx"]
 
 [ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="1_7ui2b"]
-
-[sub_resource type="GDScript" id="GDScript_7ui2b"]
-resource_name = "receipt_box"
-script/source = "extends Node2D
-
-@onready var sprite = $Sprite2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_area_2d_mouse_entered() -> void:
-	sprite.scale = Vector2(1.05, 1.05);
-
-
-func _on_area_2d_mouse_exited() -> void:
-	sprite.scale = Vector2(1, 1);
-"
+[ext_resource type="Script" uid="uid://bocnvmiqkymsp" path="res://Code/receipt-box/receipt_box.gd" id="1_kbeir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
 size = Vector2(120, 120)
 
 [node name="ReceiptBox" type="Node2D" unique_id=1318762090]
-script = SubResource("GDScript_7ui2b")
+script = ExtResource("1_kbeir")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=834538265]
 texture = ExtResource("1_7ui2b")
@@ -40,5 +17,6 @@ texture = ExtResource("1_7ui2b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=175779235]
 shape = SubResource("RectangleShape2D_r5n4g")
 
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

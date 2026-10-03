@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://t8epjukdqbi3"]
+
+[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_chpiy"]
+
+[node name="MainOffice" type="Node2D" unique_id=467881628]
+script = ExtResource("1_chpiy")
+has_task = false
+metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
