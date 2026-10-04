@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://byjkwkagsqrsm"]
+
+[ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_lpm76"]
+[ext_resource type="PackedScene" uid="uid://bc3vnmvrs2dfu" path="res://Scenes/Map/room-map.tscn" id="3_xvmph"]
+
+[node name="IanTestScene" type="Node" unique_id=1439365628]
+
+[node name="RoomManager" parent="." unique_id=259202658 node_paths=PackedStringArray("map") instance=ExtResource("1_lpm76")]
+map = NodePath("../RoomMap")
+
+[node name="RoomMap" parent="." unique_id=1155509412 instance=ExtResource("3_xvmph")]

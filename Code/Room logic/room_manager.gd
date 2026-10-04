@@ -1,14 +1,19 @@
 class_name RoomManager extends Node
 
 @export var start_room: PackedScene
+@export var map: Map;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Instantiate the first room
-	create_room(start_room)
+	create_room(start_room, Rooms.Room_Type.MAIN)	# HARD CODED ROOM TYPE; COULD CAUSE PROBLEMS
 
 
-func create_room(room: PackedScene) -> void:
+func create_room(room: PackedScene, room_type: Rooms.Room_Type) -> void:
+	# Destroy a room if it currently exists
 	if (get_child_count() > 0): get_child(0).queue_free();
+	# Set map button states
+	map.set_current_room_type(room_type);
+	# Create the scene
 	var child = room.instantiate();
-	add_child(child)
+	add_child(child);
