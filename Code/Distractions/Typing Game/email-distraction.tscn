@@ -16,6 +16,8 @@ var current_character_index := -1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Set this minigame's values to scale with the difficulty
+	set_diff();
 	duration_buffer = duration;
 	progress.max_value = duration;
 	progress.value = duration;
@@ -73,6 +75,11 @@ func get_new_active_word(typed_character: String):
 
 func _on_v_box_container_completed() -> void:
 	queue_free()
+
+
+func set_diff() -> void:
+	var controller = get_parent();
+	if (controller.has_method(\"get_difficulty\")): duration /= controller.get_difficulty() / 6;
 "
 
 [sub_resource type="GDScript" id="GDScript_eu6v1"]

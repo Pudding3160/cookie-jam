@@ -37,3 +37,7 @@ func can_spawn(min: int, max: int) -> bool:
 func start_game() -> void:
 	var scene_instance = distraction_scene.instantiate();
 	add_child(scene_instance);
+
+
+func get_difficulty() -> int:
+	return difficulty;

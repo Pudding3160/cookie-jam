@@ -6,6 +6,6 @@
 [node name="EmailController" type="Node" unique_id=1587489003]
 script = ExtResource("1_cf8rw")
 interval = 1
-difficulty = 50
+difficulty = 20
 distraction_scene = ExtResource("2_da3mq")
 metadata/_custom_type_script = "uid://c1ptcxgsty67v"
