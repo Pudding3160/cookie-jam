@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nw7xrkfhy0rl"]
 
-[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_vmq3a"]
+[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/Room logic/room.gd" id="1_vmq3a"]
 [ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="2_hrqom"]
 
 [node name="BreakRoom" type="Node2D" unique_id=17511725]

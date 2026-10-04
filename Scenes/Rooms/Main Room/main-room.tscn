@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bva74s7bqjmh8"]
 
-[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_o43up"]
+[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/Room logic/room.gd" id="1_o43up"]
 [ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="2_r8pm5"]
 
 [node name="MainRoom" type="Node2D" unique_id=2075280996]
