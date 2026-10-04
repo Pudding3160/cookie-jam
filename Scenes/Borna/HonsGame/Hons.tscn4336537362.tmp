@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfgltatfwx6kx"]
+
+[ext_resource type="Script" uid="uid://tcb60c23ndu6" path="res://Scenes/Borna/HonsGame/MainHorse.gd" id="1_i40fx"]
+[ext_resource type="PackedScene" uid="uid://c53v0ql05xryo" path="res://Scenes/Borna/HonsGame/ground.tscn" id="1_iig63"]
+[ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
+
+[node name="Node2D" type="Node2D" unique_id=1001608435]
+script = ExtResource("1_i40fx")
+
+[node name="Ground" parent="." unique_id=1851720191 instance=ExtResource("1_iig63")]
+position = Vector2(1, -1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=822775577]
+position = Vector2(578, 325)
+
+[node name="HonsChar" parent="." unique_id=1616022542 instance=ExtResource("3_swgoe")]
+position = Vector2(287, 423)
