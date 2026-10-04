@@ -7,5 +7,6 @@
 
 [node name="RoomManager" parent="." unique_id=259202658 node_paths=PackedStringArray("map") instance=ExtResource("1_lpm76")]
 map = NodePath("../RoomMap")
+current_room_type = 1
 
 [node name="RoomMap" parent="." unique_id=1155509412 instance=ExtResource("3_xvmph")]
