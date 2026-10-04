@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bc3vnmvrs2dfu"]
+
+[ext_resource type="Script" uid="uid://bi4tjdksxotr2" path="res://Code/map.gd" id="1_ty474"]
+[ext_resource type="PackedScene" uid="uid://dx7lyqdkc1cag" path="res://Scenes/Map/map-button.tscn" id="2_khby4"]
+[ext_resource type="PackedScene" uid="uid://nw7xrkfhy0rl" path="res://Scenes/Rooms/Break Room/break-room.tscn" id="3_ykypk"]
+[ext_resource type="PackedScene" uid="uid://bva74s7bqjmh8" path="res://Scenes/Rooms/Main Room/main-room.tscn" id="4_ip11r"]
+[ext_resource type="PackedScene" uid="uid://qfla867405x7" path="res://Scenes/Rooms/Printer Room/printer-room.tscn" id="5_elf1j"]
+
+[node name="RoomMap" type="Control" unique_id=1155509412]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ty474")
+metadata/_custom_type_script = "uid://bi4tjdksxotr2"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1072561393]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 819.0
+offset_top = 288.305
+offset_right = 1152.0
+offset_bottom = 596.30383
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1271602977]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/CenterContainer" unique_id=1334633745]
+custom_maximum_size = Vector2(-1, 50)
+layout_mode = 2
+
+[node name="MapButton" parent="PanelContainer/CenterContainer/HBoxContainer" unique_id=1795815701 instance=ExtResource("2_khby4")]
+layout_mode = 2
+text = "Break Room"
+room = ExtResource("3_ykypk")
+room_type = 1
+
+[node name="MapButton2" parent="PanelContainer/CenterContainer/HBoxContainer" unique_id=1413035099 instance=ExtResource("2_khby4")]
+layout_mode = 2
+text = "Main Room"
+room = ExtResource("4_ip11r")
+
+[node name="MapButton3" parent="PanelContainer/CenterContainer/HBoxContainer" unique_id=792557743 instance=ExtResource("2_khby4")]
+layout_mode = 2
+text = "Printer Room"
+room = ExtResource("5_elf1j")
+room_type = 2

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dx7lyqdkc1cag"]
+
+[ext_resource type="Script" uid="uid://bamvj5rhwejph" path="res://Code/Room logic/map_button.gd" id="1_rrrjr"]
+
+[node name="MapButton" type="Button" unique_id=1795815701]
+script = ExtResource("1_rrrjr")
+metadata/_custom_type_script = "uid://bamvj5rhwejph"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
