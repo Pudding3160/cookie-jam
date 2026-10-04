@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpp68tkmmsj88"]
 
-[ext_resource type="Script" uid="uid://dp555pdraov04" path="res://Code/room-manager/room_manager.gd" id="1_61ql1"]
+[ext_resource type="Script" uid="uid://dp555pdraov04" path="res://Code/Room logic/room_manager.gd" id="1_61ql1"]
 
 [node name="RoomManager" type="Node2D" unique_id=259202658]
 script = ExtResource("1_61ql1")

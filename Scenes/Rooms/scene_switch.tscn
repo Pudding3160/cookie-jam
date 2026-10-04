@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dl2qabuwl77s6"]
+
+[ext_resource type="Script" uid="uid://bi4tjdksxotr2" path="res://Code/change_room.gd" id="1_wwh21"]
+[ext_resource type="Script" uid="uid://bamvj5rhwejph" path="res://Code/Room logic/room_button.gd" id="2_hnot8"]
+[ext_resource type="PackedScene" uid="uid://r0qkssuulq7p" path="res://Scenes/Rooms/Break Room/break_room.tscn" id="3_isupd"]
+
+[node name="SceneSwitch" type="Control" unique_id=102950870]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwh21")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=532538985]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -219.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1035502580]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer" unique_id=270048605]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer" unique_id=278982777]
+layout_mode = 2
+text = "Break Room"
+script = ExtResource("2_hnot8")
+room = ExtResource("3_isupd")
+
+[node name="Button3" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer" unique_id=1043924696]
+layout_mode = 2
+text = "Printer Room"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/Button" to="MarginContainer/CenterContainer/HBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

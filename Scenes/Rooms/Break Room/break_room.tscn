@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://r0qkssuulq7p"]
+
+[ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_ayele"]
+[ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="2_ct66l"]
+[ext_resource type="PackedScene" uid="uid://dl2qabuwl77s6" path="res://Scenes/Rooms/scene_switch.tscn" id="3_6sbfv"]
+
+[node name="BreakRoom" type="Node2D" unique_id=681217709]
+script = ExtResource("1_ayele")
+metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1628741694]
+position = Vector2(969, 441)
+texture = ExtResource("2_ct66l")
+
+[node name="SceneSwitch" parent="." unique_id=102950870 instance=ExtResource("3_6sbfv")]
+offset_left = 1152.0
+offset_top = 648.0
+offset_right = 1152.0
+offset_bottom = 648.0
