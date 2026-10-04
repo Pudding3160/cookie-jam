@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ch2cpbw0hdjw5"]
+
+[sub_resource type="GDScript" id="GDScript_nyymt"]
+resource_name = "virus"
+script/source = "extends CanvasLayer
+
+@export var required_presses := 10;
+
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	print(event);
+	if event is not InputEventMouseButton: return;
+	print(event);
+	if !event.is_pressed(): return;
+	required_presses -= 1;
+	if required_presses == 0: queue_free();
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
+size = Vector2(350, 325)
+
+[node name="VirusDistraction" type="CanvasLayer" unique_id=1292400872]
+script = SubResource("GDScript_nyymt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1811731787]
+position = Vector2(577, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1445445387]
+shape = SubResource("RectangleShape2D_r5n4g")
+
+[node name="Control" type="Control" parent="." unique_id=373818967]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1271615703]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.25
+anchor_right = 0.65
+anchor_bottom = 0.75
+offset_left = 0.8000183
+offset_right = 0.7999878
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/MarginContainer" unique_id=1475109918]
+layout_mode = 2
+mouse_filter = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
