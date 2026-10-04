@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://q54v4qwwqafq"]
+
+[ext_resource type="Script" uid="uid://c1ptcxgsty67v" path="res://Code/Distractions/Typing Game/typing-game-controller.gd" id="1_cf8rw"]
+[ext_resource type="PackedScene" uid="uid://dd2b4bnf50t53" path="res://Code/Distractions/Typing Game/email-distraction.tscn" id="2_da3mq"]
+
+[node name="EmailController" type="Node" unique_id=1587489003]
+script = ExtResource("1_cf8rw")
+interval = 1
+difficulty = 50
+distraction_scene = ExtResource("2_da3mq")
+metadata/_custom_type_script = "uid://c1ptcxgsty67v"
