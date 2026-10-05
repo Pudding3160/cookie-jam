@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gxrbcw5dh1r2"]
 
 [ext_resource type="Texture2D" uid="uid://cfruyf0dqmfu2" path="res://Sprites/HonsSprites/birb-Sheet.png" id="1_1hv24"]
-[ext_resource type="Script" uid="uid://4vetmmg6m57j" path="res://Scenes/Borna/HonsGame/code/obstacle_behaviour.gd" id="1_k3k3a"]
+[ext_resource type="Script" uid="uid://bi7bama7pu82v" path="res://Scenes/Borna/HonsGame/obstacle_bird_behaviour.gd" id="1_k3k3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k3k3a"]
 atlas = ExtResource("1_1hv24")
