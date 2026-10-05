@@ -5,7 +5,7 @@ var interval_buffer;
 @export var difficulty := 1;
 @export var max_rand_num := 30;
 @export var distraction_scene: PackedScene
-@export var active_room := Rooms.Room_Type
+@export var active_room: RoomsEnum.Room_Type
 var is_distraction_active := false;
 var room_manager;
 
@@ -17,13 +17,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# If the distraction has a specific room assigned to it, it can't work unless that room is active
+	var active := check_for_valid_activity();
+	if (!active): set_children_state(false);
+	else: set_children_state(true);
+	
 	# If the number of children is greater than zero, the distraction is active
 	is_distraction_active = get_child_count() > 0;
 	if (is_distraction_active): return;
-	
-	# If the distraction has a specific room assigned to it, it can't work unless that room is active
-	if (active_room != null):
-		if (room_manager.current_room_type != active_room): return;
 	
 	# Decrease interval buffer
 	interval_buffer -= delta;
@@ -48,3 +49,15 @@ func start_game() -> void:
 
 func get_difficulty() -> int:
 	return difficulty;
+
+func check_for_valid_activity() -> bool:
+	if (room_manager == null): return false;
+	if (room_manager.current_room_type != active_room): return false;
+	return true;
+
+func set_children_state(active: bool) -> void:
+	if (get_child_count() == 0): return;
+	var child := get_child(0);
+	if (child == null): return;
+	if (active): child.show();
+	else: child.hide();

@@ -7,9 +7,10 @@
 [node name="IanTestScene" type="Node" unique_id=1439365628]
 
 [node name="RoomManager" parent="." unique_id=259202658 node_paths=PackedStringArray("map") instance=ExtResource("1_lpm76")]
-map = NodePath("")
+map = NodePath("../Map")
 current_room_type = 1
 
 [node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("3_actam")]
+difficulty = 15
 
 [node name="Map" parent="." unique_id=1908580526 instance=ExtResource("3_xvmph")]

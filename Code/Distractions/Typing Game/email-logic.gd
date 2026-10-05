@@ -2,7 +2,7 @@ extends Control
 
 @export var words: Array[String]
 var chosen_words: Array[String]
-@export var duration := 20.0;
+@export var duration: float = 20.0;
 var duration_buffer: float;
 @onready var v_box_controller := $PanelContainer/MarginContainer/VSplitContainer/VBoxContainer;
 @onready var progress := $PanelContainer/MarginContainer/VSplitContainer/ProgressBar
@@ -72,8 +72,12 @@ func get_new_active_word(typed_character: String):
 
 
 func scale_with_difficulty() -> void:
-	var controller := get_parent();
-	if (controller.has_method("get_difficulty")): duration /= controller.get_difficulty() / 6;
+	var node := get_parent();
+	var controller := node as DistractionControllerBase;
+	var diff: float = controller.get_difficulty();
+	var new_duration := -5 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the curve needs to be deeper, increase the first number
+	duration = new_duration;
+	print(duration);
 
 
 func _on_v_box_container_completed() -> void:
