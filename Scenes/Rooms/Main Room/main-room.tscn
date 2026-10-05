@@ -12,16 +12,16 @@ size = Vector2(298.96317, 214.5711)
 resource_name = "camera-zoom"
 script/source = "extends Camera2D
 
-
+@export var anim_speed: float;
 
 func _on_area_2d_mouse_entered() -> void:
 	var tween = create_tween()
-	tween.tween_property(self, \"zoom\", Vector2(1.75, 1.75), .15).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"zoom\", Vector2(1.75, 1.75), anim_speed).set_ease(Tween.EASE_OUT)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	var tween = create_tween()
-	tween.tween_property(self, \"zoom\", Vector2(1, 1), .15).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"zoom\", Vector2(1, 1), anim_speed).set_ease(Tween.EASE_OUT)
 "
 
 [node name="MainRoom" type="Node2D" unique_id=2075280996]
@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_r5n4g")
 
 [node name="Camera2D" type="Camera2D" parent="SOfficeWallFront/MonitorProto" unique_id=1548366561]
 script = SubResource("GDScript_r5n4g")
+anim_speed = 0.1
 
 [connection signal="mouse_entered" from="SOfficeWallFront/MonitorProto/Area2D" to="SOfficeWallFront/MonitorProto/Camera2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="SOfficeWallFront/MonitorProto/Area2D" to="SOfficeWallFront/MonitorProto/Camera2D" method="_on_area_2d_mouse_exited"]
