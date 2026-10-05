@@ -96,8 +96,8 @@ func get_words(hard_mode := false) -> void:
 
 func generate_hash(string_length := 8) -> String:
 	var hash_string := str(pow(Time.get_unix_time_from_system(), 3)).right(string_length)
-	var hash := hash_string.sha256_text();	# Multiply by 100,000 to get an integer
-	return hash.left(string_length).to_lower();
+	var mail_hash := hash_string.sha256_text();	# Multiply by 100,000 to get an integer
+	return mail_hash.left(string_length).to_lower();
 
 func get_random_word() -> String:
 	var rng := RandomNumberGenerator.new();
