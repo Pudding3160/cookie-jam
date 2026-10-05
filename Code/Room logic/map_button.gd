@@ -1,7 +1,7 @@
 class_name MapButton extends Button
 
 @export var room: PackedScene
-@export var room_type: Rooms.Room_Type
+@export var room_type: RoomsEnum.Room_Type
 var room_manager: RoomManager
 
 func _ready() -> void:
@@ -14,5 +14,5 @@ func _on_pressed() -> void:
 	
 	room_manager.create_room(room, room_type);
 
-func get_room_type() -> Rooms.Room_Type:
+func get_room_type() -> RoomsEnum.Room_Type:
 	return room_type;

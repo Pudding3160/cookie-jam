@@ -1,12 +1,54 @@
 [gd_scene format=3 uid="uid://bva74s7bqjmh8"]
 
 [ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_o43up"]
-[ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="2_r8pm5"]
+[ext_resource type="Texture2D" uid="uid://ee4e7p4v3yeg" path="res://Sprites/Temp/SOfficeWallFront.webp" id="3_odbhw"]
+[ext_resource type="Texture2D" uid="uid://bjhibwv47ker0" path="res://Sprites/Temp/monitor-proto.png" id="4_qjk5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
+size = Vector2(298.96317, 214.5711)
+
+[sub_resource type="GDScript" id="GDScript_r5n4g"]
+resource_name = "camera-zoom"
+script/source = "extends Camera2D
+
+@export var anim_speed: float;
+
+func _on_area_2d_mouse_entered() -> void:
+	var tween = create_tween()
+	tween.set_parallel(true);
+	tween.tween_property(self, \"zoom\", Vector2(1.75, 1.75), anim_speed).set_ease(Tween.EASE_OUT_IN)
+	tween.tween_property(self, \"position\", Vector2(0, -66), anim_speed).set_ease(Tween.EASE_IN)
+
+
+func _on_area_2d_mouse_exited() -> void:
+	var tween = create_tween()
+	tween.set_parallel(true);
+	tween.tween_property(self, \"zoom\", Vector2(1, 1), anim_speed).set_ease(Tween.EASE_OUT_IN)
+	tween.tween_property(self, \"position\", Vector2(0, 0), anim_speed).set_ease(Tween.EASE_OUT)
+"
 
 [node name="MainRoom" type="Node2D" unique_id=2075280996]
 script = ExtResource("1_o43up")
 metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437842523]
-position = Vector2(573, 163)
-texture = ExtResource("2_r8pm5")
+[node name="SOfficeWallFront" type="Sprite2D" parent="." unique_id=1844707469]
+scale = Vector2(2.2558594, 2.2558594)
+texture = ExtResource("3_odbhw")
+
+[node name="MonitorProto" type="Sprite2D" parent="SOfficeWallFront" unique_id=1969727812]
+position = Vector2(45.658875, -8.865799)
+scale = Vector2(0.4937585, 0.49375856)
+texture = ExtResource("4_qjk5o")
+
+[node name="Area2D" type="Area2D" parent="SOfficeWallFront/MonitorProto" unique_id=1486256685]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOfficeWallFront/MonitorProto/Area2D" unique_id=1590644400]
+position = Vector2(-92.92096, -43.542664)
+shape = SubResource("RectangleShape2D_r5n4g")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1548366561]
+script = SubResource("GDScript_r5n4g")
+anim_speed = 0.2
+
+[connection signal="mouse_entered" from="SOfficeWallFront/MonitorProto/Area2D" to="Camera2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SOfficeWallFront/MonitorProto/Area2D" to="Camera2D" method="_on_area_2d_mouse_exited"]
