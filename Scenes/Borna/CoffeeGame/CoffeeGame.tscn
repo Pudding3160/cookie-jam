@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://bh84k63h5ofop"]
 
+[ext_resource type="Texture2D" uid="uid://c50i8i8yijuwh" path="res://Sprites/HonsSprites/bg.png" id="1_u3nrc"]
+[ext_resource type="PackedScene" uid="uid://ko2pt8tqdrox" path="res://Scenes/Borna/CoffeeGame/coffee_char.tscn" id="2_32l4b"]
+
 [node name="CoffeeGame" type="Node2D" unique_id=824459716]
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=350210578]
+position = Vector2(569, 290)
+texture = ExtResource("1_u3nrc")
+
+[node name="CoffeeChar" parent="." unique_id=1537344380 instance=ExtResource("2_32l4b")]
+position = Vector2(561, 438)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1211191153]
+position = Vector2(574, 324)
+
+[node name="BoxRef" type="Node" parent="." unique_id=676086818]
+
+[node name="Left" type="Node2D" parent="BoxRef" unique_id=677019805]
+position = Vector2(430, 440)
+
+[node name="Right" type="Node2D" parent="BoxRef" unique_id=1793398910]
+position = Vector2(710, 440)
