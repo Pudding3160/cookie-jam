@@ -6,7 +6,6 @@ var chosen_words: Array[String]
 var duration_buffer: float;
 @onready var v_box_controller := $PanelContainer/MarginContainer/VSplitContainer/VBoxContainer;
 @onready var progress := $PanelContainer/MarginContainer/VSplitContainer/ProgressBar
-var hard_mode: bool;
 @export var prompts_amount := 3;
 
 var active_element;
@@ -14,17 +13,14 @@ var current_character_index := -1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_words(hard_mode);
 	# Set this minigame's values to scale with the difficulty
 	scale_with_difficulty();
 	duration_buffer = duration;
 	progress.max_value = duration;
 	progress.value = duration;
-	var rng := RandomNumberGenerator.new();
-	# Get random words
-	for n in 3:
-		var word := words[rng.randi_range(0, words.size() - 1)].to_lower();
-		chosen_words.append(word);
+	
+	# Get words lol pretty obvious
+	get_words(GlobalDistractionManager.get_email_difficulty());
 
 	# Assign words to elements
 	for index in v_box_controller.get_child_count():

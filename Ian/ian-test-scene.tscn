@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byjkwkagsqrsm"]
 
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_lpm76"]
-[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Code/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
+[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Ian/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
 [ext_resource type="PackedScene" uid="uid://cs4aihcoijnos" path="res://Scenes/Map/map.tscn" id="3_xvmph"]
 
 [node name="IanTestScene" type="Node" unique_id=1439365628]

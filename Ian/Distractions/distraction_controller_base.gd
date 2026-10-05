@@ -45,15 +45,18 @@ func can_spawn(min: int, max: int) -> bool:
 func start_game() -> void:
 	var scene_instance := distraction_scene.instantiate();
 	add_child(scene_instance);
+	GlobalDistractionManager.set_distraction_active_state(true);
 
 
 func get_difficulty() -> int:
 	return difficulty;
 
+
 func check_for_valid_activity() -> bool:
 	if (room_manager == null): return false;
 	if (room_manager.current_room_type != active_room): return false;
 	return true;
+
 
 func set_children_state(active: bool) -> void:
 	if (get_child_count() == 0): return;

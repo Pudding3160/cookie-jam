@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ypdivs358i8p"]
 
-[ext_resource type="Script" uid="uid://ctusgm2c2dauf" path="res://Code/Distractions/example/ex_dist_controller.gd" id="1_at0p6"]
-[ext_resource type="PackedScene" uid="uid://ch2cpbw0hdjw5" path="res://Code/Distractions/example/ex_dist_distraction.tscn" id="2_woo7t"]
+[ext_resource type="Script" uid="uid://ctusgm2c2dauf" path="res://Ian/Distractions/example/ex_dist_controller.gd" id="1_at0p6"]
+[ext_resource type="PackedScene" uid="uid://ch2cpbw0hdjw5" path="res://Ian/Distractions/example/ex_dist_distraction.tscn" id="2_woo7t"]
 
 [node name="DistractionTest" type="Node2D" unique_id=1038323479]
 
