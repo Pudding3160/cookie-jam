@@ -15,8 +15,8 @@ fill_to = Vector2(0, 1)
 [node name="Window" type="Node2D" parent="." unique_id=1266729102]
 
 [node name="Background" type="TextureRect" parent="Window" unique_id=1289840261]
-offset_right = 1159.0
-offset_bottom = 652.0
+offset_right = 1154.0
+offset_bottom = 649.0
 texture = SubResource("GradientTexture2D_4y1mt")
 
 [node name="Grid" type="Node2D" parent="." unique_id=1207108790]
@@ -26,3 +26,20 @@ height = 8
 x_start = 300
 y_start = 550
 offset = 64
+new_offset = 1
+
+[node name="DestroyTimer" type="Timer" parent="." unique_id=103659410]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollapseTimer" type="Timer" parent="." unique_id=361412058]
+wait_time = 0.5
+one_shot = true
+
+[node name="RefillTimer" type="Timer" parent="." unique_id=925874308]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="CollapseTimer" to="Grid" method="_on_collapse_timer_timeout"]
+[connection signal="timeout" from="RefillTimer" to="Grid" method="_on_refill_timer_timeout"]

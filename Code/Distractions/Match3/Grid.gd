@@ -1,5 +1,7 @@
-
 extends Node2D
+
+enum {wait, move}
+var state
 
 #grid
 @export var width: int
@@ -7,6 +9,7 @@ extends Node2D
 @export var x_start: int
 @export var y_start: int
 @export var offset: int
+@export var new_offset: int
 
 
 var possible_pieces = [
@@ -27,6 +30,7 @@ var controlling = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	state = move
 	randomize()
 	all_pieces = make_array()
 	spawn()
@@ -34,40 +38,40 @@ func _ready() -> void:
 
 func make_array() -> Array:
 	var array = []
-	for i in width:
+	for column in width:
 		array.append([])
-		for j in height:
-			array[i].append(null)
+		for row in height:
+			array[column].append(null)
 	return array
 
 
 func spawn() -> void:
-	for i in width:
-		for j in height:
+	for column in width:
+		for row in height:
 			var rand = floori(randf_range(0, possible_pieces.size()))
 			var piece = possible_pieces[rand].instantiate()
 
 			var loops = 0
-			while check_match(i, j, piece.get_node("Sprite2D").PieceColor) and loops < 100:
+			while check_match(column, row, piece.get_node("Sprite2D").PieceColor) and loops < 100:
 				rand = floori(randf_range(0, possible_pieces.size()))
 				loops += 1
 				piece = possible_pieces[rand].instantiate()
 
 			add_child(piece)
-			piece.position = grid_to_pixel(i, j)
-			all_pieces[i][j] = piece
+			piece.position = grid_to_pixel(column, row)
+			all_pieces[column][row] = piece
 
 
 #for no matches at beginning
-func check_match(i, j, PieceColor):
-	if i > 1:
-		if all_pieces[i - 1][j] != null and all_pieces[i - 2][j] != null:
-			if all_pieces[i - 1][j].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[i - 2][j].get_node("Sprite2D").PieceColor == PieceColor:
+func check_match(column, row, PieceColor):
+	if column > 1:
+		if all_pieces[column - 1][row] != null and all_pieces[column - 2][row] != null:
+			if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 2][row].get_node("Sprite2D").PieceColor == PieceColor:
 				return true
 
-	if j > 1:
-		if all_pieces[i][j - 1] != null and all_pieces[i][j - 2] != null:
-			if all_pieces[i][j - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[i][j - 2].get_node("Sprite2D").PieceColor == PieceColor:
+	if row > 1:
+		if all_pieces[column][row - 1] != null and all_pieces[column][row - 2] != null:
+			if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 2].get_node("Sprite2D").PieceColor == PieceColor:
 				return true
 
 	return false
@@ -85,43 +89,62 @@ func pixel_to_grid(pixel_x, pixel_y):
 	return Vector2(new_x, new_y)
 
 
-func is_in_grid(column, row):
-	if column >= 0 and column < width:
-		if row >= 0 and row < height:
+func is_in_grid(grid_position):
+	if grid_position.x >= 0 and grid_position.x < width:
+		if grid_position.y >= 0 and grid_position.y < height:
 			return true
 	return false
 
 
 func touch_input():
 	if Input.is_action_just_pressed("ui_touch"):
-		first_touch = get_global_mouse_position()
-		var grid_position = pixel_to_grid(first_touch.x, first_touch.y)
+		first_touch = pixel_to_grid(get_global_mouse_position().x, get_global_mouse_position().y)
 
-		if is_in_grid(grid_position.x, grid_position.y):
+		if is_in_grid(first_touch):
 			controlling = true
 
 	if Input.is_action_just_released("ui_touch"):
-		final_touch = get_global_mouse_position()
-		var grid_position = pixel_to_grid(final_touch.x, final_touch.y)
+		final_touch = pixel_to_grid(get_global_mouse_position().x, get_global_mouse_position().y)
 
-		if is_in_grid(grid_position.x, grid_position.y) and controlling:
-			touch_difference(
-				pixel_to_grid(first_touch.x, first_touch.y),
-				grid_position
-			)
+		if is_in_grid(final_touch) and controlling:
+			touch_difference(first_touch, final_touch)
 
 		controlling = false
+
+#when we swap pieces that dont make a match
+func match_prevent(column, row, direction):
+	var first_piece = all_pieces[column][row]
+	var second_piece = all_pieces[column + int(direction.x)][row + int(direction.y)]
+
+	#swap and animate
+	all_pieces[column][row] = second_piece
+	all_pieces[column + int(direction.x)][row + int(direction.y)] = first_piece
+
+	var first_tween = first_piece.get_node("Sprite2D").move(grid_to_pixel(column + int(direction.x), row + int(direction.y)))
+	var second_tween = second_piece.get_node("Sprite2D").move(grid_to_pixel(column, row))
+	await first_tween.finished
+	await second_tween.finished
+
+	if check_match(column + int(direction.x), row + int(direction.y), first_piece.get_node("Sprite2D").PieceColor) or check_match(column, row, second_piece.get_node("Sprite2D").PieceColor):
+		find_matches()
+	else:
+		#swap back
+		all_pieces[column][row] = first_piece
+		all_pieces[column + int(direction.x)][row + int(direction.y)] = second_piece
+
+		first_piece.get_node("Sprite2D").move(grid_to_pixel(column, row))
+		second_piece.get_node("Sprite2D").move(grid_to_pixel(column + int(direction.x), row + int(direction.y)))
+
+		state = move
 
 
 func swap_pieces(column, row, direction):
 	var first_piece = all_pieces[column][row]
-	var second_piece = all_pieces[column + direction.x][row + direction.y]
+	var second_piece = all_pieces[column + int(direction.x)][row + int(direction.y)]
 
-	all_pieces[column][row] = second_piece
-	all_pieces[column + direction.x][row + direction.y] = first_piece
-
-	first_piece.position = grid_to_pixel(column + direction.x, row + direction.y)
-	second_piece.position = grid_to_pixel(column, row)
+	if first_piece != null and second_piece != null:
+		state = wait
+		match_prevent(column, row, direction)
 
 
 func touch_difference(grid_1, grid_2):
@@ -141,5 +164,112 @@ func touch_difference(grid_1, grid_2):
 			swap_pieces(grid_1.x, grid_1.y, Vector2(0, -1))
 
 
+func mark_matched(piece):
+	piece.get_node("Sprite2D").matched = true
+	piece.get_node("Sprite2D").visibility()
+
+
+func find_matches():
+	var found_match = false
+
+	for column in width:
+		for row in height:
+			if all_pieces[column][row] != null:
+				var current_color = all_pieces[column][row].get_node("Sprite2D").PieceColor
+
+				if column > 0 and column < width - 1:
+					if all_pieces[column - 1][row] != null and all_pieces[column + 1][row] != null:
+						if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == current_color and all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == current_color:
+							mark_matched(all_pieces[column - 1][row])
+							mark_matched(all_pieces[column][row])
+							mark_matched(all_pieces[column + 1][row])
+							found_match = true
+
+				if row > 0 and row < height - 1:
+					if all_pieces[column][row - 1] != null and all_pieces[column][row + 1] != null:
+						if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == current_color and all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == current_color:
+							mark_matched(all_pieces[column][row - 1])
+							mark_matched(all_pieces[column][row])
+							mark_matched(all_pieces[column][row + 1])
+							found_match = true
+
+	if found_match:
+		get_parent().get_node("DestroyTimer").start()
+	else:
+		state = move
+
+
+func destroy_matched():
+	for column in width:
+		for row in height:
+			if all_pieces[column][row] != null:
+				if all_pieces[column][row].get_node("Sprite2D").matched:
+					all_pieces[column][row].queue_free()
+					all_pieces[column][row] = null
+
+	get_parent().get_node("CollapseTimer").start()
+
+
+func collapse():
+	for column in width:
+		for row in height:
+			if all_pieces[column][row] == null:
+				for next_row in range(row + 1, height):
+					if all_pieces[column][next_row] != null:
+						all_pieces[column][next_row].get_node("Sprite2D").move(grid_to_pixel(column, row))
+						all_pieces[column][row] = all_pieces[column][next_row]
+						all_pieces[column][next_row] = null
+						break
+
+	get_parent().get_node("RefillTimer").start()
+
+
+func refill():
+	var tweens = []
+
+	for column in width:
+		for row in height:
+			if all_pieces[column][row] == null:
+				var rand = floori(randf_range(0, possible_pieces.size()))
+				var piece = possible_pieces[rand].instantiate()
+
+				var loops = 0
+				while check_match(column, row, piece.get_node("Sprite2D").PieceColor) and loops < 100:
+					rand = floori(randf_range(0, possible_pieces.size()))
+					loops += 1
+					piece = possible_pieces[rand].instantiate()
+
+				add_child(piece)
+				piece.position = grid_to_pixel(column, row + new_offset)
+
+				var tween = piece.get_node("Sprite2D").move(grid_to_pixel(column, row))
+				tweens.append(tween)
+
+				all_pieces[column][row] = piece
+
+	if tweens.size() > 0:
+		await tweens[-1].finished
+
+	refill_check()
+
+
+#looks for a match after a refill
+func refill_check():
+	find_matches()
+
+
 func _process(_delta):
-	touch_input()
+	if state == move:
+		touch_input()
+
+
+func _on_destroy_timer_timeout() -> void:
+	destroy_matched()
+
+
+func _on_collapse_timer_timeout() -> void:
+	collapse()
+
+
+func _on_refill_timer_timeout() -> void:
+	refill()
