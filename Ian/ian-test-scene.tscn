@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://byjkwkagsqrsm"]
 
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_lpm76"]
+[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Code/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
 [ext_resource type="PackedScene" uid="uid://bc3vnmvrs2dfu" path="res://Scenes/Map/room-map.tscn" id="3_xvmph"]
 
 [node name="IanTestScene" type="Node" unique_id=1439365628]
@@ -10,3 +11,7 @@ map = NodePath("../RoomMap")
 current_room_type = 1
 
 [node name="RoomMap" parent="." unique_id=1155509412 instance=ExtResource("3_xvmph")]
+
+[node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("3_actam")]
+interval = 5
+difficulty = 1
