@@ -1,1 +1,1 @@
-class_name Map extends Control
+class_name Map extends CanvasLayer

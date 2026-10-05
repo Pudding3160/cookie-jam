@@ -18,5 +18,5 @@ func create_room(room: PackedScene, room_type: Rooms.Room_Type) -> void:
 	# Set current room
 	current_room_type = room_type;
 	# Create the scene
-	var child = room.instantiate();
+	var child := room.instantiate();
 	add_child(child);

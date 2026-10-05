@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var sprite = $Sprite2D
-const Receipt = preload("res://Scenes/receipt.tscn")
+@onready var sprite := $Sprite2D
+const Receipt := preload("res://Scenes/receipt.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
-		var receipt = create_receipt()
+		var receipt := create_receipt()
 		add_child(receipt)
 
 func create_receipt() -> Node2D:
