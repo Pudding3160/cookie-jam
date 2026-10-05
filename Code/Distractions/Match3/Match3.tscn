@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://pyiyentblm7b"]
+
+[ext_resource type="Script" uid="uid://kvcwel1v36m5" path="res://Code/Distractions/Match3/Grid.gd" id="1_4y1mt"]
+
+[sub_resource type="Gradient" id="Gradient_b5vi4"]
+offsets = PackedFloat32Array(0, 0.2695783, 0.69728917, 1)
+colors = PackedColorArray(0.5559712, 0.7008478, 1, 1, 1, 1, 1, 1, 0.93227804, 0.95445246, 1, 1, 0.5568628, 0.7019608, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y1mt"]
+gradient = SubResource("Gradient_b5vi4")
+fill_to = Vector2(0, 1)
+
+[node name="Match3" type="Node2D" unique_id=829428825]
+
+[node name="Window" type="Node2D" parent="." unique_id=1266729102]
+
+[node name="Background" type="TextureRect" parent="Window" unique_id=1289840261]
+offset_right = 1159.0
+offset_bottom = 652.0
+texture = SubResource("GradientTexture2D_4y1mt")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1207108790]
+script = ExtResource("1_4y1mt")
+width = 8
+height = 8
+x_start = 300
+y_start = 550
+offset = 64

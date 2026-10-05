@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bltbsiuw0k2u8"]
+
+[ext_resource type="PackedScene" uid="uid://d1v6n7nwucm1h" path="res://Katia/Piece.tscn" id="1_dyu21"]
+
+[node name="MagentaPiece" unique_id=921506528 instance=ExtResource("1_dyu21")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1626412863]
+modulate = Color(1, 0, 0.6784314, 1)
+PieceColor = "Magenta"
