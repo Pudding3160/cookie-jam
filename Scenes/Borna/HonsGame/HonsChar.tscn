@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bry5jmi028e6a"]
+
+[ext_resource type="Script" uid="uid://7wsgbqkxkgvs" path="res://Scenes/Borna/HonsGame/code/hons_char.gd" id="1_5uqk3"]
+[ext_resource type="Texture2D" uid="uid://drsiq4d4fmnla" path="res://Sprites/HonsSprites/hons-Sheet.png" id="1_pdlvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hknv"]
+size = Vector2(15, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsqpt"]
+size = Vector2(15, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uqk3"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjbvo"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gisai"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtgax"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th1ql"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voxhl"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwib2"]
+atlas = ExtResource("1_pdlvb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fwcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uqk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjbvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gisai")
+}],
+"loop": 1,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtgax")
+}],
+"loop": 1,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th1ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voxhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwib2")
+}],
+"loop": 1,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[node name="HonsChar" type="CharacterBody2D" unique_id=1616022542]
+script = ExtResource("1_5uqk3")
+
+[node name="Run" type="CollisionShape2D" parent="." unique_id=1607961391]
+position = Vector2(0.5, 2)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_4hknv")
+
+[node name="Crouch" type="CollisionShape2D" parent="." unique_id=1453204669]
+position = Vector2(0.5, 3)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_rsqpt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1407744132]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_0fwcc")
+animation = &"Crouch"
+frame_progress = 0.27006316

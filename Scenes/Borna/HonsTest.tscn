@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cbhf4436td4dw"]
+
+[ext_resource type="Script" uid="uid://bqf7nr863lmpv" path="res://Scenes/Borna/hons_popup_controller.gd" id="1_o5nnc"]
+[ext_resource type="PackedScene" uid="uid://dfgltatfwx6kx" path="res://Scenes/Borna/HonsGame/Hons.tscn" id="2_8sryo"]
+
+[node name="HonsTest" type="Node2D" unique_id=1210752212]
+
+[node name="HonsController" type="Node" parent="." unique_id=1264345137]
+script = ExtResource("1_o5nnc")
+interval = 1
+distraction_scene = ExtResource("2_8sryo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=431222103]
+position = Vector2(577, 320)

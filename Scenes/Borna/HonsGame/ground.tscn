@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c53v0ql05xryo"]
+
+[ext_resource type="Texture2D" uid="uid://c6pc71q4nnb1w" path="res://Sprites/HonsSprites/ground.png" id="1_3ai2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fwcc"]
+size = Vector2(320, 8)
+
+[node name="Ground" type="StaticBody2D" unique_id=1851720191]
+
+[node name="Grnd2" type="Sprite2D" parent="." unique_id=1485036663]
+position = Vector2(440, 432)
+scale = Vector2(1, 1.0154794)
+texture = ExtResource("1_3ai2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956711767]
+position = Vector2(440, 436)
+shape = SubResource("RectangleShape2D_0fwcc")
