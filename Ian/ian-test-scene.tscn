@@ -16,10 +16,12 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=691137145]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 296.0
-offset_right = 580.0
-offset_bottom = 336.0
+offset_left = -95.0
+offset_top = -169.0
+offset_right = 87.0
+offset_bottom = 8.0
+mouse_filter = 2

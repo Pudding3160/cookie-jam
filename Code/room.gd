@@ -1,7 +1,5 @@
 class_name Room extends Node2D
 
-
-
 #@export var has_task := true;
 #@export var cooldown: float;
 #@export var rand_add_range: Vector2;
