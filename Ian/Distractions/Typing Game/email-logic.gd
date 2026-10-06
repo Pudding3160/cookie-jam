@@ -7,7 +7,7 @@ var duration_buffer: float;
 @onready var v_box_controller := $PanelContainer/MarginContainer/VSplitContainer/VBoxContainer;
 @onready var progress := $PanelContainer/MarginContainer/VSplitContainer/ProgressBar
 @export var prompts_amount := 3;
-@export var time_penalty := 10
+@export var time_penalty := 2.0
 
 var active_element;
 var current_character_index := -1;
@@ -33,7 +33,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	duration_buffer -= delta;
 	progress.value = duration_buffer;
-	if duration_buffer < 0.0: end_game(false);
+	if duration_buffer < 0.0: end_game(true);
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -74,14 +74,13 @@ func get_new_active_word(typed_character: String):
 func scale_with_difficulty() -> void:
 	var node := get_parent();
 	var controller := node as DistractionControllerBase;
-	var diff: float = controller.get_difficulty();
-	var new_duration := -5 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the curve needs to be deeper, increase the first number
-	duration = new_duration;
-	# time_penalty *= ;
+	var diff: float = controller.get_difficulty(); 
+	duration = -5 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
+	time_penalty = 7 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
 
 
 func _on_v_box_container_completed() -> void:
-	end_game(true);
+	end_game(false);
 
 
 func get_words(hard_mode := false) -> void:
@@ -105,5 +104,7 @@ func get_random_word() -> String:
 func end_game(failed: bool) -> void:
 	GlobalDistractionManager.set_distraction_active_state(false);
 	GlobalDistractionManager.email_difficulty = GlobalDistractionManager.EmailDifficulty.EASY;
-	if (failed): TimerManager.update_time(time_penalty);
+	if (failed):
+		TimerManager.update_time(time_penalty);
+		GlobalStrikeManager.update_strikes(1);
 	queue_free();
