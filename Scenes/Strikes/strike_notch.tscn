@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ca5m8ltpxhy1f"]
+
+[ext_resource type="Script" uid="uid://b15hr8q75xx6j" path="res://Scenes/Strikes/Code/strike_notch.gd" id="1_7kagb"]
+
+[node name="StrikeNotch" type="Control" unique_id=594040538]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kagb")
+
+[node name="Panel" type="Panel" parent="." unique_id=784231248]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

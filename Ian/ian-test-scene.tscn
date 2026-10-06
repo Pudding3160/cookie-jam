@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://byjkwkagsqrsm"]
 
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_lpm76"]
-[ext_resource type="PackedScene" uid="uid://bc3vnmvrs2dfu" path="res://Scenes/Map/room-map.tscn" id="3_xvmph"]
+[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Ian/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
+[ext_resource type="PackedScene" uid="uid://cs4aihcoijnos" path="res://Scenes/Map/map.tscn" id="3_xvmph"]
+[ext_resource type="PackedScene" uid="uid://xjuw67uvcgrc" path="res://Scenes/global-timer.tscn" id="4_actam"]
+[ext_resource type="PackedScene" uid="uid://dbxwhb0mhls3w" path="res://Ian/Distractions/Cookie Collector/cookie-collector.tscn" id="5_jac7h"]
+[ext_resource type="PackedScene" uid="uid://cftkwo67v7ac4" path="res://Scenes/Strikes/strike_counter.tscn" id="6_572t3"]
 
 [node name="IanTestScene" type="Node" unique_id=1439365628]
 
 [node name="RoomManager" parent="." unique_id=259202658 node_paths=PackedStringArray("map") instance=ExtResource("1_lpm76")]
-map = NodePath("../RoomMap")
+map = NodePath("../Map")
 current_room_type = 1
 
-[node name="RoomMap" parent="." unique_id=1155509412 instance=ExtResource("3_xvmph")]
+[node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("3_actam")]
+difficulty = 20
+
+[node name="Map" parent="." unique_id=1908580526 instance=ExtResource("3_xvmph")]
+
+[node name="GlobalTimer" parent="." unique_id=296257864 instance=ExtResource("4_actam")]
+
+[node name="CookieCollector" parent="." unique_id=1791148422 instance=ExtResource("5_jac7h")]
+
+[node name="StrikeCounter" parent="." unique_id=2111545922 instance=ExtResource("6_572t3")]

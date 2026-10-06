@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://dxa1r1d3s6pso"]
+
+[ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Ian/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
+
+[sub_resource type="GDScript" id="GDScript_3sau0"]
+resource_name = "detect_children"
+script/source = "extends VBoxContainer
+
+signal completed;
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if (get_child_count() > 0): return;
+	completed.emit();
+	queue_free();
+"
+
+[sub_resource type="GDScript" id="GDScript_3f12i"]
+resource_name = "text_element"
+script/source = "extends RichTextLabel
+
+@export var default_color := Color.WHITE;
+@export var success_color := Color.BURLYWOOD;
+
+func get_prompt() -> String:
+	return text;
+
+func set_next_character(next_character_index: int) -> void:
+	var default_text = get_bbcode_color_tag(default_color, text.substr(next_character_index, text.length() - next_character_index))
+	var success_text = get_bbcode_color_tag(success_color, text.substr(0, next_character_index))
+	parse_bbcode(success_text + default_text)
+
+
+func get_bbcode_color_tag(color: Color, text_to_write: String) -> String:
+	return \"[color=#\" + color.to_html(false) + \"]\" + text_to_write + \"[/color]\";
+	
+"
+
+[node name="EmailDistraction" type="Control" unique_id=1398266982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3f12i")
+words = Array[String](["embezzlement", "flabbergasted", "thorough", "consciousness", "conscientious", "embarrassment", "accommodation", "callousness", "bureaucracy", "mischievous", "abcess", "pronunciation", "silhouette", "narcissistic", "exacerbate", "exageratory", "reconnaissance"])
+duration = 30.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1401458539]
+layout_mode = 0
+offset_left = -162.0
+offset_top = -185.0
+offset_right = 163.0
+offset_bottom = 45.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=679615504]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer" unique_id=1068897769]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+split_offsets = PackedInt32Array(4)
+split_offset = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VSplitContainer" unique_id=1151307487]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+value = 50.0
+show_percentage = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer" unique_id=632098839]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+script = SubResource("GDScript_3sau0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=1602497260]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "lorem ipsum"
+fit_content = true
+scroll_active = false
+script = SubResource("GDScript_3f12i")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=135159343]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "lorem ipsum"
+fit_content = true
+scroll_active = false
+script = SubResource("GDScript_3f12i")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=587521422]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "lorem ipsum"
+fit_content = true
+scroll_active = false
+script = SubResource("GDScript_3f12i")
+
+[connection signal="completed" from="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" to="." method="_on_v_box_container_completed"]
