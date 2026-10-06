@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-var bird=preload("res://Scenes/Borna/HonsGame/Bird.tscn")
-var obstacle=preload("res://Scenes/Borna/HonsGame/Obstacle.tscn")
+var bird := preload("res://Scenes/Borna/HonsGame/Bird.tscn")
+var obstacle := preload("res://Scenes/Borna/HonsGame/Obstacle.tscn")
 var obstacle_types:=[bird,obstacle]
 var bird_height:=[370,420]
 var can_spawn:=true

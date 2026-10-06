@@ -5,11 +5,11 @@ extends Control
 var room_manager: RoomManager;
 
 func _ready() -> void:
-	var node := get_node("/root/IanTestScene/RoomManager");
+	var node := get_node("/root/Main/RoomManager");
 	if (node != null): room_manager = node as RoomManager;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# If the distraction has a specific room assigned to it, it can't work unless that room is active
 	var active := check_for_valid_activity();
 	if (!active): set_children_state(false); return;
