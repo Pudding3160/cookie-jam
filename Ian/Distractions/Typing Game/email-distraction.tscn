@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxa1r1d3s6pso"]
 
-[ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Code/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
+[ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Ian/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
 
 [sub_resource type="GDScript" id="GDScript_3sau0"]
 resource_name = "detect_children"

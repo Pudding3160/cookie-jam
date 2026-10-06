@@ -11,7 +11,6 @@ func _ready() -> void:
 
 
 func create_room(room: PackedScene, room_type: RoomsEnum.Room_Type) -> void:
-	print(room_type)
 	# If the room_type is the current room, return
 	if current_room_type == room_type: return;
 	# Destroy a room if it currently exists

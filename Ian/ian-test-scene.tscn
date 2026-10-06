@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://byjkwkagsqrsm"]
 
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_lpm76"]
-[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Code/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
+[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Ian/Distractions/Typing Game/email-controller.tscn" id="3_actam"]
 [ext_resource type="PackedScene" uid="uid://cs4aihcoijnos" path="res://Scenes/Map/map.tscn" id="3_xvmph"]
+[ext_resource type="PackedScene" uid="uid://xjuw67uvcgrc" path="res://Scenes/global-timer.tscn" id="4_actam"]
+[ext_resource type="PackedScene" uid="uid://dbxwhb0mhls3w" path="res://Ian/Distractions/Cookie Collector/cookie-collector.tscn" id="5_jac7h"]
 
 [node name="IanTestScene" type="Node" unique_id=1439365628]
 
@@ -11,6 +13,11 @@ map = NodePath("../Map")
 current_room_type = 1
 
 [node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("3_actam")]
-difficulty = 15
+interval = 35
+difficulty = 30
 
 [node name="Map" parent="." unique_id=1908580526 instance=ExtResource("3_xvmph")]
+
+[node name="GlobalTimer" parent="." unique_id=296257864 instance=ExtResource("4_actam")]
+
+[node name="CookieCollector" parent="." unique_id=1791148422 instance=ExtResource("5_jac7h")]

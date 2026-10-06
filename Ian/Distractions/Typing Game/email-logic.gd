@@ -6,25 +6,22 @@ var chosen_words: Array[String]
 var duration_buffer: float;
 @onready var v_box_controller := $PanelContainer/MarginContainer/VSplitContainer/VBoxContainer;
 @onready var progress := $PanelContainer/MarginContainer/VSplitContainer/ProgressBar
-var hard_mode: bool;
 @export var prompts_amount := 3;
+@export var time_penalty := 10
 
 var active_element;
 var current_character_index := -1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_words(hard_mode);
 	# Set this minigame's values to scale with the difficulty
 	scale_with_difficulty();
 	duration_buffer = duration;
 	progress.max_value = duration;
 	progress.value = duration;
-	var rng := RandomNumberGenerator.new();
-	# Get random words
-	for n in 3:
-		var word := words[rng.randi_range(0, words.size() - 1)].to_lower();
-		chosen_words.append(word);
+	
+	# Get words lol pretty obvious
+	get_words(GlobalDistractionManager.get_email_difficulty());
 
 	# Assign words to elements
 	for index in v_box_controller.get_child_count():
@@ -36,7 +33,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	duration_buffer -= delta;
 	progress.value = duration_buffer;
-	if duration_buffer < 0.0: queue_free();
+	if duration_buffer < 0.0: end_game(false);
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -80,10 +77,11 @@ func scale_with_difficulty() -> void:
 	var diff: float = controller.get_difficulty();
 	var new_duration := -5 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the curve needs to be deeper, increase the first number
 	duration = new_duration;
+	# time_penalty *= ;
 
 
 func _on_v_box_container_completed() -> void:
-	queue_free();
+	end_game(true);
 
 
 func get_words(hard_mode := false) -> void:
@@ -102,3 +100,10 @@ func generate_hash(string_length := 8) -> String:
 func get_random_word() -> String:
 	var rng := RandomNumberGenerator.new();
 	return words[rng.randi_range(0, words.size() - 1)].to_lower();
+
+
+func end_game(failed: bool) -> void:
+	GlobalDistractionManager.set_distraction_active_state(false);
+	GlobalDistractionManager.email_difficulty = GlobalDistractionManager.EmailDifficulty.EASY;
+	if (failed): TimerManager.update_time(time_penalty);
+	queue_free();
