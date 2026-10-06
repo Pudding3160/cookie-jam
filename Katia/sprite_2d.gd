@@ -2,11 +2,11 @@ extends Sprite2D
 
 @export var PieceColor: String
 
-var matched = false;
+var matched := false;
 
 
 func move(target):
-	var tween = get_parent().create_tween()
+	var tween := get_parent().create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(get_parent(), "position", target, 0.3)

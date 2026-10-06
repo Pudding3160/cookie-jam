@@ -12,7 +12,7 @@ var room_manager;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interval_buffer = interval;
-	var node := get_node("/root/IanTestScene/RoomManager");
+	var node := get_node("/root/Main/RoomManager");
 	if (node != null): room_manager = node as RoomManager;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,9 +37,9 @@ func _process(delta: float) -> void:
 	#if !can_spawn(0, max_rand_num): return;	# Will be added later
 	start_game();
 
-func can_spawn(min: int, max: int) -> bool:
+func can_spawn(min_chance: int, max_chance: int) -> bool:
 	var rng := RandomNumberGenerator.new();
-	return difficulty > rng.randi_range(min, max);
+	return difficulty > rng.randi_range(min_chance, max_chance);
 
 
 func start_game() -> void:
