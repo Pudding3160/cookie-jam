@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 func update_time(delta: float):
 	time_buffer += delta;
 
-
 func get_current_time() -> float:
 	return time_buffer;
 
