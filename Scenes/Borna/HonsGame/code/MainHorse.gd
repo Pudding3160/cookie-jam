@@ -61,6 +61,7 @@ func hit_obs(body):
 	
 func game_won():	
 	speed=0
+	queue_free()
 	
 func game_lost():
 	speed=0
