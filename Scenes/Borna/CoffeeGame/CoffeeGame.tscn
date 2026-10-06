@@ -34,3 +34,18 @@ position = Vector2(710, 135)
 
 [node name="Node2D" parent="." unique_id=576018206 instance=ExtResource("3_32l4b")]
 position = Vector2(557, 139)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1063786986]
+offset_left = 410.0
+offset_top = 121.0
+offset_right = 450.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=96999998]
+offset_left = 501.0
+offset_top = 117.0
+offset_right = 628.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Collect 5 coffee"
