@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjmrx24ubii21" path="res://Ian/Distractions/Cookie Collector/cookie-button.gd" id="1_0ltcj"]
 [ext_resource type="Script" uid="uid://bcshwlygpfksq" path="res://Ian/Distractions/Cookie Collector/cookie_collector_controller.gd" id="1_i88f8"]
+[ext_resource type="PackedScene" uid="uid://ow132vug53yk" path="res://Ian/Distractions/Cookie Collector/time_decrease_display.tscn" id="3_2ewh5"]
 
 [node name="CookieCollector" type="Control" unique_id=1791148422]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_i88f8")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1984618659]
@@ -23,6 +25,7 @@ mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=237121863]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=880556504]
 layout_mode = 2
@@ -34,6 +37,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MarginContainer2" unique_id=1211220324]
 layout_mode = 2
+mouse_filter = 2
 text = "67.437 sexdecillion cookies"
 fit_content = true
 horizontal_alignment = 1
@@ -51,6 +55,7 @@ theme_override_constants/margin_bottom = 15
 custom_minimum_size = Vector2(0, 115)
 layout_mode = 2
 script = ExtResource("1_0ltcj")
+time_decrease_indicator = ExtResource("3_2ewh5")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=153316533]
 layout_mode = 2

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ow132vug53yk"]
+
+[ext_resource type="Script" uid="uid://k318rq8tlmow" path="res://Ian/Distractions/Cookie Collector/time_decrease_display.gd" id="1_o235x"]
+
+[node name="TimeDecreaseDisplay" type="Control" unique_id=1919779363]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_o235x")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1308908128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer" unique_id=389291768]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+text = "lorem ipsum"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
