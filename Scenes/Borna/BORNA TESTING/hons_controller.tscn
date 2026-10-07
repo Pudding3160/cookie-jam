@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsjjcdvos1kvd"]
+
+[ext_resource type="Script" uid="uid://bqf7nr863lmpv" path="res://Scenes/Borna/hons_popup_controller.gd" id="1_1o6fd"]
+
+[node name="HonsController" type="Node" unique_id=472428097]
+script = ExtResource("1_1o6fd")
+interval = 1
+difficulty = 5
+check_for_active_room = true
+metadata/_custom_type_script = "uid://bqf7nr863lmpv"
