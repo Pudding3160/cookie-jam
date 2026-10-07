@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c53v0ql05xryo" path="res://Scenes/Borna/HonsGame/ground.tscn" id="1_iig63"]
 [ext_resource type="Texture2D" uid="uid://c50i8i8yijuwh" path="res://Sprites/HonsSprites/bg.png" id="2_5moti"]
 [ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
+[ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="5_l0ogy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pbqp2"]
 font_color = Color(0, 0, 0, 1)
@@ -37,5 +38,7 @@ offset_top = 103.0
 offset_right = 316.0
 offset_bottom = 126.0
 label_settings = SubResource("LabelSettings_pbqp2")
+
+[node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("5_l0ogy")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
