@@ -323,9 +323,3 @@ func _on_collapse_timer_timeout() -> void:
 
 func _on_refill_timer_timeout() -> void:
 	refill()
-
-
-func end_game(failed: bool) -> void:
-	if (failed):
-		GlobalStrikeManager.update_strikes(1);
-	queue_free();
