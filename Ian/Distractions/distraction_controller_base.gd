@@ -6,7 +6,6 @@ var interval_buffer;
 @export var max_rand_num := 30;
 @export var distraction_scene: PackedScene
 @export var active_room: RoomsEnum.Room_Type
-@export var check_for_active_room: bool;
 var is_distraction_active := false;
 var room_manager;
 
