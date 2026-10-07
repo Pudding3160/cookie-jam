@@ -22,6 +22,7 @@ magenta_text = NodePath("Control/VBoxContainer/MarginContainer/PanelContainer/Ma
 black_text = NodePath("Control/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/RichTextLabel4")
 
 [node name="Window" type="Node2D" parent="." unique_id=1266729102]
+visible = false
 
 [node name="Background" type="TextureRect" parent="Window" unique_id=1289840261]
 offset_right = 1154.0
