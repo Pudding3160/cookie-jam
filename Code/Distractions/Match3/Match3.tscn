@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://pyiyentblm7b"]
 
 [ext_resource type="Script" uid="uid://kvcwel1v36m5" path="res://Code/Distractions/Match3/Grid.gd" id="1_4y1mt"]
+[ext_resource type="Script" uid="uid://lq3grb3rpo2m" path="res://Code/Distractions/Match3/match3_manager.gd" id="1_jvixj"]
+[ext_resource type="Script" uid="uid://d17y2fro4ove6" path="res://Code/Distractions/Match3/color_score_multiplier.gd" id="3_m5xqt"]
 
 [sub_resource type="Gradient" id="Gradient_b5vi4"]
 offsets = PackedFloat32Array(0, 0.2695783, 0.69728917, 1)
@@ -10,7 +12,14 @@ colors = PackedColorArray(0.5559712, 0.7008478, 1, 1, 1, 1, 1, 1, 0.93227804, 0.
 gradient = SubResource("Gradient_b5vi4")
 fill_to = Vector2(0, 1)
 
-[node name="Match3" type="Node2D" unique_id=829428825]
+[node name="Match3" type="Node2D" unique_id=829428825 node_paths=PackedStringArray("csm", "cyan_text", "yellow_text", "magenta_text", "black_text")]
+script = ExtResource("1_jvixj")
+score_per_match = 4
+csm = NodePath("ColorScoreMultiplier")
+cyan_text = NodePath("Control/MarginContainer/VBoxContainer/RichTextLabel")
+yellow_text = NodePath("Control/MarginContainer/VBoxContainer/RichTextLabel2")
+magenta_text = NodePath("Control/MarginContainer/VBoxContainer/RichTextLabel3")
+black_text = NodePath("Control/MarginContainer/VBoxContainer/RichTextLabel4")
 
 [node name="Window" type="Node2D" parent="." unique_id=1266729102]
 
@@ -19,7 +28,7 @@ offset_right = 1154.0
 offset_bottom = 649.0
 texture = SubResource("GradientTexture2D_4y1mt")
 
-[node name="Grid" type="Node2D" parent="." unique_id=1207108790]
+[node name="Grid" type="Node2D" parent="." unique_id=1207108790 node_paths=PackedStringArray("csm")]
 script = ExtResource("1_4y1mt")
 width = 8
 height = 8
@@ -27,18 +36,64 @@ x_start = 300
 y_start = 550
 offset = 64
 new_offset = 1
+csm = NodePath("../ColorScoreMultiplier")
 
 [node name="DestroyTimer" type="Timer" parent="." unique_id=103659410]
-wait_time = 0.5
+wait_time = 0.35
 one_shot = true
 
 [node name="CollapseTimer" type="Timer" parent="." unique_id=361412058]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 
 [node name="RefillTimer" type="Timer" parent="." unique_id=925874308]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
+
+[node name="ColorScoreMultiplier" type="Node" parent="." unique_id=223482219]
+script = ExtResource("3_m5xqt")
+metadata/_custom_type_script = "uid://d17y2fro4ove6"
+
+[node name="Control" type="Control" parent="." unique_id=799747388]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=409335382]
+layout_mode = 0
+offset_right = 267.0
+offset_bottom = 177.0
+theme_override_constants/margin_left = 37
+theme_override_constants/margin_top = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=2089407264]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=1094745791]
+layout_mode = 2
+bbcode_enabled = true
+text = "Cyan required: "
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=1139801992]
+layout_mode = 2
+bbcode_enabled = true
+text = "Yellow required: "
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=1865369552]
+layout_mode = 2
+bbcode_enabled = true
+text = "Magenta required: "
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=1090289648]
+layout_mode = 2
+bbcode_enabled = true
+text = "Black required: "
+fit_content = true
 
 [connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_destroy_timer_timeout"]
 [connection signal="timeout" from="CollapseTimer" to="Grid" method="_on_collapse_timer_timeout"]
