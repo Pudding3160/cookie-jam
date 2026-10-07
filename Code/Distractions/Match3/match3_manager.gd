@@ -3,27 +3,29 @@ extends Node2D
 @onready var grid := $Grid;
 @onready var progress_bar := $Control/VBoxContainer/MarginContainer2/ProgressBar
 @export var score_per_match := 2	# This score is multiplied by a match multiplier that offers a bigger score for bigger matches
-@export var cyan_score := 50
-@export var yellow_score := 50
-@export var magenta_score := 50
-@export var black_score := 50
+@export var score_needed := 50
+var cyan_score: int
+var yellow_score: int
+var magenta_score: int
+var black_score: int
 @export var csm: ColorScoreMultiplier
 @export var cyan_text: RichTextLabel
 @export var yellow_text: RichTextLabel
 @export var magenta_text: RichTextLabel
 @export var black_text: RichTextLabel
-@export var time: float = 50
-@export var time_penalty: float = 5
+@export var duration: float = 50
+@export var time_penalty: float = 10
 
 func _ready():
-	progress_bar.max_value = time;
-	progress_bar.value = time;
+	scale_with_difficulty();
+	progress_bar.max_value = duration;
+	progress_bar.value = duration;
 	update_text();
 	
 func _process(delta: float) -> void:
-	time -= delta;
+	duration -= delta;
 	update_progress_bar();
-	if time > 0.0: return;
+	if duration > 0.0: return;
 	end_game(true);
 
 func calculate_score() -> void:
@@ -55,7 +57,7 @@ func update_text() -> void:
 
 
 func update_progress_bar() -> void:
-	progress_bar.value = time;
+	progress_bar.value = duration;
 
 
 func check_for_game_finished() -> bool:
@@ -64,7 +66,23 @@ func check_for_game_finished() -> bool:
 	if magenta_score != 0: return false;
 	if black_score != 0: return false;
 	return true;
-	
+
+
+func scale_with_difficulty() -> void:
+	var node := get_parent();
+	var controller := node as DistractionControllerBase;
+	var diff: float = controller.get_difficulty();
+	duration = 6 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
+	time_penalty = 15 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
+	score_needed = ceil(10 * log(diff + 1.0) + score_needed);
+	set_color_scores();
+
+
+func set_color_scores():
+	cyan_score = score_needed;
+	yellow_score = score_needed;
+	magenta_score = score_needed;
+	black_score = score_needed;
 
 func end_game(failed: bool) -> void:
 	if (failed):
