@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbhf4436td4dw"]
 
 [ext_resource type="Script" uid="uid://bqf7nr863lmpv" path="res://Scenes/Borna/hons_popup_controller.gd" id="1_o5nnc"]
-[ext_resource type="PackedScene" uid="uid://dfgltatfwx6kx" path="res://Scenes/Borna/HonsGame/Hons.tscn" id="2_8sryo"]
+[ext_resource type="PackedScene" uid="uid://bh84k63h5ofop" path="res://Scenes/Borna/CoffeeGame/CoffeeGame.tscn" id="2_8sryo"]
 
 [node name="HonsTest" type="Node2D" unique_id=1210752212]
 

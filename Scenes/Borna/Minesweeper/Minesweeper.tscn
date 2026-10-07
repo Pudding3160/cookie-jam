@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://deadaydq1afbd"]
+
+[ext_resource type="Script" uid="uid://wcrmhf0scv2f" path="res://Scenes/Borna/Minesweeper/gridcontainer_ms.gd" id="1_qoddk"]
+
+[node name="Minesweeper" type="Node2D" unique_id=1647514579]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1530210954]
+position = Vector2(577, 324)
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=314917545]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = 195.0
+offset_right = 710.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+script = ExtResource("1_qoddk")
+
+[node name="Button" type="Button" parent="GridContainer" unique_id=1151605151]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="GridContainer" unique_id=1465495604]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="GridContainer" unique_id=1426705795]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="GridContainer" unique_id=1570438842]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="GridContainer" unique_id=184159000]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="GridContainer" unique_id=1552684748]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="GridContainer" unique_id=1001437939]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="GridContainer" unique_id=307601749]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="GridContainer" unique_id=1105050254]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="GridContainer" unique_id=774954110]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="GridContainer" unique_id=390565316]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="GridContainer" unique_id=141817665]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button13" type="Button" parent="GridContainer" unique_id=187688809]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button14" type="Button" parent="GridContainer" unique_id=1604898360]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button15" type="Button" parent="GridContainer" unique_id=592476198]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button16" type="Button" parent="GridContainer" unique_id=2113796786]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button17" type="Button" parent="GridContainer" unique_id=905702707]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button18" type="Button" parent="GridContainer" unique_id=1040526671]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button19" type="Button" parent="GridContainer" unique_id=576955058]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button20" type="Button" parent="GridContainer" unique_id=1932997845]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button21" type="Button" parent="GridContainer" unique_id=1195865458]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button22" type="Button" parent="GridContainer" unique_id=2134336283]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button23" type="Button" parent="GridContainer" unique_id=987346376]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button24" type="Button" parent="GridContainer" unique_id=1518287766]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Button25" type="Button" parent="GridContainer" unique_id=127048748]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1600299617]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Game over"

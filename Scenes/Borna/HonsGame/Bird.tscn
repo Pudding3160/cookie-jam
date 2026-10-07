@@ -33,6 +33,7 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_k3k3a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2041554978]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_0fwcc")
 animation = &"Fly"
 frame_progress = 0.70367634
