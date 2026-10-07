@@ -121,3 +121,8 @@ layout_mode = 2
 [node name="Button25" type="Button" parent="GridContainer" unique_id=127048748]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1600299617]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Game over"
