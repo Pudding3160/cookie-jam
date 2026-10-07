@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bi4tjdksxotr2" path="res://Code/map.gd" id="1_xtf6f"]
 [ext_resource type="PackedScene" uid="uid://dx7lyqdkc1cag" path="res://Scenes/Map/map-button.tscn" id="2_anho1"]
+[ext_resource type="Texture2D" uid="uid://dul4h8bg74qpy" path="res://Sprites/UI Textures/MapWIP.png" id="2_fyo8k"]
 [ext_resource type="PackedScene" uid="uid://nw7xrkfhy0rl" path="res://Scenes/Rooms/Break Room/break-room.tscn" id="3_fyo8k"]
 [ext_resource type="PackedScene" uid="uid://bva74s7bqjmh8" path="res://Scenes/Rooms/Main Room/main-room.tscn" id="4_eu35m"]
 [ext_resource type="PackedScene" uid="uid://qfla867405x7" path="res://Scenes/Rooms/Printer Room/printer-room.tscn" id="5_oydqy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anho1"]
+texture = ExtResource("2_fyo8k")
 
 [node name="Map" type="CanvasLayer" unique_id=1908580526]
 script = ExtResource("1_xtf6f")
@@ -26,27 +30,37 @@ offset_bottom = 639.99884
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(1, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_anho1")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control/PanelContainer" unique_id=242093722]
+texture_filter = 1
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/CenterContainer" unique_id=624798866]
-custom_maximum_size = Vector2(-1, 50)
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/CenterContainer" unique_id=243206417]
 layout_mode = 2
+theme_override_constants/separation = 117
 
-[node name="MapButton" parent="Control/PanelContainer/CenterContainer/HBoxContainer" unique_id=1795815701 instance=ExtResource("2_anho1")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/CenterContainer/VBoxContainer" unique_id=1767316504]
+layout_mode = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="MapButton" parent="Control/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1795815701 instance=ExtResource("2_anho1")]
 layout_mode = 2
 text = "Break Room"
 room = ExtResource("3_fyo8k")
 room_type = 1
 
-[node name="MapButton2" parent="Control/PanelContainer/CenterContainer/HBoxContainer" unique_id=322099234 instance=ExtResource("2_anho1")]
-layout_mode = 2
-text = "Main Room"
-room = ExtResource("4_eu35m")
-
-[node name="MapButton3" parent="Control/PanelContainer/CenterContainer/HBoxContainer" unique_id=1541229317 instance=ExtResource("2_anho1")]
+[node name="MapButton3" parent="Control/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1541229317 instance=ExtResource("2_anho1")]
 layout_mode = 2
 text = "Printer Room"
 room = ExtResource("5_oydqy")
 room_type = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/PanelContainer/CenterContainer/VBoxContainer" unique_id=768599610]
+layout_mode = 2
+
+[node name="MapButton2" parent="Control/PanelContainer/CenterContainer/VBoxContainer/CenterContainer" unique_id=322099234 instance=ExtResource("2_anho1")]
+layout_mode = 2
+text = "Main Room"
+room = ExtResource("4_eu35m")
