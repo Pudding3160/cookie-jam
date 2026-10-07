@@ -13,7 +13,7 @@
 current_room_type = 1
 
 [node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("2_6j7wv")]
-interval = 3
+interval = 30
 difficulty = 20
 check_for_active_room = true
 

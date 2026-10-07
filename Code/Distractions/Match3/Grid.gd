@@ -10,9 +10,12 @@ var state
 @export var y_start: int
 @export var offset: int
 @export var new_offset: int
+@export var score_needed: float
+@export var score_per_match := 5;
+var matches_amount: int = 0;
+@export var csm: ColorScoreMultiplier
 
-
-var possible_pieces = [
+var possible_pieces := [
 	preload("res://Katia/BlackPiece.tscn"),
 	preload("res://Katia/CyanPiece.tscn"),
 	preload("res://Katia/MagentaPiece.tscn"),
@@ -37,7 +40,7 @@ func _ready() -> void:
 
 
 func make_array() -> Array:
-	var array = []
+	var array := []
 	for column in width:
 		array.append([])
 		for row in height:
@@ -48,10 +51,10 @@ func make_array() -> Array:
 func spawn() -> void:
 	for column in width:
 		for row in height:
-			var rand = floori(randf_range(0, possible_pieces.size()))
+			var rand := floori(randf_range(0, possible_pieces.size()))
 			var piece = possible_pieces[rand].instantiate()
 
-			var loops = 0
+			var loops := 0
 			while check_match(column, row, piece.get_node("Sprite2D").PieceColor) and loops < 100:
 				rand = floori(randf_range(0, possible_pieces.size()))
 				loops += 1
@@ -63,15 +66,53 @@ func spawn() -> void:
 
 
 #for no matches at beginning
-func check_match(column, row, PieceColor):
-	if column > 1:
-		if all_pieces[column - 1][row] != null and all_pieces[column - 2][row] != null:
-			if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 2][row].get_node("Sprite2D").PieceColor == PieceColor:
+func check_match(column: int, row: int, PieceColor: String):
+	### ====================== ###
+	### CHECKING FOR LEFT SIDE ###
+	### ====================== ###
+	if column > 1:		
+		if all_pieces[column - 1][row] != null and all_pieces[column - 1][row] != null:			
+			if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 2][row].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 
-	if row > 1:
-		if all_pieces[column][row - 1] != null and all_pieces[column][row - 2] != null:
-			if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 2].get_node("Sprite2D").PieceColor == PieceColor:
+	### ======================= ###
+	### CHECKING FOR RIGHT SIDE ###
+	### ======================= ###
+	if column < width - 2:		
+		if all_pieces[column + 1][row] != null and all_pieces[column + 1][row] != null:			
+			if all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column + 2][row].get_node("Sprite2D").PieceColor == PieceColor:				
+				return true
+
+	### ====================== ###
+	### CHECKING FOR UNDERSIDE ###
+	### ====================== ###
+	if row > 1:		
+		if all_pieces[column][row - 1] != null and all_pieces[column][row - 1] != null:			
+			if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 2].get_node("Sprite2D").PieceColor == PieceColor:				
+				return true
+
+	### ======================= ###
+	### CHECKING FOR ABOVE SIDE ###
+	### ======================= ###
+	if row < height - 2:		
+		if all_pieces[column][row + 1] != null and all_pieces[column][row + 1] != null:			
+			if all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row + 2].get_node("Sprite2D").PieceColor == PieceColor:				
+				return true
+
+	### ============================== ###
+	### CHECKING FOR MIDDLE HORIZONTAL ###
+	### ============================== ###
+	if column < width - 1 and column > 0:		
+		if all_pieces[column + 1][row] != null and all_pieces[column - 1][row] != null:			
+			if all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor:				
+				return true
+
+	### ============================ ###
+	### CHECKING FOR MIDDLE VERTICAL ###
+	### ============================ ###
+	if row < height - 1 and row > 0:		
+		if all_pieces[column][row + 1] != null and all_pieces[column][row - 1] != null:			
+			if all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 
 	return false
@@ -125,7 +166,12 @@ func match_prevent(column, row, direction):
 	await first_tween.finished
 	await second_tween.finished
 
-	if check_match(column + int(direction.x), row + int(direction.y), first_piece.get_node("Sprite2D").PieceColor) or check_match(column, row, second_piece.get_node("Sprite2D").PieceColor):
+	if check_match(column + int(direction.x), 
+			row + int(direction.y), 
+			first_piece.get_node("Sprite2D").PieceColor) or check_match(
+			column, 
+			row, 
+			second_piece.get_node("Sprite2D").PieceColor):
 		find_matches()
 	else:
 		#swap back
@@ -164,13 +210,14 @@ func touch_difference(grid_1, grid_2):
 			swap_pieces(grid_1.x, grid_1.y, Vector2(0, -1))
 
 
-func mark_matched(piece):
+func mark_matched(piece, color: String):
 	piece.get_node("Sprite2D").matched = true
 	piece.get_node("Sprite2D").visibility()
+	csm.update_color_score_multiplier(color, 1);
 
 
 func find_matches():
-	var found_match = false
+	var found_match := false
 
 	for column in width:
 		for row in height:
@@ -180,17 +227,17 @@ func find_matches():
 				if column > 0 and column < width - 1:
 					if all_pieces[column - 1][row] != null and all_pieces[column + 1][row] != null:
 						if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == current_color and all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == current_color:
-							mark_matched(all_pieces[column - 1][row])
-							mark_matched(all_pieces[column][row])
-							mark_matched(all_pieces[column + 1][row])
+							mark_matched(all_pieces[column - 1][row], current_color)
+							mark_matched(all_pieces[column][row], current_color)
+							mark_matched(all_pieces[column + 1][row], current_color)
 							found_match = true
 
 				if row > 0 and row < height - 1:
 					if all_pieces[column][row - 1] != null and all_pieces[column][row + 1] != null:
 						if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == current_color and all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == current_color:
-							mark_matched(all_pieces[column][row - 1])
-							mark_matched(all_pieces[column][row])
-							mark_matched(all_pieces[column][row + 1])
+							mark_matched(all_pieces[column][row - 1], current_color)
+							mark_matched(all_pieces[column][row], current_color)
+							mark_matched(all_pieces[column][row + 1], current_color)
 							found_match = true
 
 	if found_match:
@@ -207,6 +254,9 @@ func destroy_matched():
 					all_pieces[column][row].queue_free()
 					all_pieces[column][row] = null
 
+	var parent := get_parent();
+	if parent and parent.has_method("calculate_score"):
+		parent.calculate_score();
 	get_parent().get_node("CollapseTimer").start()
 
 

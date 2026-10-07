@@ -1,0 +1,1 @@
+class_name Match3Controller extends DistractionControllerBase
