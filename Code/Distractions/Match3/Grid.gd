@@ -10,9 +10,10 @@ var state
 @export var y_start: int
 @export var offset: int
 @export var new_offset: int
+@export var score_needed: float
 
 
-var possible_pieces = [
+var possible_pieces := [
 	preload("res://Katia/BlackPiece.tscn"),
 	preload("res://Katia/CyanPiece.tscn"),
 	preload("res://Katia/MagentaPiece.tscn"),
@@ -37,7 +38,7 @@ func _ready() -> void:
 
 
 func make_array() -> Array:
-	var array = []
+	var array := []
 	for column in width:
 		array.append([])
 		for row in height:
@@ -48,10 +49,10 @@ func make_array() -> Array:
 func spawn() -> void:
 	for column in width:
 		for row in height:
-			var rand = floori(randf_range(0, possible_pieces.size()))
+			var rand := floori(randf_range(0, possible_pieces.size()))
 			var piece = possible_pieces[rand].instantiate()
 
-			var loops = 0
+			var loops := 0
 			while check_match(column, row, piece.get_node("Sprite2D").PieceColor) and loops < 100:
 				rand = floori(randf_range(0, possible_pieces.size()))
 				loops += 1
@@ -63,15 +64,75 @@ func spawn() -> void:
 
 
 #for no matches at beginning
-func check_match(column, row, PieceColor):
+func check_match(column: int, row: int, PieceColor: String):
+	print("check_match:")
+	print("\t" + "column: " + str(column))
+	print("\t" + "row: " + str(row))
+	print("\t" + "PieceColor: " + PieceColor)
+	### ====================== ###
+	### CHECKING FOR LEFT SIDE ###
+	### ====================== ###
 	if column > 1:
-		if all_pieces[column - 1][row] != null and all_pieces[column - 2][row] != null:
+		print("step 1.1")
+		if all_pieces[column - 1][row] != null and all_pieces[column - 1][row] != null:
+			print("step 2.1")
 			if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 2][row].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.1 - GOT IT!!!")
 				return true
 
+	### ======================= ###
+	### CHECKING FOR RIGHT SIDE ###
+	### ======================= ###
+	if column < width - 2:
+		print("step 1.2")
+		if all_pieces[column + 1][row] != null and all_pieces[column + 1][row] != null:
+			print("step 2.2")
+			if all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column + 2][row].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.2 - GOT IT!!!")
+				return true
+
+	### ====================== ###
+	### CHECKING FOR UNDERSIDE ###
+	### ====================== ###
 	if row > 1:
-		if all_pieces[column][row - 1] != null and all_pieces[column][row - 2] != null:
+		print("step 1.3")
+		if all_pieces[column][row - 1] != null and all_pieces[column][row - 1] != null:
+			print("step 2.3")
 			if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 2].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.3 - GOT IT!!!")
+				return true
+
+	### ======================= ###
+	### CHECKING FOR ABOVE SIDE ###
+	### ======================= ###
+	if row < height - 2:
+		print("step 1.4")
+		if all_pieces[column][row + 1] != null and all_pieces[column][row + 1] != null:
+			print("step 2.4")
+			if all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row + 2].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.4 - GOT IT!!!")
+				return true
+
+	### ============================== ###
+	### CHECKING FOR MIDDLE HORIZONTAL ###
+	### ============================== ###
+	if column < width - 1 and column > 0:
+		print("step 1.5")
+		if all_pieces[column + 1][row] != null and all_pieces[column - 1][row] != null:
+			print("step 2.5")
+			if all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.5 - GOT IT!!!")
+				return true
+
+	### ============================ ###
+	### CHECKING FOR MIDDLE VERTICAL ###
+	### ============================ ###
+	if row < height - 1 and row > 0:
+		print("step 1.6")
+		if all_pieces[column][row + 1] != null and all_pieces[column][row - 1] != null:
+			print("step 2.6")
+			if all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor:
+				print("step 3.6 - GOT IT!!!")
 				return true
 
 	return false
@@ -125,7 +186,17 @@ func match_prevent(column, row, direction):
 	await first_tween.finished
 	await second_tween.finished
 
-	if check_match(column + int(direction.x), row + int(direction.y), first_piece.get_node("Sprite2D").PieceColor) or check_match(column, row, second_piece.get_node("Sprite2D").PieceColor):
+	print("match_prevent:")
+	print("\t" + "column: " + str(column))
+	print("\t" + "direction.x: " + str(direction.x))
+	print("\t" + "direction.y: " + str(direction.y))
+	if check_match(column + int(direction.x), 
+			row + int(direction.y), 
+			first_piece.get_node("Sprite2D").PieceColor) or check_match(
+			column, 
+			row, 
+			second_piece.get_node("Sprite2D").PieceColor):
+		print("running find_matches...")
 		find_matches()
 	else:
 		#swap back
@@ -170,7 +241,7 @@ func mark_matched(piece):
 
 
 func find_matches():
-	var found_match = false
+	var found_match := false
 
 	for column in width:
 		for row in height:
@@ -273,3 +344,9 @@ func _on_collapse_timer_timeout() -> void:
 
 func _on_refill_timer_timeout() -> void:
 	refill()
+
+
+func end_game(failed: bool) -> void:
+	if (failed):
+		GlobalStrikeManager.update_strikes(1);
+	queue_free();
