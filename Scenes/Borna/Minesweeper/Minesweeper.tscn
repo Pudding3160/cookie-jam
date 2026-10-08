@@ -14,6 +14,7 @@ data = PackedByteArray("SUQzBAAAAAAAfVRJVDIAAAAbAAADQ1JPV0QgU01BTEwgQ0hJTF9FQzA0
 script = ExtResource("1_on8nw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1530210954]
+visible = false
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=314917545]
 anchors_preset = 8

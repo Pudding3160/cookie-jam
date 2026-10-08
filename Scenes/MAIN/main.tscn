@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbxwhb0mhls3w" path="res://Ian/Distractions/Cookie Collector/cookie-collector.tscn" id="5_5b5k4"]
 [ext_resource type="PackedScene" uid="uid://cftkwo67v7ac4" path="res://Scenes/Strikes/strike_counter.tscn" id="6_t3iea"]
 [ext_resource type="PackedScene" uid="uid://bsjjcdvos1kvd" path="res://Scenes/Borna/BORNA TESTING/hons_controller.tscn" id="7_6j7wv"]
+[ext_resource type="PackedScene" uid="uid://sc6kcea8l7i" path="res://Scenes/Borna/BORNA TESTING/sweeper_controller.tscn" id="8_33lhf"]
 
 [node name="Main" type="Node" unique_id=1694300178]
 
@@ -30,4 +31,8 @@ check_for_active_room = true
 [node name="HonsController" parent="." unique_id=459550278 instance=ExtResource("7_6j7wv")]
 interval = 5
 difficulty = 1
+check_for_active_room = true
+
+[node name="Sweeper_controller" parent="." unique_id=1424258307 instance=ExtResource("8_33lhf")]
+interval = 2
 check_for_active_room = true

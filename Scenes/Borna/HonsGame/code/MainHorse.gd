@@ -74,6 +74,7 @@ func game_won():
 	
 func game_lost():
 	GlobalDistractionManager.set_distraction_active_state(false);
+	GlobalStrikeManager.update_strikes(1);	# Hard coded
 	speed=0
 	$HonsChar.queue_free()
 	$Timer.stop()
