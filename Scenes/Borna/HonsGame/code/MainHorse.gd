@@ -34,7 +34,7 @@ func _on_timer_timeout():
 	game_won()
 	print("win")
 	queue_free()
-func _process(delta):
+func _process(_delta):
 	gen_obs()
 	$Label.set_text(str(int($Timer.get_time_left())))
 	
@@ -68,11 +68,13 @@ func hit_obs(body):
 		game_lost()
 	
 func game_won():	
-	
+	GlobalDistractionManager.set_distraction_active_state(false);
 	speed=0
 	queue_free()
 	
 func game_lost():
+	GlobalDistractionManager.set_distraction_active_state(false);
+	GlobalStrikeManager.update_strikes(1);	# Hard coded
 	speed=0
 	$HonsChar.queue_free()
 	$Timer.stop()

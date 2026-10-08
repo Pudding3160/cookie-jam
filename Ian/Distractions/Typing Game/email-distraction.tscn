@@ -52,10 +52,10 @@ duration = 30.0
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1401458539]
 layout_mode = 0
-offset_left = -636.0
-offset_top = -425.0
-offset_right = 312.0
-offset_bottom = 43.0
+offset_left = -580.0
+offset_top = -409.0
+offset_right = 256.0
+offset_bottom = 27.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 
@@ -69,7 +69,7 @@ theme_override_constants/margin_right = 15
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer" unique_id=1068897769]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 20
 split_offsets = PackedInt32Array(4)
 split_offset = 4
 
@@ -84,12 +84,13 @@ show_percentage = false
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer" unique_id=632098839]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 24
 script = SubResource("GDScript_3sau0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=1602497260]
 layout_mode = 2
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"
 fit_content = true
@@ -99,6 +100,7 @@ script = SubResource("GDScript_3f12i")
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=135159343]
 layout_mode = 2
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"
 fit_content = true
@@ -108,6 +110,7 @@ script = SubResource("GDScript_3f12i")
 [node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=587521422]
 layout_mode = 2
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"
 fit_content = true

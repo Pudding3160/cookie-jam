@@ -23,8 +23,8 @@ offset_bottom = 40.0
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=135512231]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 1579.0
-offset_top = 764.0
+offset_left = 1484.938
+offset_top = 677.0
 offset_right = 1912.0
 offset_bottom = 1071.9988
 grow_horizontal = 2
@@ -38,21 +38,23 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/CenterContainer" unique_id=243206417]
 layout_mode = 2
-theme_override_constants/separation = 117
+theme_override_constants/separation = 64
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/CenterContainer/VBoxContainer" unique_id=1767316504]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 91
 alignment = 1
 
 [node name="MapButton" parent="Control/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1795815701 instance=ExtResource("2_anho1")]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Break Room"
 room = ExtResource("3_fyo8k")
 room_type = 1
 
 [node name="MapButton3" parent="Control/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1541229317 instance=ExtResource("2_anho1")]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Printer Room"
 room = ExtResource("5_oydqy")
 room_type = 2
@@ -62,5 +64,6 @@ layout_mode = 2
 
 [node name="MapButton2" parent="Control/PanelContainer/CenterContainer/VBoxContainer/CenterContainer" unique_id=322099234 instance=ExtResource("2_anho1")]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Main Room"
 room = ExtResource("4_eu35m")
