@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://833awkevx314" path="res://Font/AveriaLibre/AveriaLibre-Bold.ttf" id="2_7rvyo"]
 [ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="3_6qq1r"]
 [ext_resource type="Texture2D" uid="uid://blen85hatts0c" path="res://Sprites/UI Textures/snailmail.png" id="3_qhunf"]
+[ext_resource type="Texture2D" uid="uid://dctuyc6ih4yra" path="res://Sprites/UI Textures/snailmailk.png" id="4_we6ld"]
 
 [sub_resource type="GDScript" id="GDScript_3sau0"]
 resource_name = "detect_children"
@@ -66,6 +67,7 @@ mouse_filter = 2
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_6qq1r")
+region_rect = Rect2(0, 0, 192, 192)
 patch_margin_left = 65
 patch_margin_top = 75
 patch_margin_right = 67
@@ -74,11 +76,20 @@ patch_margin_bottom = 65
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/NinePatchRect" unique_id=887205834]
 texture_filter = 1
 layout_mode = 0
-offset_left = -6.0
+offset_left = 13.0
 offset_top = 1.0
-offset_right = 144.0
+offset_right = 163.0
 offset_bottom = 17.0
 texture = ExtResource("3_qhunf")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/NinePatchRect/TextureRect" unique_id=1397447810]
+texture_filter = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -7.0
+offset_right = 18.0
+offset_bottom = 25.0
+texture = ExtResource("4_we6ld")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/NinePatchRect" unique_id=679615504]
 layout_mode = 0

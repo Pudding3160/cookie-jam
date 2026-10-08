@@ -4,8 +4,8 @@ extends Control
 var chosen_words: Array[String]
 @export var duration: float = 20.0;
 var duration_buffer: float;
-@onready var v_box_controller := $PanelContainer/MarginContainer/VSplitContainer/VBoxContainer;
-@onready var progress := $PanelContainer/MarginContainer/VSplitContainer/ProgressBar
+@onready var v_box_controller := $PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer;
+@onready var progress := $PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/ProgressBar
 @export var prompts_amount := 3;
 @export var time_penalty := 2.0
 
