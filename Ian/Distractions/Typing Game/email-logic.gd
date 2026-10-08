@@ -75,7 +75,7 @@ func scale_with_difficulty() -> void:
 	var node := get_parent();
 	var controller := node as DistractionControllerBase;
 	var diff: float = controller.get_difficulty(); 
-	duration = -5 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
+	duration = -7 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
 	time_penalty = 7 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
 
 

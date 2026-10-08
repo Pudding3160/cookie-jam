@@ -13,9 +13,8 @@
 current_room_type = 1
 
 [node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("2_6j7wv")]
-interval = 30
 difficulty = 20
-check_for_active_room = true
+max_rand_num = 50
 
 [node name="Map" parent="." unique_id=1908580526 instance=ExtResource("3_33lhf")]
 
