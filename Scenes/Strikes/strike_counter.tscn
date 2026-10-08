@@ -19,10 +19,10 @@ strikes = [NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 856.0
+offset_left = 1537.0
 offset_top = 15.0
 offset_right = 6.0
-offset_bottom = -573.0
+offset_bottom = -975.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -31,13 +31,13 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=667020778]
 layout_mode = 2
-theme_override_constants/margin_left = 32
+theme_override_constants/margin_left = 44
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=619667457]
 layout_mode = 2
-theme_override_constants/separation = 53
+theme_override_constants/separation = 70
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1282036688]
 layout_mode = 2
