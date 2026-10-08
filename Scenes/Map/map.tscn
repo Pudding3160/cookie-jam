@@ -23,10 +23,10 @@ offset_bottom = 40.0
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=135512231]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 819.0
-offset_top = 332.0
-offset_right = 1152.0
-offset_bottom = 639.99884
+offset_left = 1579.0
+offset_top = 764.0
+offset_right = 1912.0
+offset_bottom = 1071.9988
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(1, 1)

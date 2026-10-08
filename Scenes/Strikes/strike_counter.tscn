@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0q0wg")
-strikes = [NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/StrikeNotch5"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/StrikeNotch4"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/StrikeNotch3"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/StrikeNotch2"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/StrikeNotch")]
+strikes = [NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer5/StrikeNotch5"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer4/StrikeNotch4"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer3/StrikeNotch3"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer2/StrikeNotch2"), NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer/StrikeNotch")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910437938]
 
@@ -19,10 +19,10 @@ strikes = [NodePath("CanvasLayer/MarginContainer/PanelContainer/MarginContainer/
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 856.0
+offset_left = 1537.0
 offset_top = 15.0
 offset_right = 6.0
-offset_bottom = -573.0
+offset_bottom = -975.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -31,24 +31,40 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=667020778]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 9
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=619667457]
 layout_mode = 2
-theme_override_constants/separation = 56
+theme_override_constants/separation = 70
 
-[node name="StrikeNotch" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=594040538 instance=ExtResource("1_yj617")]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1282036688]
 layout_mode = 2
 
-[node name="StrikeNotch2" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1625841443 instance=ExtResource("1_yj617")]
+[node name="StrikeNotch" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer" unique_id=594040538 instance=ExtResource("1_yj617")]
 layout_mode = 2
 
-[node name="StrikeNotch3" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=453334442 instance=ExtResource("1_yj617")]
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=768017950]
 layout_mode = 2
 
-[node name="StrikeNotch4" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=992694648 instance=ExtResource("1_yj617")]
+[node name="StrikeNotch2" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer2" unique_id=1625841443 instance=ExtResource("1_yj617")]
 layout_mode = 2
 
-[node name="StrikeNotch5" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=19579404 instance=ExtResource("1_yj617")]
+[node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1396341357]
+layout_mode = 2
+
+[node name="StrikeNotch3" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer3" unique_id=453334442 instance=ExtResource("1_yj617")]
+layout_mode = 2
+
+[node name="CenterContainer4" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=793768308]
+layout_mode = 2
+
+[node name="StrikeNotch4" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer4" unique_id=992694648 instance=ExtResource("1_yj617")]
+layout_mode = 2
+
+[node name="CenterContainer5" type="CenterContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=227003375]
+layout_mode = 2
+
+[node name="StrikeNotch5" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/CenterContainer5" unique_id=19579404 instance=ExtResource("1_yj617")]
 layout_mode = 2

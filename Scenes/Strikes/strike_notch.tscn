@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ca5m8ltpxhy1f"]
 
 [ext_resource type="Script" uid="uid://b15hr8q75xx6j" path="res://Scenes/Strikes/Code/strike_notch.gd" id="1_7kagb"]
+[ext_resource type="Texture2D" uid="uid://bi0w83bcti6du" path="res://Sprites/UI Textures/StrikeInd1.png" id="2_yxf35"]
 
 [node name="StrikeNotch" type="Control" unique_id=594040538]
 layout_mode = 3
@@ -13,5 +14,15 @@ script = ExtResource("1_7kagb")
 
 [node name="Panel" type="Panel" parent="." unique_id=784231248]
 layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1855082950]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -24.0
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_yxf35")
+expand_mode = 1
