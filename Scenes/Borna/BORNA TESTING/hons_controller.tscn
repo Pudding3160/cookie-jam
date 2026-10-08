@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bsjjcdvos1kvd"]
+
+[ext_resource type="Script" uid="uid://mnod0np11jvm" path="res://Scenes/Borna/BORNA TESTING/hons_controller.gd" id="1_vewfv"]
+[ext_resource type="PackedScene" uid="uid://dfgltatfwx6kx" path="res://Scenes/Borna/HonsGame/Hons.tscn" id="2_bhcp3"]
+
+[node name="HonsController" type="Node" unique_id=459550278]
+script = ExtResource("1_vewfv")
+interval = 1
+distraction_scene = ExtResource("2_bhcp3")

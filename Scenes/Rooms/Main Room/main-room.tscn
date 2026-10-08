@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://bva74s7bqjmh8"]
 
 [ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_o43up"]
-[ext_resource type="Texture2D" uid="uid://cplpys03ymynb" path="res://Sprites/Room Sprites/Main Room/bg.png" id="4_rvdfg"]
-[ext_resource type="Texture2D" uid="uid://b1afn03qron28" path="res://Sprites/Room Sprites/Main Room/monitor.png" id="5_gpra5"]
-[ext_resource type="Texture2D" uid="uid://mtu5epur3wys" path="res://Sprites/Room Sprites/Main Room/sticky_notes.png" id="5_ldt57"]
-[ext_resource type="Texture2D" uid="uid://cltljmceqg6ex" path="res://Sprites/Room Sprites/Main Room/ekran.png" id="6_jc7mf"]
-[ext_resource type="Texture2D" uid="uid://cayhqrfmexqpk" path="res://Sprites/Room Sprites/Main Room/table.png" id="7_7g522"]
-[ext_resource type="Texture2D" uid="uid://b2qdi2cs4eqfn" path="res://Sprites/Room Sprites/Main Room/mis.png" id="8_s3f8p"]
-[ext_resource type="Texture2D" uid="uid://dqfoj8vrkspd0" path="res://Sprites/Room Sprites/Main Room/keyboard.png" id="9_4sj7u"]
-[ext_resource type="Texture2D" uid="uid://2d5xnhwatta3" path="res://Sprites/Room Sprites/Main Room/apple.png" id="10_qb13v"]
-[ext_resource type="Texture2D" uid="uid://d2de3fnc152uv" path="res://Sprites/Room Sprites/Main Room/loops.png" id="11_qw2yn"]
-[ext_resource type="Texture2D" uid="uid://bnlkhvcx71f4g" path="res://Sprites/Room Sprites/Main Room/dino_plant.png" id="12_agn4o"]
-[ext_resource type="Texture2D" uid="uid://clvbtxu0v4d7x" path="res://Sprites/Room Sprites/Main Room/cup.png" id="13_47q83"]
+[ext_resource type="Texture2D" uid="uid://ddrpbawap2xne" path="res://Sprites/Temp/image.png" id="2_odbhw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
+size = Vector2(814.5531, 405.88657)
 
 [sub_resource type="GDScript" id="GDScript_r5n4g"]
 resource_name = "camera-zoom"
@@ -42,64 +35,23 @@ size = Vector2(845.71545, 417.471)
 script = ExtResource("1_o43up")
 metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1166579413]
-z_index = -10
-texture = ExtResource("4_rvdfg")
+[node name="SOfficeWallFront" type="Sprite2D" parent="." unique_id=1844707469]
+position = Vector2(6.1035156e-05, -7.6293945e-06)
+scale = Vector2(1.4570136, 1.4570135)
+texture = ExtResource("2_odbhw")
 
-[node name="Monitor" type="Sprite2D" parent="Background" unique_id=74889405]
-z_index = 1
-texture = ExtResource("5_gpra5")
+[node name="Area2D" type="Area2D" parent="SOfficeWallFront" unique_id=1486256685]
+position = Vector2(-65.20191, -72.75155)
+scale = Vector2(0.4937585, 0.4937585)
 
-[node name="Screen" type="Sprite2D" parent="Background/Monitor" unique_id=1926843042]
-z_index = -1
-texture = ExtResource("6_jc7mf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOfficeWallFront/Area2D" unique_id=1590644400]
+position = Vector2(6.950119, -1.3900299)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_r5n4g")
 
-[node name="Camera2D" type="Camera2D" parent="Background/Monitor/Screen" unique_id=1548366561]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1548366561]
 script = SubResource("GDScript_r5n4g")
 anim_speed = 0.2
 
-[node name="Area2D" type="Area2D" parent="Background/Monitor/Screen" unique_id=1486256685]
-position = Vector2(-152, -188.00002)
-scale = Vector2(1.1138498, 1.1138499)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Monitor/Screen/Area2D" unique_id=1590644400]
-position = Vector2(-8.977844, -2.2444916)
-shape = SubResource("RectangleShape2D_r5n4g")
-
-[node name="StickyNotes" type="Sprite2D" parent="Background/Monitor/Screen" unique_id=1155289474]
-z_index = 128
-texture = ExtResource("5_ldt57")
-
-[node name="Table" type="Sprite2D" parent="Background" unique_id=244510489]
-texture = ExtResource("7_7g522")
-
-[node name="Mis" type="Sprite2D" parent="Background/Table" unique_id=1073688301]
-texture = ExtResource("8_s3f8p")
-
-[node name="Keyboard" type="Sprite2D" parent="Background/Table" unique_id=1190372410]
-z_index = 1
-texture = ExtResource("9_4sj7u")
-
-[node name="Apple" type="Sprite2D" parent="Background/Table" unique_id=353470531]
-position = Vector2(307, 207)
-scale = Vector2(0.3975, 0.3975)
-texture = ExtResource("10_qb13v")
-
-[node name="Loops" type="Sprite2D" parent="Background/Table" unique_id=1115612907]
-position = Vector2(477.99997, 123)
-scale = Vector2(0.6699999, 0.6699999)
-texture = ExtResource("11_qw2yn")
-
-[node name="DinoPlant" type="Sprite2D" parent="Background/Table" unique_id=812122281]
-z_index = 128
-position = Vector2(-768.99994, 53)
-scale = Vector2(0.97, 0.97)
-texture = ExtResource("12_agn4o")
-
-[node name="Cup" type="Sprite2D" parent="Background/Table" unique_id=449594085]
-position = Vector2(-542.5, 204.49998)
-scale = Vector2(0.4580001, 0.4580001)
-texture = ExtResource("13_47q83")
-
-[connection signal="mouse_entered" from="Background/Monitor/Screen/Area2D" to="Background/Monitor/Screen/Camera2D" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Background/Monitor/Screen/Area2D" to="Background/Monitor/Screen/Camera2D" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SOfficeWallFront/Area2D" to="Camera2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SOfficeWallFront/Area2D" to="Camera2D" method="_on_area_2d_mouse_exited"]

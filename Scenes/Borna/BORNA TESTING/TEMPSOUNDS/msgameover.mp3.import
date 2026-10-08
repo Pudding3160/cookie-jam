@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca3omsffu3ud7"
+path="res://.godot/imported/msgameover.mp3-33ed331a32ea71217c1934ee2f05fb05.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Borna/BORNA TESTING/TEMPSOUNDS/msgameover.mp3"
+dest_files=["res://.godot/imported/msgameover.mp3-33ed331a32ea71217c1934ee2f05fb05.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

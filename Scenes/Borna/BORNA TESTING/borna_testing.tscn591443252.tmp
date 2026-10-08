@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5r582wgyyube"]
+
+[ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_0w6ts"]
+[ext_resource type="PackedScene" uid="uid://bsjjcdvos1kvd" path="res://Scenes/Borna/BORNA TESTING/hons_controller.tscn" id="2_niycl"]
+[ext_resource type="PackedScene" uid="uid://dfgltatfwx6kx" path="res://Scenes/Borna/HonsGame/Hons.tscn" id="3_qfcko"]
+
+[node name="BornaTesting" type="Node" unique_id=1719850771]
+
+[node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("1_0w6ts")]
+current_room_type = 1
+
+[node name="HonsController" parent="." unique_id=472428097 instance=ExtResource("2_niycl")]
+difficulty = 20
+distraction_scene = ExtResource("3_qfcko")
+check_for_active_room = false

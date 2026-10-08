@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fhraha4peey5"]
+
+[ext_resource type="Script" uid="uid://b4408osbx8inc" path="res://Scenes/Borna/BORNA TESTING/coffee_controller.gd" id="1_yqqf7"]
+[ext_resource type="PackedScene" uid="uid://bh84k63h5ofop" path="res://Scenes/Borna/CoffeeGame/CoffeeGame.tscn" id="2_fuqhy"]
+
+[node name="CoffeeController" type="Node" unique_id=994386965]
+script = ExtResource("1_yqqf7")
+interval = 1
+difficulty = 20
+distraction_scene = ExtResource("2_fuqhy")

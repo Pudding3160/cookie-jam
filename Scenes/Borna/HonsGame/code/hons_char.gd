@@ -7,6 +7,7 @@ func _physics_process(delta):
 	velocity.y += grav*delta
 	if is_on_floor():
 		if Input.is_action_just_pressed("HonsJump"):
+			$AudioStreamPlayer2D.play()
 			velocity.y=jump
 		elif Input.is_action_pressed("HonsDown"):
 			$AnimatedSprite2D.play("Crouch")
