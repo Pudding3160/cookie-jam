@@ -43,14 +43,18 @@ func _process(delta: float) -> void:
 	# Reset the timer for future use
 	interval_buffer = interval;
 	
-	# Check for spawn chance
-	#if !can_spawn(0, max_rand_num): return;	# Will be added later
 	# Check if another distraction is active, only if the controller is set to perform the check
 	if (GlobalDistractionManager.get_distraction_active_state() and check_for_other_distractions): return;
 	# Check if the player is in the active room, if not store the attack
-	if (!check_for_active_room): start_game();
-	if (room_manager.current_room_type != active_room): attack_stored = true;
-	else: start_game();
+	if (!check_for_active_room):
+		start_game();
+		print("1")
+	if (room_manager.current_room_type != active_room):
+		attack_stored = true;
+		print("2")
+	elif (check_for_active_room):
+		start_game();
+		print("3");
 
 func can_spawn(min_chance: int, max_chance: int) -> bool:
 	var rng := RandomNumberGenerator.new();
