@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Ian/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
 [ext_resource type="FontFile" uid="uid://833awkevx314" path="res://Font/AveriaLibre/AveriaLibre-Bold.ttf" id="2_7rvyo"]
 [ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="3_6qq1r"]
+[ext_resource type="Texture2D" uid="uid://blen85hatts0c" path="res://Sprites/UI Textures/snailmail.png" id="3_qhunf"]
 
 [sub_resource type="GDScript" id="GDScript_3sau0"]
 resource_name = "detect_children"
@@ -62,6 +63,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=262311355]
+texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_6qq1r")
 patch_margin_left = 65
@@ -69,13 +71,22 @@ patch_margin_top = 75
 patch_margin_right = 67
 patch_margin_bottom = 65
 
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/NinePatchRect" unique_id=887205834]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.0
+offset_top = 1.0
+offset_right = 144.0
+offset_bottom = 17.0
+texture = ExtResource("3_qhunf")
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/NinePatchRect" unique_id=679615504]
 layout_mode = 0
 offset_right = 836.0
 offset_bottom = 436.0
 mouse_filter = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 29
+theme_override_constants/margin_top = 34
 theme_override_constants/margin_right = 15
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/NinePatchRect/MarginContainer" unique_id=1068897769]
