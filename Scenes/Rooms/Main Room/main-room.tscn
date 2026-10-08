@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://b00r4tav8kk34" path="res://Sprites/Room Sprites/Main Room/lampa.png" id="9_4sj7u"]
 [ext_resource type="Texture2D" uid="uid://dqfoj8vrkspd0" path="res://Sprites/Room Sprites/Main Room/keyboard.png" id="11_4sj7u"]
 [ext_resource type="Texture2D" uid="uid://b2qdi2cs4eqfn" path="res://Sprites/Room Sprites/Main Room/mis.png" id="12_qb13v"]
-[ext_resource type="Texture2D" uid="uid://bi0w83bcti6du" path="res://Sprites/UI Textures/StrikeInd1.png" id="14_s3f8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
 size = Vector2(1292.7207, 638.0204)
@@ -107,11 +106,6 @@ texture = ExtResource("12_qb13v")
 z_index = 128
 position = Vector2(-762, 55)
 texture = ExtResource("6_imx6c")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=388288636]
-position = Vector2(-600, -422)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("14_s3f8p")
 
 [connection signal="mouse_entered" from="Bg/Stol/Monitor/Ekran/Area2D" to="Bg/Stol/Monitor/Camera2D" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Bg/Stol/Monitor/Ekran/Area2D" to="Bg/Stol/Monitor/Camera2D" method="_on_area_2d_mouse_exited"]

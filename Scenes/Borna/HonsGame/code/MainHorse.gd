@@ -34,7 +34,7 @@ func _on_timer_timeout():
 	game_won()
 	print("win")
 	queue_free()
-func _process(delta):
+func _process(_delta):
 	gen_obs()
 	$Label.set_text(str(int($Timer.get_time_left())))
 	

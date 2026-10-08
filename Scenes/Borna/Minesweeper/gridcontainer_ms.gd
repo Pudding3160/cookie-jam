@@ -73,13 +73,13 @@ func check_bombs(index):
 	var num_of_bombs = 0
 
 	for i in bombs.size():
-		if are_adjecent(index, bombs[i], get_columns()):
+		if are_adjacent(index, bombs[i], get_columns()):
 			num_of_bombs += 1
 
 	tiles[index].set_meta("text_to_show", str(num_of_bombs))
 
 
-func are_adjecent(index, bomb, cols):
+func are_adjacent(index, bomb, cols):
 	var ca = to_cords(index, cols)
 	var cb = to_cords(bomb, cols)
 
@@ -120,7 +120,7 @@ func reveal(i):
 		bomb.play()
 		await get_tree().create_timer(1.0).timeout
 		game_over = true
-		node.game_over()
+		node.game_over(true)
 		return
 
 	
@@ -137,9 +137,5 @@ func reveal(i):
 		await get_tree().create_timer(1.0).timeout
 		
 		game_over = true
-		node.game_over()
+		node.game_over(false)
 		print("You win!")
-
-
-func _process(delta: float) -> void:
-	pass
