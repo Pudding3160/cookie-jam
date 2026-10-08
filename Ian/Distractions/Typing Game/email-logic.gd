@@ -103,7 +103,7 @@ func get_random_word() -> String:
 
 func end_game(failed: bool) -> void:
 	GlobalDistractionManager.set_distraction_active_state(false);
-	GlobalDistractionManager.email_difficulty = GlobalDistractionManager.EmailDifficulty.EASY;
+	GlobalDistractionManager.set_email_difficulty(false);
 	if (failed):
 		TimerManager.update_time(time_penalty);
 		GlobalStrikeManager.update_strikes(1);

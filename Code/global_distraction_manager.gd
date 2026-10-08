@@ -1,12 +1,7 @@
 extends Node
 
-enum EmailDifficulty {
-	EASY,
-	HARD
-}
-
 var is_any_distraction_active := false;
-var email_difficulty := EmailDifficulty.EASY
+var is_email_hard_mode := false
 var time_decrease_modifier := 1.0;
 
 ### ================== ###
@@ -22,11 +17,11 @@ func get_distraction_active_state() -> bool:
 ### ================ ###
 ### EMAIL DIFFICULTY ###
 ### ================ ###
-func set_email_difficulty(difficulty: EmailDifficulty) -> void:
-	email_difficulty = difficulty;
+func set_email_difficulty(is_hard_mode: bool) -> void:
+	is_email_hard_mode = is_hard_mode;
 	
-func get_email_difficulty() -> EmailDifficulty:
-	return email_difficulty;
+func get_email_difficulty() -> bool:
+	return is_email_hard_mode;
 
 
 ### ================== ###
