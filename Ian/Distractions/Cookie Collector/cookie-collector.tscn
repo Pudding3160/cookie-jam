@@ -73,6 +73,7 @@ theme_override_constants/margin_bottom = 15
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=339489626]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("1_0ltcj")
 time_decrease_indicator = ExtResource("3_2ewh5")
 

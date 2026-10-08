@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://5rxcrn56rq63"]
+
+[ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="1_coi7a"]
+[ext_resource type="PackedScene" uid="uid://q54v4qwwqafq" path="res://Ian/Distractions/Typing Game/email-controller.tscn" id="2_we823"]
+[ext_resource type="PackedScene" uid="uid://cs4aihcoijnos" path="res://Scenes/Map/map.tscn" id="3_qnb36"]
+[ext_resource type="PackedScene" uid="uid://xjuw67uvcgrc" path="res://Scenes/global-timer.tscn" id="4_s21kp"]
+[ext_resource type="PackedScene" uid="uid://dbxwhb0mhls3w" path="res://Ian/Distractions/Cookie Collector/cookie-collector.tscn" id="5_bbabh"]
+[ext_resource type="PackedScene" uid="uid://cftkwo67v7ac4" path="res://Scenes/Strikes/strike_counter.tscn" id="6_kfc5n"]
+
+[node name="Main" type="Node" unique_id=1694300178]
+
+[node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("1_coi7a")]
+current_room_type = 1
+
+[node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("2_we823")]
+interval = 5
+difficulty = 12
+max_rand_num = 50
+
+[node name="Map" parent="." unique_id=1908580526 instance=ExtResource("3_qnb36")]
+
+[node name="GlobalTimer" parent="." unique_id=296257864 instance=ExtResource("4_s21kp")]
+
+[node name="CookieCollector" parent="." unique_id=1791148422 instance=ExtResource("5_bbabh")]
+
+[node name="StrikeCounter" parent="." unique_id=2111545922 instance=ExtResource("6_kfc5n")]
