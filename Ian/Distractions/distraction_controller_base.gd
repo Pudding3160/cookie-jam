@@ -20,7 +20,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# If an attack is stored, start the distraction
-	if (attack_stored and room_manager.current_room_type == active_room): start_game(); return;
+	if (attack_stored 
+		and room_manager.current_room_type == active_room 
+		and !GlobalDistractionManager.get_distraction_active_state()):
+			start_game(); 
+			return;
 	
 	# If the distraction has a specific room assigned to it, it can't work unless that room is active
 	var active := check_for_visibility();
@@ -41,8 +45,10 @@ func _process(delta: float) -> void:
 	# Check for spawn chance
 	#if !can_spawn(0, max_rand_num): return;	# Will be added later
 	# Check if the player is in the active room, if not store the attack
-	if (!check_for_active_room): start_game(); return;
+	if (GlobalDistractionManager.get_distraction_active_state()): return;
+	if (!check_for_active_room): start_game();
 	if (room_manager.current_room_type != active_room): attack_stored = true;
+	else: start_game();
 
 func can_spawn(min_chance: int, max_chance: int) -> bool:
 	var rng := RandomNumberGenerator.new();

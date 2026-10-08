@@ -68,11 +68,12 @@ func hit_obs(body):
 		game_lost()
 	
 func game_won():	
-	
+	GlobalDistractionManager.set_distraction_active_state(false);
 	speed=0
 	queue_free()
 	
 func game_lost():
+	GlobalDistractionManager.set_distraction_active_state(false);
 	speed=0
 	$HonsChar.queue_free()
 	$Timer.stop()
