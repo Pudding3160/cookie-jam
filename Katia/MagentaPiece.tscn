@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bltbsiuw0k2u8"]
 
 [ext_resource type="PackedScene" uid="uid://d1v6n7nwucm1h" path="res://Katia/Piece.tscn" id="1_dyu21"]
+[ext_resource type="Texture2D" uid="uid://tpq7s41w10pt" path="res://Sprites/Room Sprites/Printer Room/MagentaCookie.png" id="2_q6872"]
 
 [node name="MagentaPiece" unique_id=921506528 instance=ExtResource("1_dyu21")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1626412863]
-modulate = Color(1, 0, 0.6784314, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_q6872")
 PieceColor = "Magenta"

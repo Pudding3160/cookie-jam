@@ -7,6 +7,7 @@ var interval_buffer;
 @export var distraction_scene: PackedScene
 @export var active_room: RoomsEnum.Room_Type
 @export var check_for_active_room: bool
+@export var check_for_other_distractions := true;
 var attack_stored := false;
 var is_distraction_active := false;
 var room_manager;
@@ -44,8 +45,9 @@ func _process(delta: float) -> void:
 	
 	# Check for spawn chance
 	#if !can_spawn(0, max_rand_num): return;	# Will be added later
+	# Check if another distraction is active, only if the controller is set to perform the check
+	if (GlobalDistractionManager.get_distraction_active_state() and check_for_other_distractions): return;
 	# Check if the player is in the active room, if not store the attack
-	if (GlobalDistractionManager.get_distraction_active_state()): return;
 	if (!check_for_active_room): start_game();
 	if (room_manager.current_room_type != active_room): attack_stored = true;
 	else: start_game();
