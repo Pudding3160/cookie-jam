@@ -71,7 +71,7 @@ func check_match(column: int, row: int, PieceColor: String):
 	### CHECKING FOR LEFT SIDE ###
 	### ====================== ###
 	if column > 1:		
-		if all_pieces[column - 1][row] != null and all_pieces[column - 1][row] != null:			
+		if all_pieces[column - 1][row] != null and all_pieces[column - 2][row] != null:			
 			if all_pieces[column - 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column - 2][row].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 
@@ -79,7 +79,7 @@ func check_match(column: int, row: int, PieceColor: String):
 	### CHECKING FOR RIGHT SIDE ###
 	### ======================= ###
 	if column < width - 2:		
-		if all_pieces[column + 1][row] != null and all_pieces[column + 1][row] != null:			
+		if all_pieces[column + 1][row] != null and all_pieces[column + 2][row] != null:			
 			if all_pieces[column + 1][row].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column + 2][row].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 
@@ -87,7 +87,7 @@ func check_match(column: int, row: int, PieceColor: String):
 	### CHECKING FOR UNDERSIDE ###
 	### ====================== ###
 	if row > 1:		
-		if all_pieces[column][row - 1] != null and all_pieces[column][row - 1] != null:			
+		if all_pieces[column][row - 1] != null and all_pieces[column][row - 2] != null:			
 			if all_pieces[column][row - 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row - 2].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 
@@ -95,7 +95,7 @@ func check_match(column: int, row: int, PieceColor: String):
 	### CHECKING FOR ABOVE SIDE ###
 	### ======================= ###
 	if row < height - 2:		
-		if all_pieces[column][row + 1] != null and all_pieces[column][row + 1] != null:			
+		if all_pieces[column][row + 1] != null and all_pieces[column][row + 2] != null:			
 			if all_pieces[column][row + 1].get_node("Sprite2D").PieceColor == PieceColor and all_pieces[column][row + 2].get_node("Sprite2D").PieceColor == PieceColor:				
 				return true
 

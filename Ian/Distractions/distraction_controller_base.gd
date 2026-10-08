@@ -20,10 +20,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# If an attack is stored, start the distraction
+	# If an attack is stored, start the distraction; please dont ask bro i dont gaf
 	if (attack_stored 
 		and room_manager.current_room_type == active_room 
-		and !GlobalDistractionManager.get_distraction_active_state()):
+		and !GlobalDistractionManager.get_distraction_active_state()
+		and check_for_active_room):
 			start_game(); 
 			return;
 	

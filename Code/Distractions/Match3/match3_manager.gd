@@ -74,7 +74,7 @@ func scale_with_difficulty() -> void:
 	var diff: float = controller.get_difficulty();
 	duration = 6 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
 	time_penalty = 15 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
-	score_needed = ceil(10 * log(diff + 1.0) + score_needed);
+	score_needed = ceil(17 * log(diff + 1.0) + score_needed);
 	set_color_scores();
 
 
