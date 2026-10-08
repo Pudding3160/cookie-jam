@@ -3,6 +3,14 @@ extends Node
 var is_any_distraction_active := false;
 var is_email_hard_mode := false
 var time_decrease_modifier := 1.0;
+var click_modifier := 1.0;
+var min_click_mod := .05;
+var max_click_mod := 1.5;
+
+
+func _process(delta: float) -> void:
+	update_click_modifier(delta / 100);
+
 
 ### ================== ###
 ### DISTRACTION ACTIVE ###
@@ -32,3 +40,22 @@ func set_time_decrease_modifier(modifier: float) -> void:
 
 func get_time_decrease_modifier() -> float:
 	return time_decrease_modifier;
+
+
+### ======================= ###
+### CLICK MODIFIER DECREASE ###
+### ======================= ###
+func update_click_modifier(delta: float) -> void:
+	if click_modifier < min_click_mod:
+		click_modifier = min_click_mod;
+		return;
+	click_modifier -= delta;
+	print(click_modifier)
+	
+func set_click_modifier(value: float):
+	if value > max_click_mod:
+		value = max_click_mod
+	click_modifier = value;
+	
+func get_click_modifier() -> float:
+	return click_modifier;
