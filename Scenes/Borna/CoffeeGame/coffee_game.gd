@@ -39,8 +39,8 @@ func gen_obs():
 		var obs = coffee.instantiate()
 		add_child(obs)
 
-		var x= randf_range(424,710)
-		obs.position=Vector2(x,135)
+		var x= randf_range(-300.0,300.0)
+		obs.position=Vector2(x,-338.0)
 		can_spawn=true
 func reduce_score():
 	if score>0:
