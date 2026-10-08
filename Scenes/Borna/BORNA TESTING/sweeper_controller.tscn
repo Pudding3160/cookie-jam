@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sc6kcea8l7i"]
+
+[ext_resource type="Script" uid="uid://le170k7jf8kp" path="res://Scenes/Borna/BORNA TESTING/sweeper_controller.gd" id="1_m1jws"]
+[ext_resource type="PackedScene" uid="uid://deadaydq1afbd" path="res://Scenes/Borna/Minesweeper/Minesweeper.tscn" id="2_gg78n"]
+
+[node name="Sweeper_controller" type="Node" unique_id=1424258307]
+script = ExtResource("1_m1jws")
+distraction_scene = ExtResource("2_gg78n")

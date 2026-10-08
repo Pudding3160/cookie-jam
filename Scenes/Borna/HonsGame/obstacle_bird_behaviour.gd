@@ -10,5 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$AnimatedSprite2D.play("Fly")
 	position.x-=get_parent().speed
-	if position.x<=274:
+	if position.x<=150:
 		queue_free()

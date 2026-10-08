@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bujf2v2hrkpbs"
+path="res://.godot/imported/click.mp3-24f936180b9743d372cdb5c8212f08e7.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Borna/BORNA TESTING/TEMPSOUNDS/click.mp3"
+dest_files=["res://.godot/imported/click.mp3-24f936180b9743d372cdb5c8212f08e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

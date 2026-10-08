@@ -2,23 +2,25 @@
 
 [ext_resource type="Script" uid="uid://tcb60c23ndu6" path="res://Scenes/Borna/HonsGame/code/MainHorse.gd" id="1_i40fx"]
 [ext_resource type="PackedScene" uid="uid://c53v0ql05xryo" path="res://Scenes/Borna/HonsGame/ground.tscn" id="1_iig63"]
-[ext_resource type="Texture2D" uid="uid://c50i8i8yijuwh" path="res://Sprites/HonsSprites/bg.png" id="2_5moti"]
+[ext_resource type="Texture2D" uid="uid://bkfsgiwfibsy6" path="res://Sprites/HonsSprites/background.png" id="2_l0ogy"]
 [ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="5_l0ogy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pbqp2"]
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
-[node name="Node2D" type="CanvasLayer" unique_id=209692651]
+[node name="Node2D" type="Control" unique_id=2037238352]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_i40fx")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=785709633]
-position = Vector2(429, 268)
-rotation = -6.2831855
-texture = ExtResource("2_5moti")
+position = Vector2(427, 290)
+texture = ExtResource("2_l0ogy")
 
 [node name="Ground" parent="." unique_id=1851720191 instance=ExtResource("1_iig63")]
-position = Vector2(-11, 0)
+position = Vector2(-112, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=822775577]
 position = Vector2(578, 325)
@@ -27,16 +29,17 @@ position = Vector2(578, 325)
 position = Vector2(325, 409)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=941570388]
-position = Vector2(576, 414)
+position = Vector2(700, 414)
 
 [node name="Timer" type="Timer" parent="." unique_id=76687184]
 one_shot = true
 
 [node name="Label" type="Label" parent="." unique_id=1548189991]
-offset_left = 276.0
-offset_top = 103.0
-offset_right = 316.0
-offset_bottom = 126.0
+layout_mode = 0
+offset_left = 142.0
+offset_top = 163.0
+offset_right = 182.0
+offset_bottom = 186.0
 label_settings = SubResource("LabelSettings_pbqp2")
 
 [node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("5_l0ogy")]

@@ -9,5 +9,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.x-=get_parent().speed
-	if position.x<=274:
+	if position.x<=150:
 		queue_free()

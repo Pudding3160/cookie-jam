@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7wsgbqkxkgvs" path="res://Scenes/Borna/HonsGame/code/hons_char.gd" id="1_5uqk3"]
 [ext_resource type="Texture2D" uid="uid://drsiq4d4fmnla" path="res://Sprites/HonsSprites/hons-Sheet.png" id="1_pdlvb"]
+[ext_resource type="AudioStream" uid="uid://nhuahm5esfrh" path="res://Scenes/Borna/BORNA TESTING/TEMPSOUNDS/jump.mp3" id="3_rjbvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hknv"]
 size = Vector2(15, 10)
@@ -95,3 +96,7 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_0fwcc")
 animation = &"Crouch"
 frame_progress = 0.27006316
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1878714604]
+stream = ExtResource("3_rjbvo")
+volume_db = -39.289
