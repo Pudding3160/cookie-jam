@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var text_element: RichTextLabel = $MarginContainer/PanelContainer/RichTextLabel
+@onready var text_element: RichTextLabel = $MarginContainer/NinePatchRect/MarginContainer/RichTextLabel
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

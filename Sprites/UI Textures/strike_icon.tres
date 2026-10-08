@@ -1,0 +1,14 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://qlws26p0iyin"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m8d0i"]
+load_path = "res://.godot/imported/StrikeInd1.png-7fba0457d4ec003bc5acb691263cc313.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_plxqw"]
+load_path = "res://.godot/imported/StrikeInd2.png-a4ed8e0aca733988a66367b7dd6ea31b.ctex"
+
+[resource]
+frames = 2
+frame_0/texture = SubResource("CompressedTexture2D_m8d0i")
+frame_0/duration = 0.13
+frame_1/texture = SubResource("CompressedTexture2D_plxqw")
+frame_1/duration = 0.13

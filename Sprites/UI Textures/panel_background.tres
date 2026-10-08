@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://d3coqoa1uo0sr"]
+
+[ext_resource type="Texture2D" uid="uid://bjsecf15kqqwr" path="res://Sprites/UI Textures/cookiejamUIb1.png" id="1_ddmhu"]
+[ext_resource type="Texture2D" uid="uid://bo8b8l6yf1kk1" path="res://Sprites/UI Textures/cookiejamUIb2.png" id="2_bktif"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_ddmhu")
+frame_0/duration = 0.13
+frame_1/texture = ExtResource("2_bktif")
+frame_1/duration = 0.13
