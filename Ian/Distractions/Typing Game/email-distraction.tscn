@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxa1r1d3s6pso"]
 
 [ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Ian/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
+[ext_resource type="FontFile" uid="uid://833awkevx314" path="res://Font/AveriaLibre/AveriaLibre-Bold.ttf" id="2_7rvyo"]
 
 [sub_resource type="GDScript" id="GDScript_3sau0"]
 resource_name = "detect_children"
@@ -90,6 +91,7 @@ script = SubResource("GDScript_3sau0")
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=1602497260]
 layout_mode = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_7rvyo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"
@@ -100,6 +102,7 @@ script = SubResource("GDScript_3f12i")
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=135159343]
 layout_mode = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_7rvyo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"
@@ -110,6 +113,7 @@ script = SubResource("GDScript_3f12i")
 [node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/VBoxContainer" unique_id=587521422]
 layout_mode = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_7rvyo")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "lorem ipsum"

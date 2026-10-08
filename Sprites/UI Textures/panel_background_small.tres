@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://btbffa778t4ee"]
+
+[ext_resource type="Texture2D" uid="uid://b62yajgruhmg7" path="res://Sprites/UI Textures/genButton1.png" id="1_hhho2"]
+[ext_resource type="Texture2D" uid="uid://bg24e2kdufcn2" path="res://Sprites/UI Textures/genButton2.png" id="2_k2q4g"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_hhho2")
+frame_0/duration = 0.13
+frame_1/texture = ExtResource("2_k2q4g")
+frame_1/duration = 0.13
