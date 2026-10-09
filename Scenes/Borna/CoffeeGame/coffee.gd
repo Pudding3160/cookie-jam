@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	rot += .01;
 	rotation = rot
-	position.y+=1.6
+	position.y+=1.84	# Increased by 15% (original: 1.6)
 	#get_parent().speed
 	if position.y>=750:
 		get_parent().reduce_score()

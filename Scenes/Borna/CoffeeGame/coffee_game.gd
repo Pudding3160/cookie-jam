@@ -13,6 +13,7 @@ var winscore
 const hons_start_pos := Vector2i(310,423)
 @onready var score_label := $MarginContainer/HBoxContainer/ScoreLabel
 @onready var label := $MarginContainer/HBoxContainer/Label
+@onready var sfx := $SFX
 @export var left_edge: Node2D
 @export var right_edge: Node2D
 @export var click_modifier := 2.0
@@ -58,11 +59,13 @@ func reduce_score():
 func add_score():
 	score += 1
 	score_label.text = "Score: " + str(score)
+	sfx.play();
 	if score>=winscore :
 		game_won()
 		
 		
 func game_won():
+	GlobalSoundManager.play_mg_complete();
 	GlobalDistractionManager.set_click_modifier(click_modifier)
 	queue_free()
 	

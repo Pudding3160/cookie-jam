@@ -49,13 +49,10 @@ func _process(delta: float) -> void:
 	# Check if the player is in the active room, if not store the attack
 	if (!check_for_active_room):
 		start_game();
-		print("1")
 	if (room_manager.current_room_type != active_room):
 		attack_stored = true;
-		print("2")
 	elif (check_for_active_room):
 		start_game();
-		print("3");
 
 func can_spawn(min_chance: int, max_chance: int) -> bool:
 	var rng := RandomNumberGenerator.new();
@@ -81,7 +78,8 @@ func check_for_visibility() -> bool:
 
 func set_children_state(active: bool) -> void:
 	if (get_child_count() == 0): return;
-	var child := get_child(0);
-	if (child == null): return;
-	if (active): child.show();
-	else: child.hide();
+	for child in get_children():
+		if (child == null): return;
+		if (active): child.show();
+		else: child.hide();	
+	
