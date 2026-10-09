@@ -50,7 +50,6 @@ func update_click_modifier(delta: float) -> void:
 		click_modifier = min_click_mod;
 		return;
 	click_modifier -= delta;
-	print(click_modifier)
 	
 func set_click_modifier(value: float):
 	if value > max_click_mod:
