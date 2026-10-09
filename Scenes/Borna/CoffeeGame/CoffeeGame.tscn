@@ -5,48 +5,49 @@
 [ext_resource type="Texture2D" uid="uid://drrjoeliq4rce" path="res://Scenes/Borna/CoffeeGame/coffeetemp.png" id="2_cal73"]
 [ext_resource type="PackedScene" uid="uid://cj1fk4f88prfb" path="res://Scenes/Borna/CoffeeGame/Coffee.tscn" id="3_32l4b"]
 
-[node name="CoffeeGame" type="Node2D" unique_id=824459716]
-position = Vector2(-572, -319)
+[node name="CoffeeGame" type="Node2D" unique_id=824459716 node_paths=PackedStringArray("left_edge", "right_edge")]
 script = ExtResource("1_cal73")
+left_edge = NodePath("BoxRef/Left")
+right_edge = NodePath("BoxRef/Right")
 
 [node name="Coffeetemp" type="Sprite2D" parent="." unique_id=923155274]
-position = Vector2(572, 319)
+position = Vector2(960, 379)
+scale = Vector2(1.05, 1.05)
 texture = ExtResource("2_cal73")
 
-[node name="CoffeeChar" parent="." unique_id=1537344380 instance=ExtResource("2_32l4b")]
-position = Vector2(571, 661)
+[node name="CoffeeChar" parent="." unique_id=1537344380 node_paths=PackedStringArray("left_edge", "right_edge") instance=ExtResource("2_32l4b")]
+position = Vector2(957.5, 716)
 scale = Vector2(1, 1)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1211191153]
-position = Vector2(574, 324)
+left_edge = NodePath("../BoxRef/Left")
+right_edge = NodePath("../BoxRef/Right")
 
 [node name="BoxRef" type="Node" parent="." unique_id=676086818]
 
 [node name="Left" type="Node2D" parent="BoxRef" unique_id=677019805]
-position = Vector2(-300, 336)
+position = Vector2(657.5, 715)
 
 [node name="Right" type="Node2D" parent="BoxRef" unique_id=1793398910]
-position = Vector2(300, 336)
+position = Vector2(1257.5, 715)
 
 [node name="TopLeft" type="Node2D" parent="BoxRef" unique_id=1799817653]
-position = Vector2(300, -337)
+position = Vector2(1257.5, 42)
 
 [node name="TopRight" type="Node2D" parent="BoxRef" unique_id=841697782]
-position = Vector2(-300, -338)
+position = Vector2(657.5, 41)
 
 [node name="Node2D" parent="." unique_id=576018206 instance=ExtResource("3_32l4b")]
-position = Vector2(550, -34)
+position = Vector2(957.5, 379)
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1063786986]
-offset_left = 410.0
-offset_top = 121.0
-offset_right = 450.0
-offset_bottom = 144.0
+offset_left = 654.5
+offset_top = 108.0
+offset_right = 694.5
+offset_bottom = 131.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=96999998]
-offset_left = 500.0
-offset_top = 117.0
-offset_right = 627.0
-offset_bottom = 140.0
+offset_left = 744.5
+offset_top = 104.0
+offset_right = 871.5
+offset_bottom = 127.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)

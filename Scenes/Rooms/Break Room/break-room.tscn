@@ -2,42 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ygdvn74t1aco" path="res://Sprites/Room Sprites/Coffee/coffee_machine.png" id="2_hrqom"]
 
-[sub_resource type="GDScript" id="GDScript_ljfj2"]
-resource_name = "click_timer_test"
-script/source = "extends Button
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_SPACE:
-			GlobalDistractionManager.set_click_modifier(2)
-"
-
 [node name="BreakRoom" type="Node" unique_id=533714966]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=361197269]
-position = Vector2(960, 540)
+z_index = 128
+position = Vector2(954, 540)
 texture = ExtResource("2_hrqom")
-
-[node name="Control" type="Control" parent="." unique_id=66119784]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=2003871105]
-layout_mode = 0
-offset_left = 898.0
-offset_top = 673.0
-offset_right = 1018.0
-offset_bottom = 715.0
-
-[node name="Button" type="Button" parent="Control/CenterContainer" unique_id=1275526974]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "PRESS ME"
-script = SubResource("GDScript_ljfj2")
-
-[connection signal="mouse_entered" from="Control" to="Control" method="_on_mouse_entered"]
-[connection signal="pressed" from="Control/CenterContainer/Button" to="Control/CenterContainer/Button" method="_on_pressed"]

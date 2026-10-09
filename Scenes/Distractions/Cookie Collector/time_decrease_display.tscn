@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ow132vug53yk"]
 
-[ext_resource type="Script" uid="uid://k318rq8tlmow" path="res://Ian/Distractions/Cookie Collector/time_decrease_display.gd" id="1_o235x"]
+[ext_resource type="Script" uid="uid://k318rq8tlmow" path="res://Scenes/Distractions/Cookie Collector/time_decrease_display.gd" id="1_o235x"]
 [ext_resource type="FontFile" uid="uid://b2q3qbki7vgg5" path="res://Font/AveriaLibre/AveriaLibre-Light.ttf" id="2_orcei"]
 
 [sub_resource type="FontVariation" id="FontVariation_7aals"]
