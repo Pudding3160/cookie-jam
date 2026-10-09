@@ -7,14 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/Window Timer/progress-bar-empty.png" id="4_wtcak"]
 [ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/Window Timer/progress-bar-full.png" id="5_ew767"]
 
-[sub_resource type="Gradient" id="Gradient_b5vi4"]
-offsets = PackedFloat32Array(0, 0.2695783, 0.69728917, 1)
-colors = PackedColorArray(0.5559712, 0.7008478, 1, 1, 1, 1, 1, 1, 0.93227804, 0.95445246, 1, 1, 0.5568628, 0.7019608, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y1mt"]
-gradient = SubResource("Gradient_b5vi4")
-fill_to = Vector2(0, 1)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4xu5"]
 texture = ExtResource("4_wtcak")
 texture_margin_left = 6.0
@@ -37,14 +29,6 @@ cyan_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBox
 yellow_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel2")
 magenta_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel3")
 black_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel4")
-
-[node name="Window" type="Node2D" parent="." unique_id=1266729102]
-visible = false
-
-[node name="Background" type="TextureRect" parent="Window" unique_id=1289840261]
-offset_right = 1154.0
-offset_bottom = 649.0
-texture = SubResource("GradientTexture2D_4y1mt")
 
 [node name="Grid" type="Node2D" parent="." unique_id=1207108790 node_paths=PackedStringArray("csm")]
 script = ExtResource("1_4y1mt")
@@ -114,6 +98,7 @@ theme_override_constants/margin_left = 34
 theme_override_constants/margin_right = 912
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/VBoxContainer/MarginContainer" unique_id=868353191]
+texture_filter = 1
 layout_mode = 2
 texture = ExtResource("4_m5xqt")
 region_rect = Rect2(5, 4, 92, 92)
