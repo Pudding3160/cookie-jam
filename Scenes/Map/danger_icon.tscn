@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dgc8k5ujt8itl"]
+
+[ext_resource type="Texture2D" uid="uid://8mcvg56vsu8q" path="res://Sprites/UI Textures/Danger/danger_icon.tres" id="1_o7wf3"]
+
+[sub_resource type="GDScript" id="GDScript_gmicm"]
+resource_name = "controller"
+script/source = "extends CanvasLayer
+
+
+func _on_timer_timeout() -> void:
+	GlobalDistractionManager.set_warning(false);
+	queue_free();
+"
+
+[node name="DangerIcon" type="CanvasLayer" unique_id=553587090]
+script = SubResource("GDScript_gmicm")
+
+[node name="Control" type="Control" parent="." unique_id=1588346190]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1073750015]
+layout_mode = 0
+offset_left = 1745.0
+offset_top = 478.0
+offset_right = 1913.0
+offset_bottom = 646.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer" unique_id=455006817]
+layout_mode = 2
+texture = ExtResource("1_o7wf3")
+
+[node name="Timer" type="Timer" parent="." unique_id=2088334195]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

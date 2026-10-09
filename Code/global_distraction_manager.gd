@@ -3,6 +3,7 @@ extends Node
 var is_any_distraction_active := false;
 var is_email_hard_mode := false
 var time_decrease_modifier := 1.0;
+var warning_active := false;
 var click_modifier := 1.0;
 var min_click_mod := .05;
 var max_click_mod := 1.5;
@@ -42,6 +43,8 @@ func get_time_decrease_modifier() -> float:
 	return time_decrease_modifier;
 
 
+func set_warning(active: bool):
+	warning_active = active;
 ### ======================= ###
 ### CLICK MODIFIER DECREASE ###
 ### ======================= ###
