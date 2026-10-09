@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dw37d3fjjpl0l"]
+
+[ext_resource type="Script" uid="uid://joa2rd85emni" path="res://Scenes/Distractions/Coffee Game/Controller/coffee_controller.gd" id="1_lgk60"]
+
+[node name="CoffeeController" type="Node" unique_id=1479632043]
+script = ExtResource("1_lgk60")
+metadata/_custom_type_script = "uid://joa2rd85emni"

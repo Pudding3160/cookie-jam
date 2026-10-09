@@ -5,8 +5,11 @@ var can_spawn:=true
 var winscore
 #vars
 const hons_start_pos := Vector2i(310,423)
-@onready var score_label := $ScoreLabel
-@onready var label:=$Label
+@onready var score_label := $MarginContainer/HBoxContainer/ScoreLabel
+@onready var label := $MarginContainer/HBoxContainer/Label
+@export var left_edge: Node2D
+@export var right_edge: Node2D
+@export var click_modifier := 2.0
 
 var score := 0
 
@@ -25,21 +28,21 @@ func scale_with_difficulty() -> void:
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	gen_obs()
 
 func gen_obs():
 	
 	if can_spawn:
 		can_spawn=false
-		var timer = randf_range(0.5,0.9)
+		var timer := randf_range(0.5,0.9)
 		await get_tree().create_timer(timer).timeout
 		
 		#var obs_type=obstacle_types[randi()%obstacle_types.size()]
-		var obs = coffee.instantiate()
+		var obs := coffee.instantiate()
 		add_child(obs)
 
-		var x= randf_range(-300.0,300.0)
+		var x := randf_range(left_edge.position.x, right_edge.position.x)
 		obs.position=Vector2(x,-338.0)
 		can_spawn=true
 func reduce_score():
@@ -54,5 +57,6 @@ func add_score():
 		
 		
 func game_won():
+	GlobalDistractionManager.set_click_modifier(click_modifier)
 	queue_free()
 	
