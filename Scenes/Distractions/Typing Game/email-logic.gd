@@ -8,6 +8,7 @@ var duration_buffer: float;
 @onready var progress := $PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/ProgressBar
 @export var prompts_amount := 3;
 @export var time_penalty := 2.0
+@onready var audio := $"AudioStreamPlayer2D";
 
 var active_element;
 var current_character_index := -1;
@@ -50,7 +51,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		var prompt = active_element.get_prompt();
 		var next_character = prompt.substr(current_character_index, 1);
 		if (key_typed == next_character):
-			current_character_index += 1;	# If it is, move to the next letter
+			current_character_index += 1;							# If it is, move to the next letter
+			audio.pitch_scale = randf_range(0.85, 1.15)	# and, with a random pitch,
+			audio.play()											# play a sound 
 			active_element.set_next_character(current_character_index)
 			if (current_character_index == prompt.length()):	# Reset values if the word has been typed
 				current_character_index = -1;

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dgc8k5ujt8itl"]
+
+[ext_resource type="Texture2D" uid="uid://8mcvg56vsu8q" path="res://Sprites/UI Textures/Danger/danger_icon.tres" id="1_0tj33"]
+[ext_resource type="AudioStream" uid="uid://c7602lerappdh" path="res://Sounds/1SecAlert/1SecAlert.wav" id="2_3vm3y"]
+
+[sub_resource type="GDScript" id="GDScript_gmicm"]
+resource_name = "controller"
+script/source = "extends CanvasLayer
+
+
+func _on_timer_timeout() -> void:
+	GlobalDistractionManager.set_warning(false);
+	queue_free();
+"
+
+[node name="DangerIcon" type="CanvasLayer" unique_id=553587090]
+script = SubResource("GDScript_gmicm")
+
+[node name="Control" type="Control" parent="." unique_id=1588346190]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1073750015]
+layout_mode = 0
+offset_left = 1738.0
+offset_top = 490.0
+offset_right = 1884.4
+offset_bottom = 636.4
+scale = Vector2(1.25, 1.25)
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer" unique_id=455006817]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_0tj33")
+
+[node name="Timer" type="Timer" parent="." unique_id=2088334195]
+wait_time = 1.2
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=257577407]
+stream = ExtResource("2_3vm3y")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
