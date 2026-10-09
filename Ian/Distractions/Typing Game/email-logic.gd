@@ -79,8 +79,6 @@ func scale_with_difficulty() -> void:
 	time_penalty = 7 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
 
 
-func _on_v_box_container_completed() -> void:
-	end_game(false);
 
 
 func get_words(hard_mode := false) -> void:
@@ -108,3 +106,7 @@ func end_game(failed: bool) -> void:
 		TimerManager.update_time(time_penalty);
 		GlobalStrikeManager.update_strikes(1);
 	queue_free();
+
+
+func _on_v_box_container_completed() -> void:
+	end_game(false);
