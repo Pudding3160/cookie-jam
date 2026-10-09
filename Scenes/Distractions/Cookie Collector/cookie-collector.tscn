@@ -3,10 +3,18 @@
 [ext_resource type="Script" uid="uid://cjmrx24ubii21" path="res://Scenes/Distractions/Cookie Collector/cookie-button.gd" id="1_0ltcj"]
 [ext_resource type="Script" uid="uid://bcshwlygpfksq" path="res://Scenes/Distractions/Cookie Collector/cookie_collector_controller.gd" id="1_i88f8"]
 [ext_resource type="FontFile" uid="uid://bforhk8nk0fsu" path="res://Font/AveriaLibre/AveriaLibre-Regular.ttf" id="2_7aals"]
+[ext_resource type="Texture2D" uid="uid://chfgvevdjkt0y" path="res://Sprites/Room Sprites/Main Room/BlueGinghamBackground.png" id="2_cosoq"]
 [ext_resource type="PackedScene" uid="uid://ow132vug53yk" path="res://Scenes/Distractions/Cookie Collector/time_decrease_display.tscn" id="3_2ewh5"]
+[ext_resource type="Texture2D" uid="uid://kouxj72uisni" path="res://Sprites/Room Sprites/Main Room/CookieLickerSit.png" id="6_nkjj6"]
+[ext_resource type="Texture2D" uid="uid://d34whllq7srca" path="res://Sprites/Room Sprites/Main Room/CookieLickerClick.png" id="7_6y0rs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3fcr"]
+texture = ExtResource("2_cosoq")
 
 [sub_resource type="FontVariation" id="FontVariation_p0c08"]
 base_font = ExtResource("2_7aals")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4itwc"]
 
 [node name="CookieCollector" type="Control" unique_id=1791148422]
 layout_mode = 3
@@ -26,6 +34,7 @@ offset_right = 256.0
 offset_bottom = 27.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j3fcr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=237121863]
 layout_mode = 2
@@ -43,9 +52,11 @@ theme_override_constants/margin_bottom = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MarginContainer3" unique_id=1040839971]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = SubResource("FontVariation_p0c08")
-theme_override_font_sizes/normal_font_size = 24
-text = "COOKIE COLLECTOR"
+theme_override_font_sizes/normal_font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_4itwc")
+text = "COOKIE LICKER"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -61,6 +72,7 @@ theme_override_constants/margin_bottom = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MarginContainer2" unique_id=1211220324]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_p0c08")
 theme_override_font_sizes/normal_font_size = 18
 text = "67.437 sexdecillion cookies"
@@ -71,17 +83,21 @@ vertical_alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=2080739692]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 335
-theme_override_constants/margin_top = 81
-theme_override_constants/margin_right = 335
+theme_override_constants/margin_left = 275
+theme_override_constants/margin_top = 19
+theme_override_constants/margin_right = 275
 theme_override_constants/margin_bottom = 15
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=339489626]
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(280, 256)
 layout_mode = 2
 mouse_filter = 1
+theme_override_icons/icon = ExtResource("6_nkjj6")
+expand_icon = true
 script = ExtResource("1_0ltcj")
 time_decrease_indicator = ExtResource("3_2ewh5")
+idle_sprite = ExtResource("6_nkjj6")
+pressed_sprite = ExtResource("7_6y0rs")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=153316533]
 layout_mode = 2
@@ -91,4 +107,6 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
+[connection signal="button_down" from="PanelContainer/VBoxContainer/MarginContainer/Button" to="PanelContainer/VBoxContainer/MarginContainer/Button" method="_on_button_down"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/MarginContainer/Button" to="PanelContainer/VBoxContainer/MarginContainer/Button" method="_on_button_up"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/Button" to="PanelContainer/VBoxContainer/MarginContainer/Button" method="_on_pressed"]

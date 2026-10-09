@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cplpys03ymynb" path="res://Sprites/Room Sprites/Main Room/bg.png" id="2_jc7mf"]
 [ext_resource type="Texture2D" uid="uid://cayhqrfmexqpk" path="res://Sprites/Room Sprites/Main Room/table.png" id="3_lb8vm"]
 [ext_resource type="Texture2D" uid="uid://b1afn03qron28" path="res://Sprites/Room Sprites/Main Room/monitor.png" id="4_6k4qw"]
-[ext_resource type="Texture2D" uid="uid://cltljmceqg6ex" path="res://Sprites/Room Sprites/Main Room/ekran.png" id="5_y2pek"]
+[ext_resource type="Texture2D" uid="uid://fnumo6inslyw" path="res://Sprites/Room Sprites/Main Room/CloverBackground.png" id="5_7g522"]
 [ext_resource type="Texture2D" uid="uid://bnlkhvcx71f4g" path="res://Sprites/Room Sprites/Main Room/dino_plant.png" id="6_imx6c"]
 [ext_resource type="Texture2D" uid="uid://clvbtxu0v4d7x" path="res://Sprites/Room Sprites/Main Room/cup.png" id="6_ldt57"]
 [ext_resource type="Texture2D" uid="uid://mtu5epur3wys" path="res://Sprites/Room Sprites/Main Room/sticky_notes.png" id="6_s3f8p"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qdi2cs4eqfn" path="res://Sprites/Room Sprites/Main Room/mis.png" id="12_qb13v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5n4g"]
-size = Vector2(1292.7207, 638.0204)
+size = Vector2(2588.9692, 1335.9834)
 
 [sub_resource type="GDScript" id="GDScript_r5n4g"]
 resource_name = "camera-zoom"
@@ -56,15 +56,17 @@ texture = ExtResource("4_6k4qw")
 
 [node name="Ekran" type="Sprite2D" parent="Bg/Stol/Monitor" unique_id=942437707]
 z_index = -5
-texture = ExtResource("5_y2pek")
+position = Vector2(-160, -188.99998)
+scale = Vector2(0.51918405, 0.51918405)
+texture = ExtResource("5_7g522")
 
 [node name="Area2D" type="Area2D" parent="Bg/Stol/Monitor/Ekran" unique_id=1486256685]
-position = Vector2(-155.00002, -183)
+position = Vector2(-7.7043915, -7.7044067)
 scale = Vector2(0.71941286, 0.7194128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bg/Stol/Monitor/Ekran/Area2D" unique_id=1590644400]
-position = Vector2(-13.9002075, -13.205231)
-scale = Vector2(1.0000001, 1)
+position = Vector2(-6.6932983, -1.338623)
+scale = Vector2(0.99999994, 0.9999999)
 shape = SubResource("RectangleShape2D_r5n4g")
 
 [node name="StickyNotes" type="Sprite2D" parent="Bg/Stol/Monitor" unique_id=1379578779]

@@ -25,6 +25,7 @@ texture_margin_bottom = 5.0
 [node name="Node2D" type="Control" unique_id=2037238352]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_i40fx")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=785709633]
@@ -58,6 +59,7 @@ offset_left = 217.0
 offset_top = 146.0
 offset_right = 637.0
 offset_bottom = 158.0
+mouse_filter = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=1412011585]
 texture_filter = 1
