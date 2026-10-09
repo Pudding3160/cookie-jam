@@ -65,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_tagft")
 words = Array[String](["embezzlement", "flabbergasted", "thorough", "consciousness", "conscientious", "embarrassment", "accommodation", "callousness", "bureaucracy", "mischievous", "abcess", "pronunciation", "silhouette", "narcissistic", "exacerbate", "exageratory", "reconnaissance"])
 duration = 30.0
@@ -81,6 +82,7 @@ offset_bottom = -1050.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=871365683]
 texture_filter = 1
@@ -99,6 +101,7 @@ offset_left = 9.0
 offset_top = 1.0
 offset_right = 159.0
 offset_bottom = 17.0
+mouse_filter = 2
 texture = ExtResource("3_37foa")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/NinePatchRect/TextureRect" unique_id=1867871309]
@@ -108,6 +111,7 @@ offset_left = -11.0
 offset_top = -6.0
 offset_right = 21.0
 offset_bottom = 26.0
+mouse_filter = 2
 texture = ExtResource("4_c02na")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/NinePatchRect" unique_id=692902888]
@@ -116,14 +120,17 @@ offset_left = 42.0
 offset_top = 43.0
 offset_right = 837.0
 offset_bottom = 218.0
+mouse_filter = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/NinePatchRect/MarginContainer" unique_id=1614980646]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="ProgressBar" type="ProgressBar" parent="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer" unique_id=1361887691]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxTexture_r5n4g")
 theme_override_styles/fill = SubResource("StyleBoxTexture_nyymt")
 value = 73.6
@@ -131,11 +138,13 @@ show_percentage = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer" unique_id=1425989761]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 24
 script = SubResource("GDScript_c02na")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer" unique_id=1880910941]
 layout_mode = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_r5n4g")
 theme_override_font_sizes/normal_font_size = 24
 text = "lorem ipsum"
@@ -144,6 +153,7 @@ script = SubResource("GDScript_nyymt")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer" unique_id=1640042852]
 layout_mode = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_r5n4g")
 theme_override_font_sizes/normal_font_size = 24
 text = "lorem ipsum"
@@ -152,6 +162,7 @@ script = SubResource("GDScript_nyymt")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer" unique_id=799702598]
 layout_mode = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_r5n4g")
 theme_override_font_sizes/normal_font_size = 24
 text = "lorem ipsum"

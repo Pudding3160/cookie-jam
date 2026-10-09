@@ -60,3 +60,4 @@ func game_won():
 	GlobalDistractionManager.set_click_modifier(click_modifier)
 	queue_free()
 	
+	

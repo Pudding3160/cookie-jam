@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b62yajgruhmg7"
-path="res://.godot/imported/genButton1.png-34ea0d33d357da82072693f24d1b114e.ctex"
+uid="uid://chfgvevdjkt0y"
+path="res://.godot/imported/BlueGinghamBackground.png-eaebaefac3afeeebf23303d711e90a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI Textures/genButton1.png"
-dest_files=["res://.godot/imported/genButton1.png-34ea0d33d357da82072693f24d1b114e.ctex"]
+source_file="res://Sprites/Room Sprites/Main Room/BlueGinghamBackground.png"
+dest_files=["res://.godot/imported/BlueGinghamBackground.png-eaebaefac3afeeebf23303d711e90a2a.ctex"]
 
 [params]
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://tcb60c23ndu6" path="res://Scenes/Borna/HonsGame/code/MainHorse.gd" id="1_i40fx"]
 [ext_resource type="PackedScene" uid="uid://c53v0ql05xryo" path="res://Scenes/Borna/HonsGame/ground.tscn" id="1_iig63"]
 [ext_resource type="Texture2D" uid="uid://bkfsgiwfibsy6" path="res://Sprites/HonsSprites/background.png" id="2_l0ogy"]
+[ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="2_rt1e8"]
 [ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="5_l0ogy"]
 [ext_resource type="Texture2D" uid="uid://b0nklll6qxf08" path="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-empty.png" id="7_rt1e8"]
@@ -25,7 +26,21 @@ texture_margin_bottom = 5.0
 [node name="Node2D" type="Control" unique_id=2037238352]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_i40fx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1624063426]
+texture_filter = 1
+layout_mode = 0
+offset_left = 121.0
+offset_top = 119.0
+offset_right = 734.0
+offset_bottom = 447.0
+texture = ExtResource("2_rt1e8")
+patch_margin_left = 68
+patch_margin_top = 68
+patch_margin_right = 68
+patch_margin_bottom = 68
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=785709633]
 texture_filter = 1
@@ -58,6 +73,7 @@ offset_left = 217.0
 offset_top = 146.0
 offset_right = 637.0
 offset_bottom = 158.0
+mouse_filter = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=1412011585]
 texture_filter = 1

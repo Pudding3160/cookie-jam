@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg24e2kdufcn2"
-path="res://.godot/imported/genButton2.png-02f29907c85d60f72d0fe8e68917593e.ctex"
+uid="uid://d34whllq7srca"
+path="res://.godot/imported/CookieLickerClick.png-a5ac39c19f627a952ca117ffef2a9aec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI Textures/genButton2.png"
-dest_files=["res://.godot/imported/genButton2.png-02f29907c85d60f72d0fe8e68917593e.ctex"]
+source_file="res://Sprites/Room Sprites/Main Room/CookieLickerClick.png"
+dest_files=["res://.godot/imported/CookieLickerClick.png-a5ac39c19f627a952ca117ffef2a9aec.ctex"]
 
 [params]
 
