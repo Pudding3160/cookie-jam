@@ -13,6 +13,7 @@ func scale_with_difficulty():
 func game_over(failed: bool) -> void:
 	if (failed):
 		GlobalStrikeManager.update_strikes(1);
+		GlobalDistractionManager.set_email_difficulty(true);
 	
 	GlobalDistractionManager.set_distraction_active_state(false);
 	queue_free()

@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfpitt0ectedy" path="res://Sprites/Room Sprites/Printer Room/printer-no-screen.png" id="2_oxi3q"]
 [ext_resource type="Texture2D" uid="uid://c4ijb1w4g5x5n" path="res://Sprites/Room Sprites/Printer Room/SwirlBackground.png" id="3_oakb5"]
 
-[node name="ServerRoom" type="Node2D" unique_id=60660254]
-script = ExtResource("1_uugk4")
-metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
+[node name="ServerRoom" type="Node" unique_id=449459026]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895745386]
 position = Vector2(820, 244)

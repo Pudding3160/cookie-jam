@@ -2,7 +2,7 @@ extends Node
 
 var time := 320.0
 var time_buffer: float;
-var time_decrease_modifer := .1; 
+var time_decrease_modifer := .1;
 
 func _ready() -> void:
 	time_buffer = time;
