@@ -14,6 +14,8 @@ func game_over(failed: bool) -> void:
 	if (failed):
 		GlobalStrikeManager.update_strikes(1);
 		GlobalDistractionManager.set_email_difficulty(true);
+	else:
+		GlobalSoundManager.play_mg_complete();
 	
 	GlobalDistractionManager.set_distraction_active_state(false);
 	queue_free()

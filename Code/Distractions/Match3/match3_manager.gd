@@ -15,6 +15,7 @@ var black_score: int
 @export var black_text: RichTextLabel
 @export var duration: float = 50
 @export var time_penalty: float = 10
+@onready var audio_collect := $Collect
 
 func _ready():
 	scale_with_difficulty();
@@ -47,6 +48,7 @@ func calculate_score() -> void:
 	if (magenta_score < 0): magenta_score = 0;
 	if (black_score < 0): black_score = 0;
 	update_text();
+	if (!audio_collect.playing): audio_collect.play();
 	if check_for_game_finished(): end_game(false);
 
 func update_text() -> void:
@@ -74,7 +76,7 @@ func scale_with_difficulty() -> void:
 	var diff: float = controller.get_difficulty();
 	duration = 6 * log(diff + 1.0) + duration;	# If time needs to be extended, increase duration; if the difficulty curve needs to be harder, increase the first number;
 	time_penalty = 15 * log(diff + 1.0) + time_penalty;	# If the time penalty needs to be increased, increase time_penalty; if the difficulty curve needs to be harder, increase the first number
-	score_needed = ceil(17 * log(diff + 1.0) + score_needed);
+	score_needed = ceil(15 * log(diff + 1.0) + score_needed);
 	set_color_scores();
 
 
@@ -88,4 +90,6 @@ func end_game(failed: bool) -> void:
 	if (failed):
 		GlobalStrikeManager.update_strikes(1);
 		TimerManager.update_time(time_penalty)
+	else:
+		GlobalSoundManager.play_match3_complete()
 	queue_free();

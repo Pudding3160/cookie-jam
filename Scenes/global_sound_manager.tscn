@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://be1pry56fhtvn"]
+
+[ext_resource type="AudioStream" uid="uid://bql52wmnfx8oj" path="res://Sounds/Minigame/MinigameLost.wav" id="1_fk6t3"]
+[ext_resource type="Script" uid="uid://dh2e45o6ro2u3" path="res://Code/global_sound_manager.gd" id="1_l8qw0"]
+[ext_resource type="AudioStream" uid="uid://gt55ftg5g736" path="res://Sounds/Time Penalty/TimePenalty.wav" id="2_l8qw0"]
+[ext_resource type="AudioStream" uid="uid://b2xfjclq2of2" path="res://Sounds/Match 3/Match3Success.wav" id="4_dmqya"]
+[ext_resource type="AudioStream" uid="uid://ct7o64ghkp0v0" path="res://Sounds/Minigame/MinigameWin.wav" id="5_5km8h"]
+
+[node name="GlobalSoundManager" type="Node" unique_id=1636964129]
+script = ExtResource("1_l8qw0")
+
+[node name="Fail Sound" type="AudioStreamPlayer2D" parent="." unique_id=1022491153]
+stream = ExtResource("1_fk6t3")
+
+[node name="Time Penalty Sound" type="AudioStreamPlayer2D" parent="." unique_id=937858084]
+stream = ExtResource("2_l8qw0")
+
+[node name="M3 Finish" type="AudioStreamPlayer2D" parent="." unique_id=926712057]
+stream = ExtResource("4_dmqya")
+
+[node name="Mini-game Finish" type="AudioStreamPlayer2D" parent="." unique_id=1927316718]
+stream = ExtResource("5_5km8h")
+volume_db = -2.5

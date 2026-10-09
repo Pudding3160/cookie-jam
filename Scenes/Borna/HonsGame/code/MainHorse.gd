@@ -80,6 +80,7 @@ func hit_obs(body):
 	
 func game_won():	
 	GlobalDistractionManager.set_distraction_active_state(false);
+	GlobalSoundManager.play_mg_complete();
 	speed=0
 	queue_free()
 	

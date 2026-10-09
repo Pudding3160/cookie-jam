@@ -67,6 +67,7 @@ columns = 5
 script = ExtResource("1_qoddk")
 
 [node name="Button" type="TextureButton" parent="GridContainer" unique_id=423245142]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -74,6 +75,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button2" type="TextureButton" parent="GridContainer" unique_id=1463745066]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -81,6 +83,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button3" type="TextureButton" parent="GridContainer" unique_id=318780894]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -88,6 +91,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button4" type="TextureButton" parent="GridContainer" unique_id=740322342]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -95,6 +99,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button5" type="TextureButton" parent="GridContainer" unique_id=1359282686]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -102,6 +107,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button6" type="TextureButton" parent="GridContainer" unique_id=1909291852]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -109,6 +115,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button7" type="TextureButton" parent="GridContainer" unique_id=615679123]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -116,6 +123,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button8" type="TextureButton" parent="GridContainer" unique_id=1630802643]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -123,6 +131,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button9" type="TextureButton" parent="GridContainer" unique_id=1496627910]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -130,6 +139,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button10" type="TextureButton" parent="GridContainer" unique_id=1942406432]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -137,6 +147,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button11" type="TextureButton" parent="GridContainer" unique_id=1647235506]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -144,6 +155,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button12" type="TextureButton" parent="GridContainer" unique_id=1497922135]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -151,6 +163,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button13" type="TextureButton" parent="GridContainer" unique_id=1458095136]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -158,6 +171,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button14" type="TextureButton" parent="GridContainer" unique_id=911257366]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -165,6 +179,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button15" type="TextureButton" parent="GridContainer" unique_id=1119100835]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -172,6 +187,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button16" type="TextureButton" parent="GridContainer" unique_id=50719625]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -179,6 +195,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button17" type="TextureButton" parent="GridContainer" unique_id=1088289235]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -186,6 +203,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button18" type="TextureButton" parent="GridContainer" unique_id=1172194050]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -193,6 +211,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button19" type="TextureButton" parent="GridContainer" unique_id=2023093484]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -200,6 +219,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button20" type="TextureButton" parent="GridContainer" unique_id=1643080526]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -207,6 +227,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button21" type="TextureButton" parent="GridContainer" unique_id=2000792516]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -214,6 +235,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button22" type="TextureButton" parent="GridContainer" unique_id=432419045]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -221,6 +243,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button23" type="TextureButton" parent="GridContainer" unique_id=1173152596]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -228,6 +251,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button24" type="TextureButton" parent="GridContainer" unique_id=156190636]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
@@ -235,6 +259,7 @@ texture_normal = ExtResource("3_4uaa7")
 texture_hover = ExtResource("4_e7065")
 
 [node name="Button25" type="TextureButton" parent="GridContainer" unique_id=1794871307]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
