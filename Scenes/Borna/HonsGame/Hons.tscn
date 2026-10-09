@@ -5,11 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://bkfsgiwfibsy6" path="res://Sprites/HonsSprites/background.png" id="2_l0ogy"]
 [ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
 [ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="5_l0ogy"]
-[ext_resource type="FontFile" uid="uid://833awkevx314" path="res://Font/AveriaLibre/AveriaLibre-Bold.ttf" id="5_pbqp2"]
+[ext_resource type="Texture2D" uid="uid://b0nklll6qxf08" path="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-empty.png" id="7_rt1e8"]
+[ext_resource type="Texture2D" uid="uid://bl5yej0r0gr3d" path="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-full.png" id="8_g1psb"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pbqp2"]
-font_size = 24
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8q7j7"]
+texture = ExtResource("7_rt1e8")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 8.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajf5h"]
+texture = ExtResource("8_g1psb")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
 
 [node name="Node2D" type="Control" unique_id=2037238352]
 layout_mode = 3
@@ -17,6 +28,7 @@ anchors_preset = 0
 script = ExtResource("1_i40fx")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=785709633]
+texture_filter = 1
 position = Vector2(427, 290)
 texture = ExtResource("2_l0ogy")
 
@@ -27,23 +39,35 @@ position = Vector2(-112, 0)
 position = Vector2(578, 325)
 
 [node name="HonsChar" parent="." unique_id=1616022542 instance=ExtResource("3_swgoe")]
+texture_filter = 1
 position = Vector2(325, 409)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=941570388]
+texture_filter = 1
 position = Vector2(700, 414)
 
 [node name="Timer" type="Timer" parent="." unique_id=76687184]
 one_shot = true
 
-[node name="Label" type="Label" parent="." unique_id=1548189991]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 163.0
-offset_right = 182.0
-offset_bottom = 186.0
-theme_override_fonts/font = ExtResource("5_pbqp2")
-label_settings = SubResource("LabelSettings_pbqp2")
-
 [node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("5_l0ogy")]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1428703661]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 146.0
+offset_right = 637.0
+offset_bottom = 158.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=1412011585]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_8q7j7")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ajf5h")
+value = 50.0
+show_percentage = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
