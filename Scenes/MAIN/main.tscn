@@ -19,7 +19,7 @@
 current_room_type = 1
 
 [node name="EmailController" parent="." unique_id=1587489003 instance=ExtResource("2_6j7wv")]
-interval = 4
+interval = 42
 difficulty = 20
 max_rand_num = 50
 check_for_active_room = true
@@ -39,7 +39,6 @@ difficulty = 10
 check_for_other_distractions = false
 
 [node name="CoffeeController" parent="." unique_id=1479632043 instance=ExtResource("6_5b5k4")]
-interval = 1
 difficulty = 20
 distraction_scene = ExtResource("7_t3iea")
 active_room = 1
