@@ -27,7 +27,7 @@ func check_for_valid_activity() -> bool:
 
 func set_children_state(active: bool) -> void:
 	if (get_child_count() == 0): return;
-	var child := get_child(0);
-	if (child == null): return;
-	if (active): child.show();
-	else: child.hide();
+	for child in get_children():
+		if (child == null): continue;
+		if (active): child.show();
+		else: child.hide();
