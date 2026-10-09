@@ -33,7 +33,7 @@ interval = 80
 check_for_active_room = true
 
 [node name="Match3Controller" parent="." unique_id=1161232812 instance=ExtResource("5_n2fwa")]
-interval = 1
+interval = 60
 difficulty = 20
 check_for_other_distractions = false
 

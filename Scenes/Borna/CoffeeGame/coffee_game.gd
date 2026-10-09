@@ -5,10 +5,11 @@ var can_spawn:=true
 var winscore
 #vars
 const hons_start_pos := Vector2i(310,423)
-@onready var score_label := $ScoreLabel
-@onready var label := $Label
+@onready var score_label := $MarginContainer/HBoxContainer/ScoreLabel
+@onready var label := $MarginContainer/HBoxContainer/Label
 @export var left_edge: Node2D
 @export var right_edge: Node2D
+@export var click_modifier := 2.0
 
 var score := 0
 
@@ -56,5 +57,6 @@ func add_score():
 		
 		
 func game_won():
+	GlobalDistractionManager.set_click_modifier(click_modifier)
 	queue_free()
 	
