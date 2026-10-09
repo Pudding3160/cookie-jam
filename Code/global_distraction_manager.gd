@@ -8,6 +8,7 @@ enum EmailDifficulty {
 var is_any_distraction_active := false;
 var email_difficulty := EmailDifficulty.EASY
 var time_decrease_modifier := 1.0;
+var warning_active := false;
 
 ### ================== ###
 ### DISTRACTION ACTIVE ###
@@ -37,3 +38,7 @@ func set_time_decrease_modifier(modifier: float) -> void:
 
 func get_time_decrease_modifier() -> float:
 	return time_decrease_modifier;
+
+
+func set_warning(active: bool):
+	warning_active = active;
