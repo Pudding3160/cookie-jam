@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dgc8k5ujt8itl"]
+
+[node name="DangerIcon" type="CanvasLayer" unique_id=553587090]
+
+[node name="Control" type="Control" parent="." unique_id=1588346190]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1073750015]
+layout_mode = 0
+offset_left = 1745.0
+offset_top = 478.0
+offset_right = 1913.0
+offset_bottom = 646.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer" unique_id=455006817]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=2088334195]
+wait_time = 0.5
+one_shot = true
+autostart = true

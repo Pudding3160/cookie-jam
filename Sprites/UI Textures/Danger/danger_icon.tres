@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://8mcvg56vsu8q"]
+
+[ext_resource type="Texture2D" uid="uid://b2rf6j47qxfjj" path="res://Sprites/UI Textures/Danger/danger.png" id="1_gmicm"]
+[ext_resource type="Texture2D" uid="uid://chmco7xkgd5hy" path="res://Sprites/UI Textures/Danger/dangerReversed.png" id="2_w5jb0"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_gmicm")
+frame_0/duration = 0.07
+frame_1/texture = ExtResource("2_w5jb0")
+frame_1/duration = 0.07
