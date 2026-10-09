@@ -4,6 +4,7 @@ var max_strikes := 5
 var current_strikes := 0
 
 func update_strikes(delta: int) -> void:
+	if (delta > 0): GlobalSoundManager.play_fail();
 	current_strikes += delta;
 	
 func get_current_strikes() -> int:

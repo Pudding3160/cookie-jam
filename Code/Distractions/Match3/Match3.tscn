@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btbffa778t4ee" path="res://Sprites/UI Textures/panel_background_small.tres" id="4_m5xqt"]
 [ext_resource type="Texture2D" uid="uid://3jojoe80hhcw" path="res://Sprites/UI Textures/Match 3 Timer/progress-bar-m3-empty.png" id="4_wtcak"]
 [ext_resource type="Texture2D" uid="uid://hn6n5hdq6jou" path="res://Sprites/UI Textures/Match 3 Timer/progress-bar-m3-full.png" id="5_ew767"]
+[ext_resource type="AudioStream" uid="uid://bcn3omsxcdpsa" path="res://Sounds/Match 3/Match3Swipe.wav" id="7_i4xu5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4xu5"]
 texture = ExtResource("4_wtcak")
@@ -120,27 +121,34 @@ theme_override_constants/separation = 16
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1094745791]
 layout_mode = 2
+theme_override_constants/outline_size = 2
 bbcode_enabled = true
 text = "Cyan required: "
 fit_content = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1139801992]
 layout_mode = 2
+theme_override_constants/outline_size = 2
 bbcode_enabled = true
 text = "Yellow required: "
 fit_content = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1865369552]
 layout_mode = 2
+theme_override_constants/outline_size = 2
 bbcode_enabled = true
 text = "Magenta required: "
 fit_content = true
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer" unique_id=1090289648]
 layout_mode = 2
+theme_override_constants/outline_size = 2
 bbcode_enabled = true
 text = "Black required: "
 fit_content = true
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="." unique_id=221264159]
+stream = ExtResource("7_i4xu5")
 
 [connection signal="timeout" from="DestroyTimer" to="Grid" method="_on_destroy_timer_timeout"]
 [connection signal="timeout" from="CollapseTimer" to="Grid" method="_on_collapse_timer_timeout"]

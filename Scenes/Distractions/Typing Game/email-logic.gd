@@ -108,6 +108,8 @@ func end_game(failed: bool) -> void:
 	if (failed):
 		TimerManager.update_time(time_penalty);
 		GlobalStrikeManager.update_strikes(1);
+	else:
+		GlobalSoundManager.play_mg_complete();
 	queue_free();
 
 

@@ -176,5 +176,6 @@ script = SubResource("GDScript_nyymt")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=864259373]
 stream = SubResource("AudioStreamWAV_hoaf4")
+volume_db = -5.0
 
 [connection signal="completed" from="PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer" to="." method="_on_v_box_container_completed"]

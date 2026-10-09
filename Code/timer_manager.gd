@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 	update_time(-delta * time_decrease_modifer);
 
 
-func update_time(delta: float):
+func update_time(delta: float, is_penalty := false):
+	if is_penalty: GlobalSoundManager.play_penalty();
 	time_buffer += delta;
 
 func get_current_time() -> float:
