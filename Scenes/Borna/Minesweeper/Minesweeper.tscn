@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://fb8rpf2svg1d" path="res://Scenes/Borna/Minesweeper/minesweeper.gd" id="1_on8nw"]
 [ext_resource type="Script" uid="uid://wcrmhf0scv2f" path="res://Scenes/Borna/Minesweeper/gridcontainer_ms.gd" id="1_qoddk"]
+[ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="2_6xi4o"]
 [ext_resource type="Texture2D" uid="uid://dikas3lfhj2yt" path="res://Scenes/Borna/Minesweeper/Sweepersprites/covered.png" id="3_4uaa7"]
 [ext_resource type="AudioStream" uid="uid://bujf2v2hrkpbs" path="res://Scenes/Borna/BORNA TESTING/TEMPSOUNDS/click.mp3" id="3_hk2du"]
+[ext_resource type="Texture2D" uid="uid://ba5aavaylaaaq" path="res://Sprites/UI Textures/bomb-cleaner.png" id="3_ub4je"]
+[ext_resource type="Texture2D" uid="uid://ct76lsyy3hw1s" path="res://Sprites/UI Textures/bomb.png" id="4_31hpm"]
 [ext_resource type="Texture2D" uid="uid://r2br2kgqkudl" path="res://Scenes/Borna/Minesweeper/Sweepersprites/coveredhover.png" id="4_e7065"]
 [ext_resource type="AudioStream" uid="uid://ca3omsffu3ud7" path="res://Scenes/Borna/BORNA TESTING/TEMPSOUNDS/msgameover.mp3" id="4_eqtj0"]
 
@@ -15,6 +18,37 @@ script = ExtResource("1_on8nw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1530210954]
 visible = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=221642022]
+texture_filter = 1
+offset_left = -157.0
+offset_top = -169.0
+offset_right = 155.0
+offset_bottom = 159.0
+texture = ExtResource("2_6xi4o")
+region_rect = Rect2(0, 0, 192, 192)
+patch_margin_left = 65
+patch_margin_top = 75
+patch_margin_right = 67
+patch_margin_bottom = 65
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect" unique_id=1147592798]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 1.0
+offset_right = 174.0
+offset_bottom = 17.0
+texture = ExtResource("3_ub4je")
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/TextureRect" unique_id=1546510605]
+texture_filter = 1
+layout_mode = 0
+offset_left = -25.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 25.0
+texture = ExtResource("4_31hpm")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=314917545]
 anchors_preset = 8
