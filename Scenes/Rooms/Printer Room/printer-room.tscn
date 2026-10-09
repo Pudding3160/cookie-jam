@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://qfla867405x7"]
 
 [ext_resource type="Script" uid="uid://u5wkdcr1hrfx" path="res://Code/room.gd" id="1_uugk4"]
-[ext_resource type="Texture2D" uid="uid://gkp4i1ino4ay" path="res://Sprites/Room Sprites/Printer Room/printer.png" id="2_6qvsm"]
+[ext_resource type="Texture2D" uid="uid://bfpitt0ectedy" path="res://Sprites/Room Sprites/Printer Room/printer-no-screen.png" id="2_oxi3q"]
+[ext_resource type="Texture2D" uid="uid://c4ijb1w4g5x5n" path="res://Sprites/Room Sprites/Printer Room/SwirlBackground.png" id="3_oakb5"]
 
 [node name="ServerRoom" type="Node2D" unique_id=60660254]
 script = ExtResource("1_uugk4")
@@ -10,4 +11,10 @@ metadata/_custom_type_script = "uid://u5wkdcr1hrfx"
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1895745386]
 position = Vector2(820, 244)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_6qvsm")
+texture = ExtResource("2_oxi3q")
+
+[node name="SwirlBackground" type="Sprite2D" parent="Sprite2D" unique_id=1033489928]
+z_index = -1
+position = Vector2(41.99999, 308)
+scale = Vector2(0.37685186, 0.37685186)
+texture = ExtResource("3_oakb5")

@@ -4,22 +4,22 @@
 [ext_resource type="Script" uid="uid://lq3grb3rpo2m" path="res://Code/Distractions/Match3/match3_manager.gd" id="1_jvixj"]
 [ext_resource type="Script" uid="uid://d17y2fro4ove6" path="res://Code/Distractions/Match3/color_score_multiplier.gd" id="3_m5xqt"]
 [ext_resource type="Texture2D" uid="uid://btbffa778t4ee" path="res://Sprites/UI Textures/panel_background_small.tres" id="4_m5xqt"]
-[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/Window Timer/progress-bar-empty.png" id="4_wtcak"]
-[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/Window Timer/progress-bar-full.png" id="5_ew767"]
+[ext_resource type="Texture2D" uid="uid://3jojoe80hhcw" path="res://Sprites/UI Textures/Match 3 Timer/progress-bar-m3-empty.png" id="4_wtcak"]
+[ext_resource type="Texture2D" uid="uid://hn6n5hdq6jou" path="res://Sprites/UI Textures/Match 3 Timer/progress-bar-m3-full.png" id="5_ew767"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4xu5"]
 texture = ExtResource("4_wtcak")
-texture_margin_left = 6.0
-texture_margin_top = 5.0
+texture_margin_left = 8.0
+texture_margin_top = 8.0
 texture_margin_right = 8.0
-texture_margin_bottom = 5.0
+texture_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3paph"]
 texture = ExtResource("5_ew767")
-texture_margin_left = 6.0
-texture_margin_top = 5.0
-texture_margin_right = 6.0
-texture_margin_bottom = 5.0
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
 
 [node name="Match3" type="Node2D" unique_id=829428825 node_paths=PackedStringArray("csm", "cyan_text", "yellow_text", "magenta_text", "black_text")]
 script = ExtResource("1_jvixj")
