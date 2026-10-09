@@ -4,6 +4,7 @@ extends Control
 @export var active_room: RoomsEnum.Room_Type
 var room_manager: RoomManager;
 
+
 func _ready() -> void:
 	var node := get_node("/root/Main/RoomManager");
 	if (node != null): room_manager = node as RoomManager;

@@ -1,13 +1,16 @@
 extends Node
 
-enum EmailDifficulty {
-	EASY,
-	HARD
-}
-
 var is_any_distraction_active := false;
-var email_difficulty := EmailDifficulty.EASY
+var is_email_hard_mode := false
 var time_decrease_modifier := 1.0;
+var click_modifier := 1.0;
+var min_click_mod := .05;
+var max_click_mod := 1.5;
+
+
+func _process(delta: float) -> void:
+	update_click_modifier(delta / 100);
+
 
 ### ================== ###
 ### DISTRACTION ACTIVE ###
@@ -22,11 +25,11 @@ func get_distraction_active_state() -> bool:
 ### ================ ###
 ### EMAIL DIFFICULTY ###
 ### ================ ###
-func set_email_difficulty(difficulty: EmailDifficulty) -> void:
-	email_difficulty = difficulty;
+func set_email_difficulty(is_hard_mode: bool) -> void:
+	is_email_hard_mode = is_hard_mode;
 	
-func get_email_difficulty() -> EmailDifficulty:
-	return email_difficulty;
+func get_email_difficulty() -> bool:
+	return is_email_hard_mode;
 
 
 ### ================== ###
@@ -37,3 +40,21 @@ func set_time_decrease_modifier(modifier: float) -> void:
 
 func get_time_decrease_modifier() -> float:
 	return time_decrease_modifier;
+
+
+### ======================= ###
+### CLICK MODIFIER DECREASE ###
+### ======================= ###
+func update_click_modifier(delta: float) -> void:
+	if click_modifier < min_click_mod:
+		click_modifier = min_click_mod;
+		return;
+	click_modifier -= delta;
+	
+func set_click_modifier(value: float):
+	if value > max_click_mod:
+		value = max_click_mod
+	click_modifier = value;
+	
+func get_click_modifier() -> float:
+	return click_modifier;

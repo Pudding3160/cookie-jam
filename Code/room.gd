@@ -1,4 +1,4 @@
-class_name Room extends Node2D
+class_name Room extends Node
 
 #@export var has_task := true;
 #@export var cooldown: float;
