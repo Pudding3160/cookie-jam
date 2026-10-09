@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b273ohiahgna1" path="res://Ian/Distractions/Typing Game/email-logic.gd" id="1_3f12i"]
 [ext_resource type="FontFile" uid="uid://833awkevx314" path="res://Font/AveriaLibre/AveriaLibre-Bold.ttf" id="2_7rvyo"]
 [ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="3_6qq1r"]
-[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/progress-bar-empty.png" id="3_we6ld"]
-[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/progress-bar-full.png" id="4_brgkr"]
+[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/Window Timer/progress-bar-empty.png" id="3_we6ld"]
+[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/Window Timer/progress-bar-full.png" id="4_brgkr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3iea"]
 texture = ExtResource("3_we6ld")

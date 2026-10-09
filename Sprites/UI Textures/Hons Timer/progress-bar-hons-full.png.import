@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb1h6l4inufi7"
-path="res://.godot/imported/progress-bar-full.png-6b6ffa5f5ca05c4f398792239c713c5e.ctex"
+uid="uid://bl5yej0r0gr3d"
+path="res://.godot/imported/progress-bar-hons-full.png-d4b93b9768b2f6d40888576074416ca1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI Textures/progress-bar-full.png"
-dest_files=["res://.godot/imported/progress-bar-full.png-6b6ffa5f5ca05c4f398792239c713c5e.ctex"]
+source_file="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-full.png"
+dest_files=["res://.godot/imported/progress-bar-hons-full.png-d4b93b9768b2f6d40888576074416ca1.ctex"]
 
 [params]
 

@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://lq3grb3rpo2m" path="res://Code/Distractions/Match3/match3_manager.gd" id="1_jvixj"]
 [ext_resource type="Script" uid="uid://d17y2fro4ove6" path="res://Code/Distractions/Match3/color_score_multiplier.gd" id="3_m5xqt"]
 [ext_resource type="Texture2D" uid="uid://btbffa778t4ee" path="res://Sprites/UI Textures/panel_background_small.tres" id="4_m5xqt"]
-[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/progress-bar-empty.png" id="4_wtcak"]
-[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/progress-bar-full.png" id="5_ew767"]
+[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/Window Timer/progress-bar-empty.png" id="4_wtcak"]
+[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/Window Timer/progress-bar-full.png" id="5_ew767"]
 
 [sub_resource type="Gradient" id="Gradient_b5vi4"]
 offsets = PackedFloat32Array(0, 0.2695783, 0.69728917, 1)
