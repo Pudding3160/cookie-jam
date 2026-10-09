@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://lq3grb3rpo2m" path="res://Code/Distractions/Match3/match3_manager.gd" id="1_jvixj"]
 [ext_resource type="Script" uid="uid://d17y2fro4ove6" path="res://Code/Distractions/Match3/color_score_multiplier.gd" id="3_m5xqt"]
 [ext_resource type="Texture2D" uid="uid://btbffa778t4ee" path="res://Sprites/UI Textures/panel_background_small.tres" id="4_m5xqt"]
+[ext_resource type="Texture2D" uid="uid://bv44qeomkkf11" path="res://Sprites/UI Textures/progress-bar-empty.png" id="4_wtcak"]
+[ext_resource type="Texture2D" uid="uid://cb1h6l4inufi7" path="res://Sprites/UI Textures/progress-bar-full.png" id="5_ew767"]
 
 [sub_resource type="Gradient" id="Gradient_b5vi4"]
 offsets = PackedFloat32Array(0, 0.2695783, 0.69728917, 1)
@@ -12,6 +14,20 @@ colors = PackedColorArray(0.5559712, 0.7008478, 1, 1, 1, 1, 1, 1, 0.93227804, 0.
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_4y1mt"]
 gradient = SubResource("Gradient_b5vi4")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4xu5"]
+texture = ExtResource("4_wtcak")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 8.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3paph"]
+texture = ExtResource("5_ew767")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 6.0
+texture_margin_bottom = 5.0
 
 [node name="Match3" type="Node2D" unique_id=829428825 node_paths=PackedStringArray("csm", "cyan_text", "yellow_text", "magenta_text", "black_text")]
 script = ExtResource("1_jvixj")
@@ -80,9 +96,15 @@ theme_override_constants/margin_left = 34
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 288
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer/MarginContainer2" unique_id=1668541533]
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer/MarginContainer2" unique_id=1880367743]
+texture_filter = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_i4xu5")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3paph")
+value = 50.0
 show_percentage = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer" unique_id=1321812158]
