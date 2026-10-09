@@ -1,6 +1,12 @@
 extends Node2D
 var coffee := preload("res://Scenes/Borna/CoffeeGame/Coffee.tscn")
-var obstacle_types:=[coffee]
+var loops := preload("res://Scenes/Borna/CoffeeGame/fruit_loop.tscn")
+var sugar := preload("res://Scenes/Borna/CoffeeGame/Sugar.tscn")
+var obstacle_types:=[
+	coffee,
+	loops,
+	sugar
+]
 var can_spawn:=true
 var winscore
 #vars
@@ -38,8 +44,8 @@ func gen_obs():
 		var timer := randf_range(0.5,0.9)
 		await get_tree().create_timer(timer).timeout
 		
-		#var obs_type=obstacle_types[randi()%obstacle_types.size()]
-		var obs := coffee.instantiate()
+		var obs_type: PackedScene = obstacle_types[randi()%obstacle_types.size()]
+		var obs := obs_type.instantiate()
 		add_child(obs)
 
 		var x := randf_range(left_edge.position.x, right_edge.position.x)

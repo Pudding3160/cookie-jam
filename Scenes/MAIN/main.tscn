@@ -39,6 +39,7 @@ difficulty = 10
 check_for_other_distractions = false
 
 [node name="CoffeeController" parent="." unique_id=1479632043 instance=ExtResource("6_5b5k4")]
+interval = 1
 difficulty = 20
 distraction_scene = ExtResource("7_t3iea")
 active_room = 1

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bhvxhupyi73nt" path="res://Scenes/Borna/CoffeeGame/coffee_game.gd" id="1_cal73"]
 [ext_resource type="PackedScene" uid="uid://ko2pt8tqdrox" path="res://Scenes/Borna/CoffeeGame/coffee_char.tscn" id="2_32l4b"]
 [ext_resource type="Texture2D" uid="uid://drrjoeliq4rce" path="res://Scenes/Borna/CoffeeGame/coffeetemp.png" id="2_cal73"]
-[ext_resource type="PackedScene" uid="uid://cj1fk4f88prfb" path="res://Scenes/Borna/CoffeeGame/Coffee.tscn" id="3_32l4b"]
 [ext_resource type="FontFile" uid="uid://bforhk8nk0fsu" path="res://Font/AveriaLibre/AveriaLibre-Regular.ttf" id="5_re7eh"]
 
 [sub_resource type="FontVariation" id="FontVariation_cal73"]
@@ -14,9 +13,9 @@ script = ExtResource("1_cal73")
 left_edge = NodePath("BoxRef/Left")
 right_edge = NodePath("BoxRef/Right")
 
-[node name="Coffeetemp" type="Sprite2D" parent="." unique_id=923155274]
-position = Vector2(960, 379)
-scale = Vector2(1.05, 1.05)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1272319609]
+position = Vector2(960, 370)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_cal73")
 
 [node name="CoffeeChar" parent="." unique_id=1537344380 node_paths=PackedStringArray("left_edge", "right_edge") instance=ExtResource("2_32l4b")]
@@ -39,13 +38,10 @@ position = Vector2(1257.5, 42)
 [node name="TopRight" type="Node2D" parent="BoxRef" unique_id=841697782]
 position = Vector2(657.5, 41)
 
-[node name="Node2D" parent="." unique_id=576018206 instance=ExtResource("3_32l4b")]
-position = Vector2(957.5, 379)
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1776981525]
 offset_left = 657.0
 offset_top = 83.0
-offset_right = 885.0
+offset_right = 987.0
 offset_bottom = 158.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=223431678]
@@ -56,12 +52,12 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_cal73")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "left"
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1063786986]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_cal73")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "score"
