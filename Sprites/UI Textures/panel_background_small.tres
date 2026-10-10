@@ -1,7 +1,7 @@
 [gd_resource type="AnimatedTexture" format=3 uid="uid://btbffa778t4ee"]
 
-[ext_resource type="Texture2D" uid="uid://bx1wblhxfj63s" path="res://Sprites/UI Textures/genButtonex2.png" id="1_hhho2"]
-[ext_resource type="Texture2D" uid="uid://b3uw5w1b6hngj" path="res://Sprites/UI Textures/genButtonex21.png" id="2_k2q4g"]
+[ext_resource type="Texture2D" uid="uid://xxuqmve6a0sd" path="res://Sprites/UI Textures/genButtonex2.png" id="1_hhho2"]
+[ext_resource type="Texture2D" uid="uid://cwhdojxeuxfs6" path="res://Sprites/UI Textures/genButtonex21.png" id="2_k2q4g"]
 
 [resource]
 frames = 2
