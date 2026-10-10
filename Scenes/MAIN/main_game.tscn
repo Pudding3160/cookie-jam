@@ -34,6 +34,7 @@ max_rand_num = 50
 check_for_active_room = true
 
 [node name="HonsController" parent="." unique_id=459550278 instance=ExtResource("3_ddboy")]
+interval = 38
 difficulty = 5
 check_for_active_room = true
 
@@ -47,7 +48,7 @@ difficulty = 10
 check_for_other_distractions = false
 
 [node name="CoffeeController" parent="." unique_id=1479632043 instance=ExtResource("6_qn4i6")]
-interval = 1
+interval = 10
 difficulty = 20
 distraction_scene = ExtResource("7_ywhef")
 active_room = 1
