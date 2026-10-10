@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bkfsgiwfibsy6" path="res://Sprites/HonsSprites/background.png" id="2_l0ogy"]
 [ext_resource type="Texture2D" uid="uid://dr0m5b5hq2cqn" path="res://Sprites/UI Textures/window-9slice.png" id="2_rt1e8"]
 [ext_resource type="PackedScene" uid="uid://bry5jmi028e6a" path="res://Scenes/Borna/HonsGame/HonsChar.tscn" id="3_swgoe"]
-[ext_resource type="PackedScene" uid="uid://cpp68tkmmsj88" path="res://Scenes/room-manager.tscn" id="5_l0ogy"]
 [ext_resource type="Texture2D" uid="uid://b0nklll6qxf08" path="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-empty.png" id="7_rt1e8"]
 [ext_resource type="Texture2D" uid="uid://bl5yej0r0gr3d" path="res://Sprites/UI Textures/Hons Timer/progress-bar-hons-full.png" id="8_g1psb"]
 
@@ -63,9 +62,6 @@ position = Vector2(700, 414)
 
 [node name="Timer" type="Timer" parent="." unique_id=76687184]
 one_shot = true
-
-[node name="RoomManager" parent="." unique_id=259202658 instance=ExtResource("5_l0ogy")]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1428703661]
 layout_mode = 0

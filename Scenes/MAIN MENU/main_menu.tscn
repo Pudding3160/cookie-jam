@@ -16,10 +16,7 @@ script/source = "extends Button
 func _on_pressed() -> void:
 	var result = await SceneTransition.fade_in();
 	if result:
-		var scene := next_scene.instantiate();
-		get_tree().root.add_child(scene);
-		SceneTransition.fade_out(false);
-		root.queue_free();
+		print(\"done\")
 "
 
 [sub_resource type="GDScript" id="GDScript_r5n4g"]

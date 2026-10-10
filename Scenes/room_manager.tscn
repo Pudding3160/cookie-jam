@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dgoaucmcjukvp"]
+
+[ext_resource type="Script" uid="uid://dp555pdraov04" path="res://Code/Room logic/room_manager.gd" id="1_lthvl"]
+
+[node name="RoomManager" type="Node" unique_id=997167194]
+script = ExtResource("1_lthvl")
+current_room_type = 1
