@@ -6,5 +6,4 @@
 [node name="HonsController" type="Node" unique_id=459550278]
 script = ExtResource("1_vewfv")
 interval = 1
-difficulty = 15
 distraction_scene = ExtResource("2_bhcp3")

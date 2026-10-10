@@ -10,6 +10,7 @@ var max_click_mod := 1.5;
 
 
 func _process(delta: float) -> void:
+	if is_any_distraction_active: return;	# Don't decrease the modifier while a cubicle mini-game is active; Qof change, but it *does* affect difficulty
 	update_click_modifier(delta / 20);
 
 

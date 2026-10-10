@@ -49,10 +49,6 @@ texture = ExtResource("2_l0ogy")
 [node name="Ground" parent="." unique_id=1851720191 instance=ExtResource("1_iig63")]
 position = Vector2(-112, 0)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=822775577]
-visible = false
-position = Vector2(578, 325)
-
 [node name="HonsChar" parent="." unique_id=1616022542 instance=ExtResource("3_swgoe")]
 texture_filter = 1
 position = Vector2(325, 409)

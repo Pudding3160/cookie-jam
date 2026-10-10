@@ -25,9 +25,11 @@ func scale_with_difficulty() -> void:
 	var node := get_parent();
 	var controller := node as DistractionControllerBase;
 	var diff: float = controller.get_difficulty(); 
-	speed=5+diff*0.03
-	maxspawngap= 1.2-(0.02*diff);
+	speed=2+diff*0.03
+	maxspawngap= 1.25-(0.02*diff);
+	print(maxspawngap)
 	timer.wait_time=8.0+(diff*0.3)
+	print(timer.wait_time)
 	set_timer();
 
 
@@ -57,7 +59,7 @@ func gen_obs():
 	
 	if can_spawn:
 		can_spawn=false
-		var timer := randf_range(0.55,maxspawngap)
+		var timer := randf_range(0.7,maxspawngap)
 		await get_tree().create_timer(timer).timeout
 		
 		var obs_type=obstacle_types[randi()%obstacle_types.size()]

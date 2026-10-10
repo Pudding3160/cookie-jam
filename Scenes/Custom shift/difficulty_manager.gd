@@ -1,7 +1,7 @@
 extends Node
 
-var diffCoffee: int=1
-var diffmatch3: int=2
-var diffhons: int=3
-var diffbomb: int=4
-var diffemail: int =5
+@export var diffCoffee :=1
+@export var diffmatch3 :=2
+@export var diffhons :=3
+@export var diffbomb :=4
+@export var diffemail : =5

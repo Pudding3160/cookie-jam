@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="cookie-jam"
-run/main_scene="uid://lbnjejiorve4"
+run/main_scene="uid://cgkl4wled0cxi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
