@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://di7d07nivshx0"
+path="res://.godot/imported/bell ding 3.wav [611111].mp3-2f6bd9e8517bd9aba47b1a344c3fd285.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Coffee/bell ding 3.wav [611111].mp3"
+dest_files=["res://.godot/imported/bell ding 3.wav [611111].mp3-2f6bd9e8517bd9aba47b1a344c3fd285.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
