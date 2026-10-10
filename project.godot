@@ -24,6 +24,7 @@ GlobalSoundManager="*uid://be1pry56fhtvn"
 SceneTransition="*uid://dckax87qb371f"
 RoomManager="*uid://dgoaucmcjukvp"
 DifficultyManager="*uid://dmqa8s5xfmkom"
+YoureFired="*uid://ba2yad831acg5"
 
 [display]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://fujk2w1crmxt" path="res://Scenes/Custom shift/custom_shift.gd" id="1_0q4aa"]
 [ext_resource type="Texture2D" uid="uid://db5cknm5hhdve" path="res://Sprites/UI Textures/Arrow1.png" id="1_14y8w"]
 [ext_resource type="Texture2D" uid="uid://kkq4ji0sjl1s" path="res://Sprites/CoffeeTempArt/coffe_cup_closed.png" id="1_47buj"]
-[ext_resource type="PackedScene" uid="uid://lbnjejiorve4" path="res://Scenes/MAIN/main_game.tscn" id="2_vt8j1"]
+[ext_resource type="PackedScene" uid="uid://b1jyb0038stvv" path="res://Scenes/Cutscenes/intro.tscn" id="2_vt8j1"]
 [ext_resource type="Texture2D" uid="uid://cu3sxqyecwf7x" path="res://Sprites/Room Sprites/Printer Room/YellowCookie.png" id="2_yf61y"]
 [ext_resource type="Script" uid="uid://cacki71dse8kg" path="res://Katia/sprite_2d.gd" id="3_0q4aa"]
 [ext_resource type="Texture2D" uid="uid://dvrqtb5acuql7" path="res://Sprites/Room Sprites/Printer Room/CyanCookie.png" id="4_apce4"]
