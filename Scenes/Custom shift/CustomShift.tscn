@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://fujk2w1crmxt" path="res://Scenes/Custom shift/custom_shift.gd" id="1_0q4aa"]
 [ext_resource type="Texture2D" uid="uid://db5cknm5hhdve" path="res://Sprites/UI Textures/Arrow1.png" id="1_14y8w"]
 [ext_resource type="Texture2D" uid="uid://kkq4ji0sjl1s" path="res://Sprites/CoffeeTempArt/coffe_cup_closed.png" id="1_47buj"]
+[ext_resource type="PackedScene" uid="uid://lbnjejiorve4" path="res://Scenes/MAIN/main_game.tscn" id="2_vt8j1"]
 [ext_resource type="Texture2D" uid="uid://cu3sxqyecwf7x" path="res://Sprites/Room Sprites/Printer Room/YellowCookie.png" id="2_yf61y"]
 [ext_resource type="Script" uid="uid://cacki71dse8kg" path="res://Katia/sprite_2d.gd" id="3_0q4aa"]
 [ext_resource type="Texture2D" uid="uid://dvrqtb5acuql7" path="res://Sprites/Room Sprites/Printer Room/CyanCookie.png" id="4_apce4"]
@@ -13,207 +14,263 @@
 [ext_resource type="Texture2D" uid="uid://blen85hatts0c" path="res://Sprites/UI Textures/snailmail.png" id="10_gso1f"]
 [ext_resource type="Texture2D" uid="uid://ba5aavaylaaaq" path="res://Sprites/UI Textures/bomb-cleaner.png" id="11_wn6ye"]
 [ext_resource type="Texture2D" uid="uid://b1efbojpprdlh" path="res://Sprites/UI Textures/Arrow2.png" id="12_yf61y"]
+[ext_resource type="FontFile" uid="uid://bforhk8nk0fsu" path="res://Font/AveriaLibre/AveriaLibre-Regular.ttf" id="14_apce4"]
+[ext_resource type="PackedScene" uid="uid://ds30lh6nirhwq" path="res://Scenes/Custom shift/set_diff_to_value.tscn" id="15_15e8x"]
 
-[node name="CustomShift" type="Node2D" unique_id=509679210]
+[sub_resource type="FontVariation" id="FontVariation_0q4aa"]
+base_font = ExtResource("14_apce4")
+
+[node name="CustomShift" type="Node2D" unique_id=509679210 node_paths=PackedStringArray("coffeedif", "honsdifftext", "bombdifftext", "emaildifftext", "match3difftext")]
 script = ExtResource("1_0q4aa")
+coffeedif = NodePath("HBoxContainer/CoffeeContainer/HBoxContainer/CoffeeDiff")
+honsdifftext = NodePath("HBoxContainer/HonsContainer/HBoxContainer/HonsDiff")
+bombdifftext = NodePath("HBoxContainer/BombContainer/HBoxContainer/BombDiff")
+emaildifftext = NodePath("HBoxContainer/EmailContainer/HBoxContainer/EmailDiff")
+match3difftext = NodePath("HBoxContainer/Match3Container/HBoxContainer/Match3Diff")
+next_scene = ExtResource("2_vt8j1")
 
 [node name="icons" type="Node" parent="." unique_id=1439582742]
 
-[node name="Sprite2D" type="Sprite2D" parent="icons" unique_id=1216985826]
-position = Vector2(1563, 447)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_yf61y")
-script = ExtResource("3_0q4aa")
-PieceColor = "Yellow"
-
-[node name="Sprite2D2" type="Sprite2D" parent="icons" unique_id=1302963651]
-position = Vector2(1619.0001, 449.99997)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_apce4")
-script = ExtResource("3_0q4aa")
-PieceColor = "Cyan"
-
-[node name="Sprite2D3" type="Sprite2D" parent="icons" unique_id=1688137758]
-position = Vector2(1679, 451.99997)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_15e8x")
-script = ExtResource("3_0q4aa")
-PieceColor = "Magenta"
-
-[node name="CoffeCupClosed" type="Sprite2D" parent="icons" unique_id=864794687]
-position = Vector2(301.55, 458.8)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_47buj")
-
-[node name="Hons" type="Sprite2D" parent="icons" unique_id=321672554]
-texture_filter = 1
-position = Vector2(651.55, 445)
-scale = Vector2(6, 6)
-texture = ExtResource("7_vt8j1")
-
-[node name="Bomb" type="Sprite2D" parent="icons" unique_id=2075300972]
-texture_filter = 1
-position = Vector2(982.55005, 448)
-scale = Vector2(5, 5)
-texture = ExtResource("8_id42v")
-
-[node name="Snailmailk" type="Sprite2D" parent="icons" unique_id=2051544381]
-texture_filter = 1
-position = Vector2(1294, 450)
-scale = Vector2(4, 4)
-texture = ExtResource("9_kqmhv")
-
 [node name="Snailmail" type="Sprite2D" parent="icons" unique_id=1632444658]
+visible = false
 position = Vector2(1302, 496)
 scale = Vector2(0.73333335, 0.625)
 texture = ExtResource("10_gso1f")
 
 [node name="BombCleaner" type="Sprite2D" parent="icons" unique_id=1514228578]
+visible = false
 position = Vector2(982.55, 505.5)
 scale = Vector2(0.58, 0.5625)
 texture = ExtResource("11_wn6ye")
 
-[node name="CoffeeDiffDown" type="TextureButton" parent="." unique_id=1757355470]
-offset_left = 129.0
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1316378098]
+offset_left = 139.0
 offset_top = 518.0
-offset_right = 229.0
+offset_right = 1777.0
 offset_bottom = 618.0
+theme_override_constants/separation = 42
+
+[node name="CoffeeContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1367675674]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CoffeeContainer" unique_id=1723539488]
+layout_mode = 2
+
+[node name="CoffeeDiffDown" type="TextureButton" parent="HBoxContainer/CoffeeContainer/HBoxContainer" unique_id=1757355470]
+layout_mode = 2
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="CoffeeDiffUp" type="TextureButton" parent="." unique_id=1719561359]
-offset_left = 469.0
-offset_top = 618.0
-offset_right = 569.0
-offset_bottom = 718.0
-rotation = 3.1415927
-texture_normal = ExtResource("1_14y8w")
-texture_hover = ExtResource("12_yf61y")
-
-[node name="CoffeeDiff" type="Label" parent="." unique_id=170769836]
-offset_left = 270.0
-offset_top = 523.0
-offset_right = 310.0
-offset_bottom = 611.0
+[node name="CoffeeDiff" type="Label" parent="HBoxContainer/CoffeeContainer/HBoxContainer" unique_id=170769836]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 2
 
-[node name="HonsDiffDown" type="TextureButton" parent="." unique_id=560186152]
-offset_left = 468.0
-offset_top = 518.0
-offset_right = 568.0
-offset_bottom = 618.0
+[node name="CoffeeDiffUp" type="TextureButton" parent="HBoxContainer/CoffeeContainer/HBoxContainer" unique_id=1719561359]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="HonsDiffUp" type="TextureButton" parent="." unique_id=208150140]
-offset_left = 808.0
-offset_top = 618.0
-offset_right = 908.0
-offset_bottom = 718.0
-rotation = 3.1415927
+[node name="CoffeCupClosed" type="Sprite2D" parent="HBoxContainer/CoffeeContainer" unique_id=864794687]
+position = Vector2(140.55, -64.20001)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_47buj")
+
+[node name="HonsContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1316349171]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/HonsContainer" unique_id=1658409664]
+layout_mode = 2
+
+[node name="HonsDiffDown" type="TextureButton" parent="HBoxContainer/HonsContainer/HBoxContainer" unique_id=560186152]
+layout_mode = 2
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="HonsDiff" type="Label" parent="." unique_id=1049999984]
-offset_left = 609.0
-offset_top = 523.0
-offset_right = 649.0
-offset_bottom = 611.0
+[node name="HonsDiff" type="Label" parent="HBoxContainer/HonsContainer/HBoxContainer" unique_id=1049999984]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 2
 
-[node name="BombDiffDown" type="TextureButton" parent="." unique_id=878729340]
-offset_left = 805.0
-offset_top = 513.0
-offset_right = 905.0
-offset_bottom = 613.0
+[node name="HonsDiffUp" type="TextureButton" parent="HBoxContainer/HonsContainer/HBoxContainer" unique_id=208150140]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="BombDiffUp" type="TextureButton" parent="." unique_id=808018922]
-offset_left = 1145.0
-offset_top = 613.0
-offset_right = 1245.0
-offset_bottom = 713.0
-rotation = 3.1415927
+[node name="Hons" type="Sprite2D" parent="HBoxContainer/HonsContainer" unique_id=321672554]
+texture_filter = 1
+position = Vector2(143.55, -63.200012)
+scale = Vector2(6, 6)
+texture = ExtResource("7_vt8j1")
+
+[node name="BombContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1169841586]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/BombContainer" unique_id=877115678]
+layout_mode = 2
+
+[node name="BombDiffDown" type="TextureButton" parent="HBoxContainer/BombContainer/HBoxContainer" unique_id=878729340]
+layout_mode = 2
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="BombDiff" type="Label" parent="." unique_id=619439591]
-offset_left = 946.0
-offset_top = 518.0
-offset_right = 986.0
-offset_bottom = 606.0
+[node name="BombDiff" type="Label" parent="HBoxContainer/BombContainer/HBoxContainer" unique_id=619439591]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 2
 
-[node name="EmailDiffDown" type="TextureButton" parent="." unique_id=1732277022]
-offset_left = 1131.0
-offset_top = 519.0
-offset_right = 1231.0
-offset_bottom = 619.0
+[node name="BombDiffUp" type="TextureButton" parent="HBoxContainer/BombContainer/HBoxContainer" unique_id=808018922]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="EmailDiffUp" type="TextureButton" parent="." unique_id=151654967]
-offset_left = 1471.0
-offset_top = 619.0
-offset_right = 1571.0
-offset_bottom = 719.0
-rotation = 3.1415927
+[node name="Bomb" type="Sprite2D" parent="HBoxContainer/BombContainer" unique_id=2075300972]
+texture_filter = 1
+position = Vector2(145.55, -50.200012)
+scale = Vector2(5, 5)
+texture = ExtResource("8_id42v")
+
+[node name="EmailContainer" type="CenterContainer" parent="HBoxContainer" unique_id=852688654]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/EmailContainer" unique_id=778996889]
+layout_mode = 2
+
+[node name="EmailDiffDown" type="TextureButton" parent="HBoxContainer/EmailContainer/HBoxContainer" unique_id=1732277022]
+layout_mode = 2
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="EmailDiff" type="Label" parent="." unique_id=169758038]
-offset_left = 1272.0
-offset_top = 524.0
-offset_right = 1312.0
-offset_bottom = 612.0
+[node name="EmailDiff" type="Label" parent="HBoxContainer/EmailContainer/HBoxContainer" unique_id=169758038]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 2
 
-[node name="Match3DiffDown" type="TextureButton" parent="." unique_id=1442280594]
-offset_left = 1455.0
-offset_top = 519.0
-offset_right = 1555.0
-offset_bottom = 619.0
+[node name="EmailDiffUp" type="TextureButton" parent="HBoxContainer/EmailContainer/HBoxContainer" unique_id=151654967]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="Match3DiffUp" type="TextureButton" parent="." unique_id=1287490624]
-offset_left = 1795.0
-offset_top = 619.0
-offset_right = 1895.0
-offset_bottom = 719.0
-rotation = 3.1415927
+[node name="Snailmailk" type="Sprite2D" parent="HBoxContainer/EmailContainer" unique_id=2051544381]
+texture_filter = 1
+position = Vector2(142.99995, -45)
+scale = Vector2(4, 4)
+texture = ExtResource("9_kqmhv")
+
+[node name="Match3Container" type="CenterContainer" parent="HBoxContainer" unique_id=1251748880]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Match3Container" unique_id=786964168]
+layout_mode = 2
+
+[node name="Match3DiffDown" type="TextureButton" parent="HBoxContainer/Match3Container/HBoxContainer" unique_id=1442280594]
+layout_mode = 2
 texture_normal = ExtResource("1_14y8w")
 texture_hover = ExtResource("12_yf61y")
 
-[node name="Match3Diff" type="Label" parent="." unique_id=1318653627]
-offset_left = 1596.0
-offset_top = 524.0
-offset_right = 1636.0
-offset_bottom = 612.0
+[node name="Match3Diff" type="Label" parent="HBoxContainer/Match3Container/HBoxContainer" unique_id=1318653627]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "1"
+horizontal_alignment = 2
 
-[node name="StartGame" type="Button" parent="." unique_id=133732699]
-offset_left = 941.0
-offset_top = 761.0
-offset_right = 1051.0
-offset_bottom = 792.0
-scale = Vector2(1.9893, 2.6431923)
+[node name="Match3DiffUp" type="TextureButton" parent="HBoxContainer/Match3Container/HBoxContainer" unique_id=1287490624]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
+texture_normal = ExtResource("1_14y8w")
+texture_hover = ExtResource("12_yf61y")
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Match3Container" unique_id=1216985826]
+position = Vector2(88.99997, -34.000008)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_yf61y")
+script = ExtResource("3_0q4aa")
+PieceColor = "Yellow"
+
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/Match3Container" unique_id=1302963651]
+position = Vector2(145.00009, -33.00004)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_apce4")
+script = ExtResource("3_0q4aa")
+PieceColor = "Cyan"
+
+[node name="Sprite2D3" type="Sprite2D" parent="HBoxContainer/Match3Container" unique_id=1688137758]
+position = Vector2(200.99997, -33.000008)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_15e8x")
+script = ExtResource("3_0q4aa")
+PieceColor = "Magenta"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1447402103]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1491.0
+offset_top = 726.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 1)
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=394804049]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=133732699]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_0q4aa")
+theme_override_font_sizes/font_size = 42
 text = "START GAME "
 
-[connection signal="pressed" from="CoffeeDiffDown" to="." method="_on_coffee_diff_down_pressed"]
-[connection signal="pressed" from="CoffeeDiffUp" to="." method="_on_coffee_diff_up_pressed"]
-[connection signal="pressed" from="HonsDiffDown" to="." method="_on_hons_diff_down_pressed"]
-[connection signal="pressed" from="HonsDiffUp" to="." method="_on_hons_diff_up_pressed"]
-[connection signal="pressed" from="BombDiffDown" to="." method="_on_bomb_diff_down_pressed"]
-[connection signal="pressed" from="BombDiffUp" to="." method="_on_bomb_diff_up_pressed"]
-[connection signal="pressed" from="EmailDiffDown" to="." method="_on_email_diff_down_pressed"]
-[connection signal="pressed" from="EmailDiffUp" to="." method="_on_email_diff_up_pressed"]
-[connection signal="pressed" from="Match3DiffDown" to="." method="_on_match_3_diff_down_pressed"]
-[connection signal="pressed" from="Match3DiffUp" to="." method="_on_match_3_diff_up_pressed"]
-[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[node name="SetDiffToValue" parent="MarginContainer/VBoxContainer" unique_id=1264764030 node_paths=PackedStringArray("diff_controller") instance=ExtResource("15_15e8x")]
+layout_mode = 2
+text = "SET ALL TO 20"
+set_diff = 20
+diff_controller = NodePath("../../..")
+
+[node name="SetDiffToValue2" parent="MarginContainer/VBoxContainer" unique_id=1954893833 node_paths=PackedStringArray("diff_controller") instance=ExtResource("15_15e8x")]
+layout_mode = 2
+text = "SET ALL TO 10"
+set_diff = 10
+diff_controller = NodePath("../../..")
+
+[node name="SetDiffToValue3" parent="MarginContainer/VBoxContainer" unique_id=526495147 node_paths=PackedStringArray("diff_controller") instance=ExtResource("15_15e8x")]
+layout_mode = 2
+text = "SET ALL TO 0"
+diff_controller = NodePath("../../..")
+
+[connection signal="pressed" from="HBoxContainer/CoffeeContainer/HBoxContainer/CoffeeDiffDown" to="." method="_on_coffee_diff_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/CoffeeContainer/HBoxContainer/CoffeeDiffUp" to="." method="_on_coffee_diff_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/HonsContainer/HBoxContainer/HonsDiffDown" to="." method="_on_hons_diff_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/HonsContainer/HBoxContainer/HonsDiffUp" to="." method="_on_hons_diff_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/BombContainer/HBoxContainer/BombDiffDown" to="." method="_on_bomb_diff_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/BombContainer/HBoxContainer/BombDiffUp" to="." method="_on_bomb_diff_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/EmailContainer/HBoxContainer/EmailDiffDown" to="." method="_on_email_diff_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/EmailContainer/HBoxContainer/EmailDiffUp" to="." method="_on_email_diff_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/Match3Container/HBoxContainer/Match3DiffDown" to="." method="_on_match_3_diff_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/Match3Container/HBoxContainer/Match3DiffUp" to="." method="_on_match_3_diff_up_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
