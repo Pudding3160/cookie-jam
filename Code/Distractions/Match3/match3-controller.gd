@@ -16,3 +16,10 @@ func start_game() -> void:
 
 func get_diff()->void: 
 	difficulty=DifficultyManager.diffmatch3
+
+func set_children_state(active: bool) -> void:
+	if (get_child_count() == 0): return;
+	var child := get_child(0)
+	if (child == null): return;
+	if (active): child.show();
+	else: child.hide();

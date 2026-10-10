@@ -1,6 +1,6 @@
 extends Node
 
-var time := 420.0
+var time := 340.0
 var time_buffer: float;
 var time_decrease_modifer := .1;
 @onready var next_scene := preload("res://Scenes/Cutscenes/good ending/good_end.tscn")
