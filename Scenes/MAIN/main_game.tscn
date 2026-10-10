@@ -34,6 +34,7 @@ max_rand_num = 50
 check_for_active_room = true
 
 [node name="HonsController" parent="." unique_id=459550278 instance=ExtResource("3_ddboy")]
+interval = 38
 difficulty = 5
 check_for_active_room = true
 

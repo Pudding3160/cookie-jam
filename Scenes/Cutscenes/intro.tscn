@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b1jyb0038stvv"]
+
+[ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="1_jqxjc"]
+[ext_resource type="Script" uid="uid://63fuv5myi5jk" path="res://Scenes/Cutscenes/intro.gd" id="1_ketci"]
+[ext_resource type="PackedScene" uid="uid://lbnjejiorve4" path="res://Scenes/MAIN/main_game.tscn" id="2_y6v41"]
+
+[node name="Node2D" type="Node2D" unique_id=1326432956]
+script = ExtResource("1_ketci")
+next_scene = ExtResource("2_y6v41")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1451228134]
+position = Vector2(960, 540)
+texture = ExtResource("1_jqxjc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1188677557]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
