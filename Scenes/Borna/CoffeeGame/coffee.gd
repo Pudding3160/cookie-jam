@@ -4,7 +4,7 @@ extends Area2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 
-	position.y+=1.6
+	position.y+=3
 	#get_parent().speed
 	if position.y>=750:
 		get_parent().reduce_score()

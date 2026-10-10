@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 650
+@export var speed := 800
 @export var left_edge: Node2D
 @export var right_edge: Node2D
 

@@ -17,6 +17,7 @@ func _ready() -> void:
 	interval_buffer = interval;
 	var node := get_node("/root/Main/RoomManager");
 	if (node != null): room_manager = node as RoomManager;
+	print(difficulty)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
