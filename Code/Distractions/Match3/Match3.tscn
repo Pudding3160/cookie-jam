@@ -34,6 +34,8 @@ cyan_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBox
 yellow_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel2")
 magenta_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel3")
 black_text = NodePath("Control/VBoxContainer/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel4")
+duration = 65.0
+time_penalty = 25.0
 
 [node name="Grid" type="Node2D" parent="." unique_id=1207108790 node_paths=PackedStringArray("csm")]
 script = ExtResource("1_4y1mt")
