@@ -20,3 +20,8 @@ func _process(_delta: float) -> void:
 func end_game():
 	YoureFired.show_fired();
 	done = true
+
+func reset():
+	max_strikes = 5
+	current_strikes = 0
+	done = false;

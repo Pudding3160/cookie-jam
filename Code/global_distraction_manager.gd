@@ -63,3 +63,12 @@ func set_click_modifier(value: float):
 	
 func get_click_modifier() -> float:
 	return click_modifier;
+
+func reset():
+	is_any_distraction_active = false;
+	is_email_hard_mode = false
+	time_decrease_modifier = 1.0;
+	warning_active = false;
+	click_modifier = 1.0;
+	min_click_mod = .05;
+	max_click_mod = 1.5;

@@ -21,3 +21,8 @@ func create_room(room: PackedScene, room_type: RoomsEnum.Room_Type) -> void:
 	# Create the scene
 	var child := room.instantiate();
 	add_child(child);
+
+func clear_children() -> void:
+	current_room_type = RoomsEnum.Room_Type.BREAK
+	for child in get_children():
+		child.queue_free()

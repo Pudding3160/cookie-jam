@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cgkl4wled0cxi"]
 
 [ext_resource type="FontFile" uid="uid://bforhk8nk0fsu" path="res://Font/AveriaLibre/AveriaLibre-Regular.ttf" id="1_0ki4d"]
+[ext_resource type="Texture2D" uid="uid://cky10ol485jix" path="res://Sprites/paper.png" id="1_vxd15"]
 [ext_resource type="Script" uid="uid://bxhnejlfaado4" path="res://Code/change_scene.gd" id="2_1f6jl"]
 [ext_resource type="PackedScene" uid="uid://b1jyb0038stvv" path="res://Scenes/Cutscenes/intro.tscn" id="3_je036"]
 [ext_resource type="PackedScene" uid="uid://ctkp6o0ktx0iq" path="res://Scenes/Custom shift/CustomShift.tscn" id="3_ntrau"]
 [ext_resource type="Script" uid="uid://seq0rmqf6qa6" path="res://Code/quit_game.gd" id="4_6uye8"]
+[ext_resource type="Texture2D" uid="uid://coon3ootrdrqr" path="res://Sprites/ProJOSHTination.png" id="6_6uye8"]
 
 [sub_resource type="FontVariation" id="FontVariation_r5n4g"]
 base_font = ExtResource("1_0ki4d")
@@ -17,22 +19,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1646769290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -2.0
+offset_right = 74.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer2" unique_id=1194575220]
+modulate = Color(0.84422654, 0.7707295, 0.8720468, 1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.29, 1.29)
+mouse_filter = 2
+texture = ExtResource("1_vxd15")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1435129601]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -483.0
-offset_bottom = -114.0
+offset_top = -381.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_constants/margin_left = 768
 theme_override_constants/margin_right = 768
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1236842488]
 layout_mode = 2
-theme_override_constants/separation = 78
+mouse_filter = 2
+theme_override_constants/separation = 56
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1815863866 node_paths=PackedStringArray("root")]
 custom_minimum_size = Vector2(256, 0)
@@ -60,6 +85,23 @@ theme_override_font_sizes/font_size = 52
 text = "Custom Shift"
 script = ExtResource("2_1f6jl")
 next_scene = ExtResource("3_ntrau")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=677813084]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -123.0
+offset_bottom = 837.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=893520593]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.75, 0.75)
+mouse_filter = 2
+texture = ExtResource("6_6uye8")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="MarginContainer/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="MarginContainer/VBoxContainer/Button2" method="_on_pressed"]

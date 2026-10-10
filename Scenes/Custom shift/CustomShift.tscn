@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1jyb0038stvv" path="res://Scenes/Cutscenes/intro.tscn" id="2_vt8j1"]
 [ext_resource type="Texture2D" uid="uid://cu3sxqyecwf7x" path="res://Sprites/Room Sprites/Printer Room/YellowCookie.png" id="2_yf61y"]
 [ext_resource type="Script" uid="uid://cacki71dse8kg" path="res://Katia/sprite_2d.gd" id="3_0q4aa"]
+[ext_resource type="Texture2D" uid="uid://cky10ol485jix" path="res://Sprites/paper.png" id="3_id42v"]
 [ext_resource type="Texture2D" uid="uid://dvrqtb5acuql7" path="res://Sprites/Room Sprites/Printer Room/CyanCookie.png" id="4_apce4"]
 [ext_resource type="Texture2D" uid="uid://tpq7s41w10pt" path="res://Sprites/Room Sprites/Printer Room/MagentaCookie.png" id="5_15e8x"]
 [ext_resource type="Texture2D" uid="uid://dcryfa2gxf0k5" path="res://Sprites/HonsSprites/hons.png" id="7_vt8j1"]
@@ -28,6 +29,26 @@ bombdifftext = NodePath("HBoxContainer/BombContainer/HBoxContainer/BombDiff")
 emaildifftext = NodePath("HBoxContainer/EmailContainer/HBoxContainer/EmailDiff")
 match3difftext = NodePath("HBoxContainer/Match3Container/HBoxContainer/Match3Diff")
 next_scene = ExtResource("2_vt8j1")
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1314617931]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -2.0
+offset_right = 1990.0
+offset_bottom = 1078.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer2" unique_id=2027403348]
+modulate = Color(0.84422654, 0.7707295, 0.8720468, 1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.29, 1.29)
+mouse_filter = 2
+texture = ExtResource("3_id42v")
 
 [node name="icons" type="Node" parent="." unique_id=1439582742]
 

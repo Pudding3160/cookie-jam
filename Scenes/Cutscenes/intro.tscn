@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csjc1fetaltla" path="res://icon.svg" id="1_jqxjc"]
 [ext_resource type="Script" uid="uid://63fuv5myi5jk" path="res://Scenes/Cutscenes/intro.gd" id="1_ketci"]
-[ext_resource type="PackedScene" uid="uid://lbnjejiorve4" path="res://Scenes/MAIN/main_game.tscn" id="2_y6v41"]
+[ext_resource type="PackedScene" uid="uid://dy7m06v21f7h" path="res://Scenes/Cutscenes/tutorial/tutorial.tscn" id="2_y6v41"]
 
 [node name="Node2D" type="Node2D" unique_id=1326432956]
 script = ExtResource("1_ketci")
