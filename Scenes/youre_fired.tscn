@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ba2yad831acg5"]
+
+[ext_resource type="Script" uid="uid://dvx8tw04lyfg2" path="res://Scenes/youre_fired.gd" id="1_dodkd"]
+[ext_resource type="Texture2D" uid="uid://b0q8y6rtwit5w" path="res://Sprites/YOU ARE FIRED.png" id="1_i1nmx"]
+[ext_resource type="PackedScene" uid="uid://xppxrp7p4h3q" path="res://Scenes/Cutscenes/bad ending/ban_end.tscn" id="2_0h67k"]
+
+[node name="YoureFired" type="CanvasLayer" unique_id=2039088057]
+script = ExtResource("1_dodkd")
+timer = 5.0
+next_scene = ExtResource("2_0h67k")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2078656043]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1379212052]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_i1nmx")
+
+[node name="Timer" type="Timer" parent="." unique_id=1897188072]
+wait_time = 6.0

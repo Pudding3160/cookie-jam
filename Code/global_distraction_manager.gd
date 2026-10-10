@@ -10,6 +10,7 @@ var max_click_mod := 1.5;
 
 
 func _process(delta: float) -> void:
+	if GlobalStrikeManager.done: time_decrease_modifier = 0;
 	if is_any_distraction_active: return;	# Don't decrease the modifier while a cubicle mini-game is active; Qof change, but it *does* affect difficulty
 	update_click_modifier(delta / 20);
 
@@ -62,3 +63,12 @@ func set_click_modifier(value: float):
 	
 func get_click_modifier() -> float:
 	return click_modifier;
+
+func reset():
+	is_any_distraction_active = false;
+	is_email_hard_mode = false
+	time_decrease_modifier = 1.0;
+	warning_active = false;
+	click_modifier = 1.0;
+	min_click_mod = .05;
+	max_click_mod = 1.5;
