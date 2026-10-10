@@ -77,7 +77,7 @@ theme_override_font_sizes/font_size = 52
 text = "Quit"
 script = ExtResource("4_6uye8")
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1442001014]
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1442001014 node_paths=PackedStringArray("root")]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_r5n4g")
@@ -85,6 +85,7 @@ theme_override_font_sizes/font_size = 52
 text = "Custom Shift"
 script = ExtResource("2_1f6jl")
 next_scene = ExtResource("3_ntrau")
+root = NodePath("../../..")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=677813084]
 clip_contents = true

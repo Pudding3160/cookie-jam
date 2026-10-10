@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://c1lhe36o3tnho"]
+
+[ext_resource type="Texture2D" uid="uid://dsnyptcxusyrn" path="res://Sprites/UI Textures/Match 3 Timer/buttonPrinter.png" id="1_m2lcs"]
+[ext_resource type="Texture2D" uid="uid://dpkm24fpshu2d" path="res://Sprites/UI Textures/Match 3 Timer/ButtonPrinter2.png" id="2_wsnfs"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_m2lcs")
+frame_0/duration = 0.13
+frame_1/texture = ExtResource("2_wsnfs")
+frame_1/duration = 0.13
