@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bxhnejlfaado4" path="res://Code/change_scene.gd" id="2_3bx4t"]
 [ext_resource type="PackedScene" uid="uid://dy7m06v21f7h" path="res://Scenes/Cutscenes/tutorial/tutorial.tscn" id="3_sjd37"]
 [ext_resource type="PackedScene" uid="uid://cgkl4wled0cxi" path="res://Scenes/MAIN MENU/main_menu.tscn" id="4_epysh"]
+[ext_resource type="AudioStream" uid="uid://ccdr6lyypq40w" path="res://Sounds/ShiftFinish/ShiftWin.wav" id="5_ki8js"]
 
 [sub_resource type="FontVariation" id="FontVariation_r5n4g"]
 base_font = ExtResource("1_ekns7")
@@ -60,6 +61,11 @@ text = "Quit"
 script = ExtResource("2_3bx4t")
 next_scene = ExtResource("4_epysh")
 root = NodePath("../..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1636749716]
+stream = ExtResource("5_ki8js")
+volume_db = -2.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/Button" to="MarginContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer2/Button2" to="MarginContainer2/Button2" method="_on_pressed"]
