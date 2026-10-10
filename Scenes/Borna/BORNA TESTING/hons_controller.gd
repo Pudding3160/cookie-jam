@@ -7,3 +7,6 @@ func start_game() -> void:
 	GlobalDistractionManager.set_distraction_active_state(true);
 	attack_stored = false;
 	
+func get_diff()->void: 
+	difficulty=DifficultyManager.diffhons
+	

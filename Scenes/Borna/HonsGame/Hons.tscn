@@ -50,6 +50,7 @@ texture = ExtResource("2_l0ogy")
 position = Vector2(-112, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=822775577]
+visible = false
 position = Vector2(578, 325)
 
 [node name="HonsChar" parent="." unique_id=1616022542 instance=ExtResource("3_swgoe")]

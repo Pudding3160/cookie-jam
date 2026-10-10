@@ -5,3 +5,6 @@ func start_game() -> void:
 	add_child(scene_instance);
 	GlobalDistractionManager.set_distraction_active_state(true);
 	attack_stored = false;
+	
+func get_diff()->void: 
+	difficulty=DifficultyManager.diffbomb

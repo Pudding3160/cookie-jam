@@ -12,3 +12,7 @@ func start_game() -> void:
 		add_child(warning_scene);
 	
 	attack_stored = false;
+	
+
+func get_diff()->void: 
+	difficulty=DifficultyManager.diffmatch3
