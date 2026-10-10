@@ -2,7 +2,7 @@ extends Control
 
 @export var words: Array[String]
 var chosen_words: Array[String]
-@export var duration: float = 20.0;
+@export var duration: float = 30.0;
 var duration_buffer: float;
 @onready var v_box_controller := $PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/VBoxContainer;
 @onready var progress := $PanelContainer/NinePatchRect/MarginContainer/VSplitContainer/ProgressBar

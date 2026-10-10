@@ -7,7 +7,7 @@ var done := false;
 func update_strikes(delta: int) -> void:
 	if (delta > 0): GlobalSoundManager.play_fail();
 	current_strikes += delta;
-	if current_strikes >= 1 and !done:
+	if current_strikes >= max_strikes and !done:
 		end_game();
 	
 func get_current_strikes() -> int:
