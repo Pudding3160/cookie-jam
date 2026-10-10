@@ -14,6 +14,8 @@ var is_distraction_active := false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interval_buffer = interval;
+	get_diff()
+	print(str(self) + ": " + str(difficulty))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -78,5 +80,7 @@ func set_children_state(active: bool) -> void:
 	for child in get_children():
 		if (child == null): return;
 		if (active): child.show();
-		else: child.hide();	
-	
+		else: child.hide();
+
+func get_diff()->void:
+	difficulty=0
