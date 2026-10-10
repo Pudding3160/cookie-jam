@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgkl4wled0cxi"]
 
 [ext_resource type="FontFile" uid="uid://bforhk8nk0fsu" path="res://Font/AveriaLibre/AveriaLibre-Regular.ttf" id="1_0ki4d"]
+[ext_resource type="PackedScene" uid="uid://lbnjejiorve4" path="res://Scenes/MAIN/main_game.tscn" id="3_1f6jl"]
 
 [sub_resource type="FontVariation" id="FontVariation_r5n4g"]
 base_font = ExtResource("1_0ki4d")
@@ -10,9 +11,15 @@ resource_name = "start_game"
 script/source = "extends Button
 
 @export var next_scene: PackedScene
+@onready var root := get_tree().root
 
 func _on_pressed() -> void:
-	var trans = await SceneTransition.fade_in();
+	var result = await SceneTransition.fade_in();
+	if result:
+		var scene := next_scene.instantiate();
+		get_tree().root.add_child(scene);
+		SceneTransition.fade_out(false);
+		root.queue_free();
 "
 
 [sub_resource type="GDScript" id="GDScript_r5n4g"]
@@ -55,6 +62,7 @@ theme_override_fonts/font = SubResource("FontVariation_r5n4g")
 theme_override_font_sizes/font_size = 52
 text = "Work"
 script = SubResource("GDScript_0ki4d")
+next_scene = ExtResource("3_1f6jl")
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=235819502]
 custom_minimum_size = Vector2(256, 0)
