@@ -5,3 +5,12 @@ func start_game() -> void:
 	add_child(scene_instance);
 	GlobalDistractionManager.set_distraction_active_state(true);
 	attack_stored = false;
+	
+func getdiff()->void: 
+	difficulty=DifficultyManager.diffbomb
+func _ready() -> void:
+	interval_buffer = interval;
+	var node := get_node("/root/Main/RoomManager");
+	if (node != null): room_manager = node as RoomManager;
+	getdiff()
+	print(difficulty)

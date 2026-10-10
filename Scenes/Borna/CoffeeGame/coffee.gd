@@ -8,9 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	rot += .01;
+	rot += .02;
 	rotation = rot
-	position.y+=1.84	# Increased by 15% (original: 1.6)
+	position.y+=3
 	#get_parent().speed
 	if position.y>=750:
 		get_parent().reduce_score()

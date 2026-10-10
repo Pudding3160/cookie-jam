@@ -25,7 +25,7 @@ func scale_with_difficulty() -> void:
 	var node := get_parent();
 	var controller := node as DistractionControllerBase;
 	var diff: float = controller.get_difficulty(); 
-	speed=0.9+diff*0.03
+	speed=5+diff*0.03
 	maxspawngap= 1.2-(0.02*diff);
 	timer.wait_time=8.0+(diff*0.3)
 	set_timer();

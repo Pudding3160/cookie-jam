@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dmqa8s5xfmkom"]
+
+[ext_resource type="Script" uid="uid://csadywje753ht" path="res://Scenes/Custom shift/difficulty_manager.gd" id="1_0ejdy"]
+
+[node name="DifficultyManager" type="Node" unique_id=1114539718]
+script = ExtResource("1_0ejdy")

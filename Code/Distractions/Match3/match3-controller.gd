@@ -12,3 +12,13 @@ func start_game() -> void:
 		add_child(warning_scene);
 	
 	attack_stored = false;
+	
+
+func getdiff()->void: 
+	difficulty=DifficultyManager.diffmatch3
+func _ready() -> void:
+	interval_buffer = interval;
+	var node := get_node("/root/Main/RoomManager");
+	if (node != null): room_manager = node as RoomManager;
+	getdiff()
+	print(difficulty)
